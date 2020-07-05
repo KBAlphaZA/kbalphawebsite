@@ -1,84 +1,62 @@
+<!--Nav bar-->
+<nav class="navbar" role="navigation" aria-label="main navigation" >
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="/assets/Serapis_Medical.PNG" width="112" height="28">
+    </a>
 
-  <div>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-
-    <!--Nav bar-->
-  <nav class="navbar" role="navigation" aria-label="main navigation" >
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="/assets/Serapis_Medical.PNG" width="112" height="28">
+  <div id="navbarBasicExample" class="navbar-end">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="" routerLinkActive="active">
+        Home
       </a>
-  
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+
+      <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
+        About Us
       </a>
-    </div>
-  
-    <div id="navbarBasicExample" class="navbar-end">
-      <div class="navbar-start">
-        <a class="navbar-item" routerLink="" routerLinkActive="active">
-          Home
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
         </a>
-  
-        <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
-          About Us
-        </a>
-  
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
+            About
           </a>
-  
-          <div class="navbar-dropdown">
-            <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
-              About
-            </a>
-            <a class="navbar-item" routerLink="/careers" routerLinkActive="active">
-              Careers
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
-          </div>
-        </div>
-      </div>
-  
-      <div class="navbar">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary" style="background-color: #607d8b;">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
-          </div>
+          <a class="navbar-item" routerLink="/careers" routerLinkActive="active">
+            Careers
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
         </div>
       </div>
     </div>
-  </nav>
 
-  <!-- Footer -->
-  <footer>
-      Love Angular?&nbsp;
-      <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
-        <div class="github-star-badge">
-            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          Star
+    <div class="navbar">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" style="background-color: #607d8b;">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
         </div>
-      </a>
-      <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
-        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-      </a>
-  </footer>
-
-</div>
-
-
+      </div>
+    </div>
+  </div>
+</nav>
 <router-outlet></router-outlet>
