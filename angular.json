@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "kbalphawebsite"
+    }
+  },
+  "defaultProject": "kbalphawebsite",
+  "cli": {
+    "analytics": "ceb4b882-7bb6-48cd-8b7e-839184271cad"
+  }
 }
