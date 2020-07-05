@@ -18,17 +18,17 @@
         Home
       </a>
 
-      <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
+      <a class="navbar-item" routerLink="" routerLinkActive="active">
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             Services
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item">
+            <a class="navbar-item" routerLink="/softwaredevservice" routerLinkActive="active">
               Software development
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item" routerLink="/serapismedical" routerLinkActive="active">
               Serapis Medical
             </a>
           </div>
@@ -46,5 +46,9 @@
 
     </div>
   </div>
-</nav>
+
+</nav >
+
+<hr/>
+
 <router-outlet></router-outlet>
