@@ -2,7 +2,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation" >
   <div class="navbar-brand">
     <a class="navbar-item" href="https://bulma.io">
-      <img src="/assets/Serapis_Medical.PNG" width="112" height="28">
+      <img src="/assets/icons8-alpha-100.png" width="50" height="100"/>
     </a>
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -19,7 +19,21 @@
       </a>
 
       <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
-        About Us
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Services
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              Software development
+            </a>
+            <a class="navbar-item">
+              Serapis Medical
+            </a>
+          </div>
+
+      </div>
       </a>
 
       <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
@@ -27,11 +41,7 @@
       </a>
       
       <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
-        Services
-      </a>
-
-      <a class="navbar-item" routerLink="/about-us" routerLinkActive="active">
-        Ventures
+        About
       </a>
 
     </div>
