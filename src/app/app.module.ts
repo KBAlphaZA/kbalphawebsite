@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './Home/home/home.component';
 import { SoftwaredevserviceComponent } from './softwaredevservice/softwaredevservice.component';
 import { SerapismedicalComponent } from './serapismedical/serapismedical.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { SerapismedicalComponent } from './serapismedical/serapismedical.compone
     HomeComponent,
     SoftwaredevserviceComponent,
     SerapismedicalComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
