@@ -8,6 +8,8 @@ import { SoftwaredevserviceComponent } from './softwaredevservice/softwaredevser
 import { SerapismedicalComponent } from './serapismedical/serapismedical.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactusComponent } from './contactus/contactus.component';
+
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
     SerapismedicalComponent,
     HeaderComponent,
     FooterComponent,
+    ContactusComponent,
   ],
   imports: [
     BrowserModule,
