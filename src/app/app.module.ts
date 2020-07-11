@@ -9,6 +9,8 @@ import { SerapismedicalComponent } from './serapismedical/serapismedical.compone
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
 
 
@@ -29,4 +31,7 @@ import { ContactusComponent } from './contactus/contactus.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule { }
