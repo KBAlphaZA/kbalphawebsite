@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-  <nav class="navbar" role="navigation" aria-label="main navigation" >
+  <nav class="navbar has-text-white" role="navigation" aria-label="main navigation" style="background-color: #41754e;">
   <div class="navbar-brand">
     <a class="navbar-item" href="#">
       <img src="/assets/icons8-alpha-100.png" width="50" height="100"/>
@@ -50,6 +50,8 @@ import { Component, OnInit } from '@angular/core';
 
     </div>
   </div>
+
+<br>
 
 </nav >
   `,
