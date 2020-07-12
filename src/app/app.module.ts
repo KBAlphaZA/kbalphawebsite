@@ -12,7 +12,9 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 
-
+export function playerFactory(){
+    return import('lottie-web');
+}
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import player from 'lottie-web';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LottieModule.forRoot({player: playerFactory})
   ],
   providers: [],
   bootstrap: [AppComponent]
