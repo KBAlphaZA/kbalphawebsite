@@ -15,9 +15,7 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class HomeComponent implements OnInit {
 
-  options: AnimationOptions = { path: 'https://assets8.lottiefiles.com/private_files/lf30_ZOuB83.json',
-
-                              };
+  options: AnimationOptions = { path: 'https://assets8.lottiefiles.com/private_files/lf30_ZOuB83.json',};
 
   animationCreated(animationItem: AnimationItem): void{console.log(animationItem); }
 

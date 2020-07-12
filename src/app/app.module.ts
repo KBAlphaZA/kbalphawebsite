@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import { ProcessanimationComponent } from './components/subcomponent/animation/processanimation/processanimation.component';
+import { FinishanimationComponent } from './components/subcomponent/animation/finishanimation/finishanimation.component';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -25,6 +27,8 @@ export function playerFactory(){
     HeaderComponent,
     FooterComponent,
     ContactusComponent,
+    ProcessanimationComponent,
+    FinishanimationComponent,
   ],
   imports: [
     BrowserModule,

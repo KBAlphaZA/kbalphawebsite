@@ -1,3 +1,4 @@
-#box-background{
-    background-color:gray;
+#box-css{
+    border-color: black;
+    border-radius: 20px;
 }
