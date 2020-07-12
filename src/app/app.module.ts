@@ -9,8 +9,12 @@ import { SerapismedicalComponent } from './serapismedical/serapismedical.compone
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
-
+export function playerFactory(){
+    return import('lottie-web');
+}
 
 @NgModule({
   declarations: [
@@ -24,9 +28,13 @@ import { ContactusComponent } from './contactus/contactus.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LottieModule.forRoot({player: playerFactory})
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule { }
