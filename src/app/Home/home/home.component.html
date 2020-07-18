@@ -26,45 +26,61 @@
 
         <!--Offering list-->
         <div class="container">
-            <h1 class="title"><b>Platforms we develop for</b></h1>
+           <div class="box">
+            <h1 class="title"><b>Development areas</b></h1>
 
-            <div class="level">
-                <!--Card 1-->
-                <div class="card">
-                    <div class="card-content">
+            <div class="columns">
+                <!--Container 1-->
+                <div class="column">
+                    <!--Card 1-->
+                    <div class="card">
+                        <div class="card-content">
+                                <figure class="image is-128x128">
+                                    <img src="/assets/mobiledevIcon.png" alt="Mobile development"/>
+                                </figure>
+
+                                <br>
+
+                                <h1>Mobile development</h1>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <!--Container 2-->
+                <div class="column">
+                    <!--Card 2-->
+                    <div class="card">
+                        <div class="card-content">
                             <figure class="image is-128x128">
-                                <img src="/assets/mobiledevIcon.png" alt="Mobile development"/>
+                                <img src="/assets/webdevIcon.png" alt="Web development">
                             </figure>
 
-                             <h1>Mobile development</h1>
-                    </div>
-                    
-                </div>
+                            <br>
 
-
-                <!--Card 2-->
-                <div class="card">
-                    <div class="card-content">
-                        <figure class="image is-128x128">
-                            <img src="/assets/webdevIcon.png" alt="Web development">
-                          </figure>
-
-                          <h1>Web development</h1>
+                            <h1>Web development</h1>
+                        </div>
                     </div>
                 </div>
 
-                <!--Card 3-->
-                <div class="card">
-                    <div class="card-content">
-                        <figure class="image is-128x128">
-                            <img src="/assets/iotdevIcon.png">
-                          </figure>
+                <!--Container 3-->
+                <div class="column">
+                    <!--Card 3-->
+                    <div class="card">
+                        <div class="card-content">
+                            <figure class="image is-128x128">
+                                <img src="/assets/iotdevIcon.png">
+                            </figure>
 
-                          <h1>Iot development</h1>
+                            <br>
+
+                            <h1>Iot development</h1>
+                        </div>
                     </div>
                 </div>
 
             </div>
+           </div>
         </div>
 
     </div>
@@ -88,14 +104,126 @@
 <!--Our tech stack-->
 <section class="section new-section">
     <div class="container">
-        <b>Hello tech stack</b>
+
+        <div class="box">
+            <div class="title">
+                <b>Our tech stack</b>
+            </div>
+
+            <br>
+
+            <div>
+                <p>In order for us to deliver the best solution, 
+                    we use the best combination of technologies to meet a high standard of great software</p>
+            </div>
+
+
+            <br>
+
+            <div class="box">
+                <!--Angualr-->
+                <div class="card-content">
+                    <img src="/assets/angularjsdevIcon.png" width="60" height="60" alt="angular developers"/>
+                    <h1 class="has-text-centered">Angular</h1>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </section>
 
 
 <!--Contact us section-->
 <section class="section new-section">
-    <div class="container">
-        <b>Hello contact</b>
+    <div class="box">
+        <div class="container">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Text input">
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </div>
+                <p class="help is-success">This username is available</p>
+              </div>
+              
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </span>
+                </div>
+                <p class="help is-danger">This email is invalid</p>
+              </div>
+              
+              <div class="field">
+                <label class="label">Subject</label>
+                <div class="control">
+                  <div class="select">
+                    <select>
+                        <option>Software development</option>
+                        <option>Serapis medical</option>
+                        <option>Pescado farms</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Textarea"></textarea>
+                </div>
+              </div>
+              
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox">
+                    I agree to the <a href="#">terms and conditions</a>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="field">
+                <div class="control">
+                  <label class="radio">
+                    <input type="radio" name="question">
+                    Yes
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="question">
+                    No
+                  </label>
+                </div>
+              </div>
+              
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light">Cancel</button>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </section>
