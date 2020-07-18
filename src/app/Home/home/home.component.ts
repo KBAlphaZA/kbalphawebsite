@@ -4,14 +4,17 @@ import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-home',
-  /*templateUrl: './home.component.html',*/
-  template: `<div class="level-right">
+  templateUrl: './home.component.html',
+  
+  /*template: `<div class="level-right">
                 <ng-lottie  width="600px"
-                height="600px"
-                [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+                     height="600px"
+                     [options]="options" (animationCreated)="animationCreated($event)">
+                </ng-lottie>
               </div>
               `,
-  styleUrls: ['./home.component.css']
+*/
+              styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
