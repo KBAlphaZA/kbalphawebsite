@@ -30,7 +30,7 @@ import { Component, OnInit } from '@angular/core';
                         <h3>Business</h3>
                     </div>
                     <ul class="link-list">
-                        <li><a href="{{ data.links.docs }}">Support</a></li>
+                        <li><a href="{{ data.links.docs-article}}">Support</a></li>
                         <li><a href="{{data.links.blog-article}}">Partners & Clients</a></li>
                         <li><a href="{{data.links.blog-article}}">Integration</a></li>
                         <li><a href="{{data.links.blog-article}}">Admin Portal</a></li>
