@@ -1,0 +1,3 @@
+-The icons of this project are local or are from www.icon8.com as links.
+-The robots files was constructed using the follwoing website as refrence: http://www.javascriptkit.com/howto/robots.shtml
+ 
