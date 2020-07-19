@@ -3,4 +3,4 @@
 -The robots files was constructed using the follwoing website as refrence: http://www.javascriptkit.com/howto/robots.shtml
 
 -The sitemap was constructed with the help of this webiste:  https://www.sitemaps.org/protocol.html
-
+use the following link to read moore about formatting the site https://www.sitemaps.org/protocol.html#location
