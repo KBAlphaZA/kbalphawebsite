@@ -14,6 +14,7 @@ import player from 'lottie-web';
 import { ProcessanimationComponent } from './components/subcomponent/animation/processanimation/processanimation.component';
 import { FinishanimationComponent } from './components/subcomponent/animation/finishanimation/finishanimation.component';
 import { TechstackcomponentComponent } from './TechStack/techstackcomponent/techstackcomponent.component';
+import { OurTeamComponent } from './Team/our-team/our-team.component';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -31,6 +32,7 @@ export function playerFactory(){
     ProcessanimationComponent,
     FinishanimationComponent,
     TechstackcomponentComponent,
+    OurTeamComponent,
   ],
   imports: [
     BrowserModule,
