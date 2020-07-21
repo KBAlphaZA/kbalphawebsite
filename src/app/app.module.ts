@@ -13,6 +13,10 @@ import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { ProcessanimationComponent } from './components/subcomponent/animation/processanimation/processanimation.component';
 import { FinishanimationComponent } from './components/subcomponent/animation/finishanimation/finishanimation.component';
+import { TechstackcomponentComponent } from './TechStack/techstackcomponent/techstackcomponent.component';
+import { OurTeamComponent } from './Team/our-team/our-team.component';
+import { LandingpagecomponentComponent } from './LandingPage/landingpagecomponent/landingpagecomponent.component';
+import { PlatformofferingcomponentComponent } from './PlatformDevelopmentOfferings/platformofferingcomponent/platformofferingcomponent.component';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -29,6 +33,10 @@ export function playerFactory(){
     ContactusComponent,
     ProcessanimationComponent,
     FinishanimationComponent,
+    TechstackcomponentComponent,
+    OurTeamComponent,
+    LandingpagecomponentComponent,
+    PlatformofferingcomponentComponent,
   ],
   imports: [
     BrowserModule,
