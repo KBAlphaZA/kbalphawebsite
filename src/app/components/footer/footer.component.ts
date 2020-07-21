@@ -18,9 +18,9 @@ import { Component, OnInit } from '@angular/core';
                         <h3>KB alpha</h3>
                     </div>
                     <ul class="link-list">
-                        <li><a href="{{data.links.github}}">Partners & Clients</a></li>
-                        <li><a href="{{data.links.bulma-apps}}">About Us</a></li>
-                        <li><a href="{{data.links.bulma-apps}}">Careers</a></li>
+                        <li><a href="#">Partners & Clients</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,11 +30,11 @@ import { Component, OnInit } from '@angular/core';
                         <h3>Business</h3>
                     </div>
                     <ul class="link-list">
-                        <li><a href="{{ data.links.docs-article}}">Support</a></li>
-                        <li><a href="{{data.links.blog-article}}">Partners & Clients</a></li>
-                        <li><a href="{{data.links.blog-article}}">Integration</a></li>
-                        <li><a href="{{data.links.blog-article}}">Admin Portal</a></li>
-                        <li><a href="{{data.links.blog-article}}">Submit An Idea</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Partners & Clients</a></li>
+                        <li><a href="#">Integration</a></li>
+                        <li><a href="#">Admin Portal</a></li>
+                        <li><a href="#">Submit An Idea</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,16 +57,16 @@ import { Component, OnInit } from '@angular/core';
                         <h3>Follow us</h3>
                         <nav class="level is-mobile">
                             <div class="level-left">
-                                <a class="level-item" href="{{data.links.github}}">
+                                <a class="level-item" href="#">
                                     <span class="icon"><i class="fab fa-github"></i></span>
                                 </a>
-                                <a class="level-item" href="{{data.links.facebook}}">
+                                <a class="level-item" href="#">
                                     <span class="icon"><i class="fab fa-facebook"></i></span>
                                 </a>
-                                <a class="level-item" href="{{data.links.twitter}}">
+                                <a class="level-item" href="#">
                                     <span class="icon"><i class="fab fa-twitter"></i></span>
                                 </a>
-                                <a class="level-item" href="{{data.links.instagram}}">
+                                <a class="level-item" href="#">
                                     <span class="icon"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </div>
