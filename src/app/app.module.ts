@@ -13,6 +13,8 @@ import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { ProcessanimationComponent } from './components/subcomponent/animation/processanimation/processanimation.component';
 import { FinishanimationComponent } from './components/subcomponent/animation/finishanimation/finishanimation.component';
+import { TechstackcomponentComponent } from './TechStack/techstackcomponent/techstackcomponent.component';
+import { DevelopmentservicescomponentComponent } from './app/components/developmentservices/developmentservicescomponent.component';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -29,6 +31,7 @@ export function playerFactory(){
     ContactusComponent,
     ProcessanimationComponent,
     FinishanimationComponent,
+    TechstackcomponentComponent,
   ],
   imports: [
     BrowserModule,
