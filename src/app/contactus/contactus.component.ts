@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
-  potentialClientName = '';
+  customerName = '';
+  customerCellphone = '';
+  customerEmail = '';
+  subjectChoosen = '';
+  customerMessage = '';
+
 
   constructor() { }
 
@@ -15,8 +20,8 @@ export class ContactusComponent implements OnInit {
   }
 
   onSendRequest(clientName: HTMLInputElement) {
-       this.potentialClientName = clientName.value;
-       console.log(clientName);
+      //take all the user data and send it to database.
+      this.customerName = clientName.value;
   }
 
 }
