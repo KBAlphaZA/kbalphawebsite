@@ -14,14 +14,14 @@
       <div class="field">
         <label class="label">Name</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Text input" #clientName>
+          <input class="input" type="text" placeholder="Text input" [(ngModel)]="clientName">
         </div>
       </div>
 
       <div class="field">
         <label class="label">Cellphone number</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input is-success" type="text" placeholder="Text input" value="">
+          <input class="input is-success" type="text" placeholder="Text input" [(ngModel)]="clientCellphone">
           <span class="icon is-small is-left">
             <i class="fas fa-phone"></i>
           </span>
@@ -34,7 +34,7 @@
       <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+          <input class="input is-danger" type="email" placeholder="Email input" [(ngModel)]="clientEmail">
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -61,7 +61,7 @@
       <div class="field">
         <label class="label">Message</label>
         <div class="control">
-          <textarea class="textarea" placeholder="Textarea"></textarea>
+          <textarea class="textarea" placeholder="What can we help you with?" [(ngModel)]="clientMessage"></textarea>
         </div>
       </div>
 
@@ -80,13 +80,13 @@
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link" (click)="onSendRequest(clientName)">Submit</button>
+          <button class="button is-link" (click)="onSendRequest()">Submit</button>
         </div>
         <div class="control">
           <button class="button is-link is-light">Cancel</button>
         </div>
       </div>
-      <p class="title">{{ clientName.value }}</p>
+
     </div>
 
 </div>

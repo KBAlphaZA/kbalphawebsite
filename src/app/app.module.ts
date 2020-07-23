@@ -17,6 +17,7 @@ import { TechstackcomponentComponent } from './TechStack/techstackcomponent/tech
 import { OurTeamComponent } from './Team/our-team/our-team.component';
 import { LandingpagecomponentComponent } from './LandingPage/landingpagecomponent/landingpagecomponent.component';
 import { PlatformofferingcomponentComponent } from './PlatformDevelopmentOfferings/platformofferingcomponent/platformofferingcomponent.component';
+import {FormsModule} from '@angular/forms';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -41,7 +42,8 @@ export function playerFactory(){
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LottieModule.forRoot({player: playerFactory})
+    LottieModule.forRoot({player: playerFactory}),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
