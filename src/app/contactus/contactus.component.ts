@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
+  potentialClientName = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSendRequest(clientName: HTMLInputElement) {
+       this.potentialClientName = clientName.value;
+       console.log(clientName);
   }
 
 }
