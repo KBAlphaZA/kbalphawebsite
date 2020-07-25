@@ -1,5 +1,29 @@
 #boxWindow{
-  height: 900px;
+  height: 700px;
   max-width: 100%;
   border-radius: 0px 0px 0px 0px;
+}
+
+#boxOverlap{
+  height: 80%;
+  width: 95%;
+  align-content: center;
+}
+
+#imageSizing{
+  height: 70px;
+  width: 70px;
+}
+
+
+#stackCard{
+  border-radius: 30px;
+  border-color: black;
+}
+
+#dividingLine{
+  background-color:  black;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align-last: center;
 }
