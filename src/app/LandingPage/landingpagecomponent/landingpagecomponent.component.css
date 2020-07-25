@@ -8,6 +8,20 @@
     Top: 30px;
 }
 #lottie{
-    margin-top: 20%;
+    margin-top: 6%;
     margin-left: 45%;
 }
+
+
+#doughnut { 
+    border: 10px solid white;
+    border-radius: 150px;
+    height:150px;
+    width:150px;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+
+
+
