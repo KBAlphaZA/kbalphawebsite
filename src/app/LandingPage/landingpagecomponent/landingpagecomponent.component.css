@@ -1,9 +1,13 @@
 #headerImage {
-    background-image: url("/assets/gradientimage.jpg");
-    height: 900px;
+    height: 950px;
     max-width: 100%;
     border-radius: 0px 0px 0px 0px;
+    background-color:#2C3E7B;
    }
 #headerText{
     Top: 30px;
+}
+#lottie{
+    margin-top: 20%;
+    margin-left: 45%;
 }

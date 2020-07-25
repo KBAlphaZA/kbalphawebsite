@@ -18,6 +18,7 @@ import { OurTeamComponent } from './Team/our-team/our-team.component';
 import { LandingpagecomponentComponent } from './LandingPage/landingpagecomponent/landingpagecomponent.component';
 import { PlatformofferingcomponentComponent } from './PlatformDevelopmentOfferings/platformofferingcomponent/platformofferingcomponent.component';
 import {FormsModule} from '@angular/forms';
+import { ScrollanimationComponent } from './components/subcomponent/animation/scrollanimation/scrollanimation.component';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -38,6 +39,7 @@ export function playerFactory(){
     OurTeamComponent,
     LandingpagecomponentComponent,
     PlatformofferingcomponentComponent,
+    ScrollanimationComponent,
   ],
   imports: [
     BrowserModule,
