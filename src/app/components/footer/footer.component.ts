@@ -60,10 +60,10 @@ import { Component, OnInit } from '@angular/core';
                                 <a class="level-item" href="#">
                                     <span class="icon"><i class="fab fa-github"></i></span>
                                 </a>
-                                <a class="level-item" href="#">
+                                <a class="level-item" href="https://www.facebook.com/kbalphasolutions">
                                     <span class="icon"><i class="fab fa-facebook"></i></span>
                                 </a>
-                                <a class="level-item" href="#">
+                                <a class="level-item" href="https://twitter.com/@KBAlphaZA">
                                     <span class="icon"><i class="fab fa-twitter"></i></span>
                                 </a>
                                 <a class="level-item" href="#">

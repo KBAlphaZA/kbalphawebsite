@@ -8,3 +8,19 @@
     height: 700px;
     max-width: 100%;
 }
+
+#bannerStyle{
+  height: 20%;
+}
+
+#processCardSection{
+  height: 80%;
+}
+
+#cardStyle{
+  height: 100%;
+}
+
+#cardSubtitle{
+  font-size: 40px;
+}
