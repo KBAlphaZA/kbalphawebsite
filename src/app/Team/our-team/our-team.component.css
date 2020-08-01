@@ -10,11 +10,21 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.verticalLine{
+#verticalLine{
   border-left: 6px solid #2C3E7B;
   height: 500px;
   position: absolute;
   left: 50%;
   margin-left: -3px;
   top: 0;
+}
+
+#employeeInfo{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#imageSizing{
+  width: 60px;
+  height: 50px;
 }
