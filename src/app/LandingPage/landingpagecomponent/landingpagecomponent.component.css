@@ -1,14 +1,15 @@
 #headerImage {
-    height: 950px;
-    max-width: 100%;
-    border-radius: 0px 0px 0px 0px;
     background-color:#2C3E7B;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
    }
 #headerText{
     Top: 30px;
 }
 #lottie{
-    margin-top: 6%;
+    position: 50%;
     margin-left: 45%;
 }
 
