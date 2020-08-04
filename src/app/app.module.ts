@@ -19,6 +19,9 @@ import { LandingpagecomponentComponent } from './LandingPage/landingpagecomponen
 import { PlatformofferingcomponentComponent } from './PlatformDevelopmentOfferings/platformofferingcomponent/platformofferingcomponent.component';
 import {FormsModule} from '@angular/forms';
 import { ScrollanimationComponent } from './components/subcomponent/animation/scrollanimation/scrollanimation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule  } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -45,7 +48,10 @@ export function playerFactory(){
     BrowserModule,
     AppRoutingModule,
     LottieModule.forRoot({player: playerFactory}),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

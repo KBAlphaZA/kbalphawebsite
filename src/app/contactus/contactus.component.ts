@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Service{
+  serviceName: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-contactus',
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.css']
 })
+
 export class ContactusComponent implements OnInit {
 
   customerName = '';
@@ -20,7 +25,15 @@ export class ContactusComponent implements OnInit {
   clientEmail = '';
   clientName = '';
   clientsubjectChoosen = '';
-  constructor() { }
+
+   /*This is the array of all the products offered rather than hard code them serviceOfferings: Array<string> = ['Software development', 'Serapis Medical', 'Pescado farms'];*/
+
+
+   serviceOfferings: Service[] = [
+     {serviceName: 'softwaredevelopment-0', viewValue : 'Software development'}
+   ];
+
+  constructor() { this.ngOnInit(); }
 
   ngOnInit(): void {
   }
