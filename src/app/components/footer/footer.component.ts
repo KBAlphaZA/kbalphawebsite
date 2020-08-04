@@ -58,7 +58,7 @@ import { Component, OnInit } from '@angular/core';
                         <nav class="level is-mobile">
                             <div class="level-left">
                                 <a class="level-item" href="#">
-                                    <span class="icon"><i class="fab fa-github"></i></span>
+                                    <span class="icon"><i class="fab fa-linkedin"></i></span>
                                 </a>
                                 <a class="level-item" href="https://www.facebook.com/kbalphasolutions">
                                     <span class="icon"><i class="fab fa-facebook"></i></span>
