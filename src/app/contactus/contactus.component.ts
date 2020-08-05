@@ -30,7 +30,12 @@ export class ContactusComponent implements OnInit {
 
 
    serviceOfferings: Service[] = [
-     {serviceName: 'softwaredevelopment-0', viewValue : 'Software development'}
+     {serviceName: 'General-00', viewValue: 'General enquiry'},
+     {serviceName: 'softwaredevelopment-0', viewValue : 'Software development'},
+     {serviceName: 'SerapisMedical-1', viewValue: 'Serapis Medical'},
+     {serviceName: 'PescadoFarms-2', viewValue: 'Pescado Farms'},
+     {serviceName: 'Gamedevelopment-3', viewValue: 'KB Alpha Interactive'},
+     {serviceName: 'Career-4', viewValue: 'Careers'}
    ];
 
   constructor() { this.ngOnInit(); }
