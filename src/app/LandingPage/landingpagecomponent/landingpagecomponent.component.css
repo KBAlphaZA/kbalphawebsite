@@ -1,0 +1,28 @@
+#headerImage {
+    background-color:#2C3E7B;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   }
+#headerText{
+    Top: 30px;
+}
+#lottie{
+    position: 50%;
+    margin-left: 45%;
+}
+
+
+#doughnut { 
+    border: 10px solid white;
+    border-radius: 150px;
+    height:150px;
+    width:150px;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+
+
+
