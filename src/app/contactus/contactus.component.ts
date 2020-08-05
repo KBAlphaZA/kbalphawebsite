@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CustomerEnquiry } from '../Models/CustomerEnquiry';
+import { Customer } from '../Models/Customer';
+import {EnquiryMetaData} from '../Models/EnquiryMetaData';
+import { Location, PlatformLocation } from '@angular/common';
+
 
 interface Service{
   serviceName: string;
@@ -26,9 +31,6 @@ export class ContactusComponent implements OnInit {
   clientName = '';
   clientsubjectChoosen = '';
 
-   /*This is the array of all the products offered rather than hard code them serviceOfferings: Array<string> = ['Software development', 'Serapis Medical', 'Pescado farms'];*/
-
-
    serviceOfferings: Service[] = [
      {serviceName: 'General-00', viewValue: 'General enquiry'},
      {serviceName: 'softwaredevelopment-0', viewValue : 'Software development'},
@@ -38,9 +40,13 @@ export class ContactusComponent implements OnInit {
      {serviceName: 'Career-4', viewValue: 'Careers'}
    ];
 
-  constructor() { this.ngOnInit(); }
+  constructor() { this.ngOnInit();}
 
   ngOnInit(): void {
+  }
+
+  GenerateMetaData(date, time, location){
+
   }
 
   onSendRequest() {
@@ -51,6 +57,26 @@ export class ContactusComponent implements OnInit {
       this.customerName = this.clientName;
       this.customerMessage = this.clientMessage;
       this.customerEmail = this.customerEmail;
+
+      // The actual details of the customer
+      const customerDets: Customer = {
+         CustomerFullName: this.clientName,
+         CustomerEmail: this.clientEmail,
+         CustomerPhoneNumber: this.clientCellphone
+        };
+
+        // The data about the enquiry itself
+      const localDate: Date = new Date();
+      const meta: EnquiryMetaData = {
+         date: localDate.toDateString(),
+         time: localDate.toTimeString(),
+         location: ''
+        };
+
+        // the data to be sent to the database
+      const potentialClient: CustomerEnquiry = { CustomerDetails: customerDets, CustomerMessage: this.clientMessage };
+
+
   }
 
 }
