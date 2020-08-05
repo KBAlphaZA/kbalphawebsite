@@ -13,17 +13,20 @@
     <div id="columnTwo" class="column" >
         <mat-form-field class="example-full-width">
           <mat-label>Name</mat-label>
-          <input matInput placeholder="Name" [(ngModel)]="clientName">
+          <input required matInput placeholder="Name" [(ngModel)]="clientName">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Cellphone number</mat-label>
-          <input matInput type="text" placeholder="Cell phone number" [(ngModel)]="clientCellphone">
+          <input required matInput type="text" placeholder="Cell phone number" [(ngModel)]="clientCellphone">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
-          <input matInput type="email" placeholder="Email input" [(ngModel)]="clientEmail">
+          <input id="email" required minlength="3" name="email" matInput type="email" placeholder="Email input" [(ngModel)]="clientEmail" #email="ngModel">
+          <div *ngIf="clientEmail===' '" class="alert alertdanger">
+            <!--This will be for if the email address is invalid-->
+          </div>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
@@ -38,7 +41,7 @@
       <div class="field">
         <label id="formLabel" class="label">Message</label>
         <div class="control">
-          <textarea matInput class="textarea" placeholder="What can we help you with?" [(ngModel)]="clientMessage"></textarea>
+          <textarea required.minlength="4" matInput class="textarea" placeholder="What can we help you with?" [(ngModel)]="clientMessage"></textarea>
         </div>
       </div>
 
