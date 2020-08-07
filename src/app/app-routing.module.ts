@@ -9,7 +9,7 @@ const routes: Routes = [
    {path: 'softwaredevservice', component: SoftwaredevserviceComponent} ,
    {path: 'about', component: SoftwaredevserviceComponent} ,
    {path: 'serapismedical', component: SerapismedicalComponent},
-   //{ path: '**', component: HomeComponent },
+   // { path: '**', component: HomeComponent },
  // { path: '**', component: HomeComponent },  // Wildcard route for a 404 page[PAGE NOT FOUND]
   ];
 
