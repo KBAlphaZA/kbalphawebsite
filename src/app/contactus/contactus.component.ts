@@ -3,7 +3,8 @@ import { CustomerEnquiry } from '../Models/CustomerEnquiry';
 import { Customer } from '../Models/Customer';
 import {EnquiryMetaData} from '../Models/EnquiryMetaData';
 import { Location, PlatformLocation } from '@angular/common';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 interface Service{
   serviceName: string;
@@ -40,11 +41,13 @@ export class ContactusComponent implements OnInit {
      {serviceName: 'Career-4', viewValue: 'Careers'}
    ];
 
-  constructor() { this.ngOnInit();}
+  constructor() { this.ngOnInit(); }
 
   ngOnInit(): void {
+
   }
 
+  // Creates the meta deta to be sent to the database
   GenerateMetaData(date, time, location){
 
   }
@@ -73,9 +76,14 @@ export class ContactusComponent implements OnInit {
          location: ''
         };
 
-        // the data to be sent to the database
-      const potentialClient: CustomerEnquiry = { CustomerDetails: customerDets, CustomerMessage: this.clientMessage };
+      // the data to be sent to the database, commented out for now
+      // const potentialClient: CustomerEnquiry = { CustomerDetails: customerDets, CustomerMessage: this.clientMessage, MetaData: meta };
 
+      // finally send to the data private theSnackBar: MatSnackBar
+
+      // Notify the user the message went through
+      let bar: MatSnackBar;
+      bar.open('hi', 'cancel', {duration: 2000});
 
   }
 
