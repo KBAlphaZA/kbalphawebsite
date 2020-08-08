@@ -3,69 +3,41 @@
 <h2 class="title is-1 has-text-centered">You deserve a great software engineering team</h2>
 
 <!--main content tag-->
-<section id="boxWindow" class="section">
+<div id="boxWindow">
     <div class="box" id="box-css">
         <h3 class="subtitle is-1 has-text-centered" style="color: black;">Our team</h3>
 
-        <div class="columns">
-            <!--Bonga's profile-->
-            <div id="employeeInfo" class="column">
-                <!--Profile picture-->
+        <mat-list>
+          <mat-list-item *ngFor="let employee of ListOfTeamMemebers" style="display: inline-block; width: 50%; text-align: center;">
+
+            <!--The divider-->
+            <mat-divider></mat-divider>
+
+            <mat-card style="width: 100%; height: 100%;">
+              <!--Employee Name-->
+              <mat-card-header>
+                <h2 class="subtitle">{{employee.employeeName}}</h2>
+              </mat-card-header>
+
+              <!--Employee picture-->
+              <mat-card-content>
                 <figure class="image is-rounded is-128x128">
-                   <img class="is-rounded" src="/assets/bonga.jpg" alt="co-founder and tech lead"/>
-                </figure>
-
-                <br>
-
-                <!--Grid with title name and linkedin link to profile-->
-                <div class="columns">
-                    <div class="column">
-                      <h2 class="subtitle">Bonga Ngcobo</h2>
-
-                      <h2 class="subtitle">Co-founder and tech lead</h2>
-                    </div>
-
-                    <div class="column">
-                      <a href="">
-                        <img id="imageSizing" src="/assets/LI-In-Bug.png" alt="co founder Bonga's linkdIn profile">
-                      </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!--Vertical line-->
-
-
-            <!--Khanyisani's profile-->
-            <div id="employeeInfo" class="column">
-              <figure class="image is-rounded is-128x128">
-                 <img class="is-rounded" src="/assets/khanyisani.jpg" alt="co-founder and tech lead"/>
+                  <img class="is-rounded" src="{{employee.employeeProfilePicture}}" alt="{{ employee.employeeTitle }}"/>
               </figure>
+              </mat-card-content>
 
-              <br>
+              <mat-card-footer>
+                <h2 class="subtitle">{{employee.employeeTitle}}
+                  <span><a href="{{employee.employeeLinkdInLink}}"><img id="imageSizing" src="/assets/LI-In-Bug.png" alt="kb alpha employee linkdIn link"></a></span></h2>
+              </mat-card-footer>
 
-              <!--Grid with title name and linkedin link to profile-->
-              <div class="columns">
-                <div class="column">
-                  <h2 class="subtitle">Khanyisani Buthelezi</h2>
+            </mat-card>
 
-                  <h2 class="subtitle">Co-founder and project lead</h2>
-                </div>
-
-                <div class="column">
-                  <a href="https://www.linkedin.com/in/khanyisani-buthelezi-060602146">
-                    <img id="imageSizing" src="/assets/LI-In-Bug.png" alt="co founder Khanyisani's linkdIn profile">
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-        </div>
+          </mat-list-item>
+        </mat-list>
 
     </div>
-</section>
+  </div>
 
 <hr>
 

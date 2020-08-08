@@ -5,7 +5,7 @@ import { AnimationOptions } from 'ngx-lottie';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  
+
   /*template: `<div class="level-right">
                 <ng-lottie  width="600px"
                      height="600px"

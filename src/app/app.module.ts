@@ -22,6 +22,10 @@ import { ScrollanimationComponent } from './components/subcomponent/animation/sc
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule  } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDividerModule, MatDivider } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -42,7 +46,7 @@ export function playerFactory(){
     OurTeamComponent,
     LandingpagecomponentComponent,
     PlatformofferingcomponentComponent,
-    ScrollanimationComponent,
+    ScrollanimationComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,11 @@ export function playerFactory(){
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule,
+    MatListModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
