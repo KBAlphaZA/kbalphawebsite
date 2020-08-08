@@ -1,26 +1,32 @@
-#box-css{
-    border-color: black;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 100%;
-}
-.is-horizontal-center{
-  justify-content: center;
-}
-#boxWindow{
-    height: 700px;
-    max-width: 100%;
-}
-
-#bannerStyle{
-  height: 20%;
-  background-color: #2C3E7B;
-}
-
-#processCardSection{
+#box-css {
+  border-color: black;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 80%;
 }
 
-#cardSubtitle{
+.is-horizontal-center {
+  justify-content: center;
+}
+
+.is-kbalpha-color {
+  color: #2c3e7b;
+}
+
+#boxWindow {
+  max-width: 100%;
+  max-height: 700px;
+}
+
+#bannerStyle {
+  height: 700px;
+  background-color: #2c3e7b;
+}
+
+#processCardSection {
+  height: 80%;
+}
+
+#cardSubtitle {
   font-size: 40px;
 }

@@ -2,3 +2,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.is-kbalpha-color{
+    color: #2C3E7B;
+    font-weight: bold;
+}
