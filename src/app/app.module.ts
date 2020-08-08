@@ -26,6 +26,7 @@ import { MatDividerModule, MatDivider } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {HttpClientModule} from '@angular/common/http';
 
 export function playerFactory(){
     return import('lottie-web');
@@ -59,7 +60,8 @@ export function playerFactory(){
     MatDividerModule,
     MatListModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
