@@ -7,36 +7,32 @@
     <div class="card" id="box-css">
         <h3 class="subtitle is-1 has-text-centered" style="color: black;"> Meet Our team</h3>
 
-        <mat-list>
-          <mat-list-item *ngFor="let employee of ListOfTeamMemebers" style="display: inline-block; width: 50%; text-align: center;">
+        <div class="section">
+          <mat-grid-list cols="2" rowHeight="2:1" id="containerGrid">
+            <mat-grid-tile *ngFor="let employee of ListOfTeamMemebers">
+              <div>
+                <!--Name of employee-->
+                <h2 class="subtitle has-text-centered">{{employee.employeeName}}</h2>
 
-            <!--The divider-->
-            <mat-divider  [vertical]="true"></mat-divider>
-
-            <div style="height: 100%;">
-              <mat-card style="width: 100%; height: 100%;">
-                <!--Employee Name-->
-                <mat-card-header>
-                  <h2 class="subtitle">{{employee.employeeName}}</h2>
-                </mat-card-header>
-
-                <!--Employee picture-->
-                <mat-card-content>
+                <!--Head shot-->
+                <div id="profilePicture">
                   <figure class="image is-rounded is-128x128">
                     <img class="is-rounded" src="{{employee.employeeProfilePicture}}" alt="{{ employee.employeeTitle }}"/>
-                </figure>
-                </mat-card-content>
+                  </figure>
+                </div>
 
-                <mat-card-footer>
+                <br>
+
+                <!--The title and linkdin button-->
+                <div>
                   <h2 class="subtitle">{{employee.employeeTitle}}
-                    <span><a href="{{employee.employeeLinkdInLink}}"><img id="imageSizing" src="/assets/LI-In-Bug.png" alt="kb alpha employee linkdIn link"></a></span></h2>
-                </mat-card-footer>
+                    <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
+                </div>
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
 
-              </mat-card>
-            </div>
-
-          </mat-list-item>
-        </mat-list>
+        </div>
 
     </div>
   </div>
