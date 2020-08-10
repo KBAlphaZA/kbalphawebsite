@@ -39,3 +39,9 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.StackItems{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
