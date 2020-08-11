@@ -15,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
             <div class="column">
                 <div class="footer-column">
                     <div class="footer-header">
-                        <h3>KB alpha</h3>
+                        <h3 class="subtitle" style="color: white;">KB alpha</h3>
                     </div>
                     <ul class="link-list">
                         <li><a href="#">Partners & Clients</a></li>
@@ -27,7 +27,7 @@ import { Component, OnInit } from '@angular/core';
             <div class="column">
                 <div class="footer-column">
                     <div class="footer-header">
-                        <h3>Business</h3>
+                        <h3 style="color: white;">Business</h3>
                     </div>
                     <ul class="link-list">
                         <li><a href="#">Support</a></li>
@@ -41,7 +41,7 @@ import { Component, OnInit } from '@angular/core';
             <div class="column">
                 <div class="footer-column">
                     <div class="footer-header">
-                        <h3>Services</h3>
+                        <h3 style="color: white;">Services</h3>
                     </div>
                     <ul class="link-list">
                         <li><a href="https://absurd.design/">Mobile development</a></li>
@@ -54,20 +54,20 @@ import { Component, OnInit } from '@angular/core';
             <div class="column">
                 <div class="footer-column">
                     <div class="footer-header">
-                        <h3>Follow us</h3>
+                        <h3 style="color: white;">Follow us</h3>
                         <nav class="level is-mobile">
                             <div class="level-left">
                                 <a class="level-item" href="#">
-                                    <span class="icon"><i class="fab fa-linkedin"></i></span>
+                                    <span class="icon"><i class="fab fa-2x fa-linkedin is-large " style="color: white;"></i></span>
                                 </a>
                                 <a class="level-item" href="https://www.facebook.com/kbalphasolutions">
-                                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                                    <span class="icon"><i class="fab fa-2x fa-facebook" style="color: white;"></i></span>
                                 </a>
                                 <a class="level-item" href="https://twitter.com/@KBAlphaZA">
-                                    <span class="icon"><i class="fab fa-twitter"></i></span>
+                                    <span class="icon"><i class="fab fa-2x fa-twitter" style="color: white;"></i></span>
                                 </a>
                                 <a class="level-item" href="#">
-                                    <span class="icon"><i class="fab fa-instagram"></i></span>
+                                    <span class="icon"><i class="fab fa-2x fa-instagram" style="color: white;"></i></span>
                                 </a>
                             </div>
                         </nav>
