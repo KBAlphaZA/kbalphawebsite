@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-footer',
   template: `
-  <footer class="footer footer-light" style="background-color: blue">
+  <footer class="footer footer-light" style="background-color: #2C3E7B">
     <div class="container">
         <div class="columns">
             <div class="column">
