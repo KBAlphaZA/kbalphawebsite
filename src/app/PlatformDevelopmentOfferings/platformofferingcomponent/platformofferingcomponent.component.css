@@ -15,7 +15,7 @@
 }
 
 #boxWindow{
-    height: 700px;
+    height: auto;
     max-width: 100%;
 }
 
@@ -31,8 +31,20 @@
 }
 
 #rowTwo{
-  height: 40%;
+  height: 100%;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 5%;
+  margin-top: 5%;;
+}
+
+.iconLabel{
+  height: 100%;
+  background-color: teal;
+  width: 10%;
+}
+
+.innerboxContainer{
+  display: flex;
+  justify-content: start;
+  height: 100%;
 }
