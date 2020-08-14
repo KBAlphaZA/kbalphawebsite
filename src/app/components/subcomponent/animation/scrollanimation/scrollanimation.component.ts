@@ -16,8 +16,8 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class ScrollanimationComponent implements OnInit {
 
-  //options: AnimationOptions = { path: '../src/assets/ScrollAnimation.json',};
-  options: AnimationOptions = { path: 'https://assets4.lottiefiles.com/packages/lf20_ADqq0Z.json',};
+  // options: AnimationOptions = { path: '../src/assets/ScrollAnimation.json',};
+  options: AnimationOptions = { path: 'https://assets4.lottiefiles.com/packages/lf20_ADqq0Z.json', };
 
   animationCreated(animationItem: AnimationItem): void{console.log(animationItem); }
   constructor() { }

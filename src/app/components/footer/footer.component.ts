@@ -69,9 +69,15 @@ import { Component, OnInit } from '@angular/core';
                                 <a class="level-item" href="#">
                                     <span class="icon"><i class="fab fa-2x fa-instagram" style="color: white;"></i></span>
                                 </a>
+
                             </div>
                         </nav>
 
+                        <br>
+
+                        <!--Linkedin follow button plugin goes here future updates-->
+                        <!--Documentation for it is here for version 2 of the website-->
+                        <!--https://docs.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/follow-company-plugin -->
                     </div>
                 </div>
             </div>
