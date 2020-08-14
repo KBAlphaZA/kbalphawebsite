@@ -24,6 +24,7 @@ export class ContactusComponent implements OnInit {
   customerEmail = '';
   subjectChoosen = '';
   customerMessage = '';
+  customerCompany = '';
 
   /*This enable two way binding between the text field and updated values*/
   clientCellphone = '';
@@ -31,6 +32,7 @@ export class ContactusComponent implements OnInit {
   clientEmail = '';
   clientName = '';
   clientsubjectChoosen = '';
+  clientCompanyName = '';
 
    serviceOfferings: Service[] = [
      {serviceName: 'General-00', viewValue: 'General enquiry'},
@@ -60,12 +62,14 @@ export class ContactusComponent implements OnInit {
       this.customerName = this.clientName;
       this.customerMessage = this.clientMessage;
       this.customerEmail = this.customerEmail;
+      this.customerCompany = this.clientCompanyName;
 
       // The actual details of the customer
       const customerDets: Customer = {
          CustomerFullName: this.clientName,
          CustomerEmail: this.clientEmail,
-         CustomerPhoneNumber: this.clientCellphone
+         CustomerPhoneNumber: this.clientCellphone,
+         CustomerCompanyName: this.clientCompanyName
         };
 
         // The data about the enquiry itself
