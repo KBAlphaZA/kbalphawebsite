@@ -1,5 +1,5 @@
 #boxWindow{
-  height: 700px;
+  height: auto;
   max-width: 100%;
   max-height: 100%;
   border-radius: 0px 0px 0px 0px;
@@ -44,4 +44,12 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 80%;
+  padding-top: 10%;
+}
+
+.innerStackItemStyling{
+  padding-top: 10%;
 }

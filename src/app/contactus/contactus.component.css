@@ -20,6 +20,6 @@
 }
 
 #mainContainer{
-  height: 700px;
+  height: auto;
   max-width: 100%;
 }
