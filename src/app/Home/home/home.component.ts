@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 
@@ -18,13 +18,21 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class HomeComponent implements OnInit {
 
-  options: AnimationOptions = { path: 'https://assets8.lottiefiles.com/private_files/lf30_ZOuB83.json',};
+   screenHeight: number;
+    screenWidth: number;
 
-  animationCreated(animationItem: AnimationItem): void{console.log(animationItem); }
-
-  constructor() { }
+  constructor() {
+    this.getScreenSize();
+  }
 
   ngOnInit(): void {
   }
 
+  // Use directive to listen for screen changes
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?){
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+    console.log(this.screenHeight, this.screenWidth);
+  }
 }

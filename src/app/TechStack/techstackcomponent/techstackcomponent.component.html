@@ -16,26 +16,24 @@
 
           <!--Stack content-->
           <div class="StackItems">
-            <mat-grid-list cols="2" rowHeight="2:1" >
-              <mat-grid-tile>
-                <div class="innerStackItemStyling" >
-                  <figure class="image is-64x64" >
-                    <img class="imageStyling" src="/assets/angularjsdevIcon.png" alt="we develop using the angular framework fpor web solutions"/>
-                 </figure>
-                 <h4 class="is-1 has-text-centered"><b>Angular</b></h4>
-                </div>
-              </mat-grid-tile>
+            <div id="innerColoumn" class="columns">
+              <!--Angular Tag-->
+              <div class="column">
+                <figure class="image container is-64x64" >
+                  <img class="imageStyling" src="/assets/angularjsdevIcon.png" alt="we develop using the angular framework fpor web solutions"/>
+               </figure>
+               <h4 class="is-1 has-text-centered"><b>Angular</b></h4>
+              </div>
 
-              <mat-grid-tile>
-                <div class="innerStackItemStyling">
-                  <figure class="image is-64x64">
-                     <img src="/assets/xamarindevIcon.png" alt="we develop using the xamarin framework for mobile solutions"/>
-                  </figure>
+              <!--Xamarin tag-->
+              <div class="column">
+                <figure class="image container is-64x64">
+                  <img src="/assets/xamarindevIcon.png" alt="we develop using the xamarin framework for mobile solutions"/>
+               </figure>
 
-                  <h4 class="is-1 has-text-centered"><b>Xamarin</b></h4>
-                </div>
-              </mat-grid-tile>
-            </mat-grid-list>
+               <h4 class="is-1 has-text-centered"><b>Xamarin</b></h4>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -51,54 +49,49 @@
 
           <!--Stack content-->
           <div class="StackItems">
-            <mat-grid-list cols="2" rowHeight="2:1">
-              <!--Mongodb-->
-              <mat-grid-tile>
-                  <div class="innerStackItemStyling">
-                    <figure class="image is-64x64">
-                      <img src="/assets/mongodbdevIcon.png" alt="we use noSQl for data storage"/>
-                   </figure>
+              <!--Row 1-->
+              <div class="columns">
 
-                   <h4 class="is-1 has-text-centered"><b>Mongodb</b></h4>
-                  </div>
-              </mat-grid-tile>
+                <!--Mongo db-->
+                <div class="column">
+                  <figure class="image container is-64x64">
+                    <img src="/assets/mongodbdevIcon.png" alt="we use noSQl for data storage"/>
+                 </figure>
 
-              <!--Azure-->
-              <mat-grid-tile>
-                  <div class="innerStackItemStyling">
-                    <figure class="image is-64x64">
-                      <img src="/assets/azuredevIcon.png" alt="we use Azure for cloud development"/>
-                   </figure>
+                 <h4 class="is-1 has-text-centered"><b>Mongodb</b></h4>
+                </div>
 
-                   <h4 class="is-1 has-text-centered"><b>Azure</b></h4>
-                  </div>
-              </mat-grid-tile>
+                <!--Azure-->
+                <div class="column">
+                  <figure class="image container is-64x64">
+                    <img src="/assets/azuredevIcon.png" alt="we use Azure for cloud development"/>
+                 </figure>
 
-              <br>
+                 <h4 class="is-1 has-text-centered"><b>Azure</b></h4>
+                </div>
 
-              <!--Heroku-->
-              <mat-grid-tile>
-                <div class="innerStackItemStyling">
-                  <figure class="image is-64x64">
+              </div>
+
+              <!--Row 2-->
+              <div class="columns">
+                <!--Heroku-->
+                <div class="column">
+                  <figure class="image container is-64x64">
                     <img src="/assets/herokudevIcon.png" alt="we delpoy using heroku"/>
                  </figure>
 
                  <h4 class="is-1 has-text-centered"><b>Heroku</b></h4>
                 </div>
-              </mat-grid-tile>
 
-              <!--Docker-->
-              <mat-grid-tile>
-                <div class="innerStackItemStyling">
-                  <figure class="image is-64x64">
+                <!--Docker-->
+                <div class="column">
+                  <figure class="image container is-64x64">
                     <img src="/assets/dockerdevicon.png" alt="Docker is our go to for containrized solutions"/>
                  </figure>
 
                  <h4 class="is-1 has-text-centered"><b>Docker</b></h4>
                 </div>
-              </mat-grid-tile>
-
-            </mat-grid-list>
+              </div>
           </div>
 
         </div>
@@ -115,51 +108,47 @@
 
           <!--Stack content-->
           <div class="StackItems">
-            <mat-grid-list cols="2" rowHeight="2:1">
-              <!--GitHub-->
-              <mat-grid-tile>
-                <div class="innerStackItemStyling">
-                  <figure class="image is-64x64">
-                    <img src="/assets/githubdevIcon.png" alt="we develop using the angular framework"/>
-                 </figure>
+            <!--Row 1-->
+            <div class="columns">
+              <!--Github-->
+              <div class="column">
+                <figure class="image container is-64x64">
+                  <img src="/assets/githubdevIcon.png" alt="we develop using the angular framework"/>
+               </figure>
 
-                 <h4 class="is-1 has-text-centered"><b>Github</b></h4>
-                </div>
-              </mat-grid-tile>
+               <h4 class="is-1 has-text-centered"><b>Github</b></h4>
+              </div>
 
               <!--Visual Studio-->
-              <mat-grid-tile>
-                <div class="innerStackItemStyling">
-                  <figure class="image is-64x64">
-                    <img src="/assets/visual_studiodevIcon.png" alt="we develop using the angular framework"/>
-                 </figure>
+              <div class="column">
+                <figure class="image container is-64x64">
+                  <img src="/assets/visual_studiodevIcon.png" alt="we develop using the angular framework"/>
+               </figure>
 
-                 <h4 class="is-1 has-text-centered"><b>Visual studio</b></h4>
-                </div>
-              </mat-grid-tile>
+               <h4 class="is-1 has-text-centered"><b>Visual studio</b></h4>
+              </div>
+            </div>
 
-              <!--Visual Code-->
-              <mat-grid-tile>
-                <div class="innerStackItemStyling">
-                  <figure class="image is-64x64">
+            <!--Row 2-->
+            <div class="columns">
+                <!--Visual code-->
+                <div class="column">
+                  <figure class="image container is-64x64">
                     <img src="https://img.icons8.com/fluent/144/000000/visual-studio-code-2019.png" alt="we develop using the angular framework"/>
                  </figure>
 
                  <h4 class="is-1 has-text-centered"><b>Visual code</b></h4>
                 </div>
-              </mat-grid-tile>
 
-              <!--.Net Core-->
-              <mat-grid-tile>
-                <div class="innerStackItemStyling">
-                  <figure class="image is-64x64">
+                <!--.Net core-->
+                <div class="column">
+                  <figure class="image container is-64x64">
                     <img src="/assets/NetcoredevIcon.png" alt="we develop using the angular framework"/>
                  </figure>
 
                  <h4 class="is-1 has-text-centered"><b>.Net Core</b></h4>
                 </div>
-              </mat-grid-tile>
-            </mat-grid-list>
+            </div>
           </div>
 
         </div>

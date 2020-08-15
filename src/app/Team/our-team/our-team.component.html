@@ -1,37 +1,39 @@
-<br>
+<div id="outterDivWrapper">
 
-<h2 class=" is-size-1 has-text-centered is-kbalpha-color">You deserve a great software engineering team</h2>
+  <h2 class=" is-size-1 is-kbalpha-color has-text-centered">You deserve a great software engineering team</h2>
 
 <!--main content tag-->
 <div id="boxWindow">
         <div class="section">
-          <mat-grid-list cols="2" rowHeight="2:1" id="containerGrid">
-            <mat-grid-tile *ngFor="let employee of ListOfTeamMemebers">
-              <div>
-                <!--Name of employee-->
-                <h2 class="is-size-3 has-text-centered is-kbalpha-color">{{employee.employeeName}}</h2>
+          <div class="columns">
 
-                <!--Head shot-->
-                <div id="profilePicture">
-                  <figure class="image is-rounded is-128x128">
-                    <img class="is-rounded" src="{{employee.employeeProfilePicture}}" alt="{{ employee.employeeTitle }}"/>
-                  </figure>
-                </div>
+            <div *ngFor="let employee of ListOfTeamMemebers" class="column">
+              <!--Name of employee-->
+              <h2 class="is-size-3 has-text-centered is-kbalpha-color">{{employee.employeeName}}</h2>
 
-                <br>
-
-                <!--The title and linkdin button-->
-                <div>
-                  <h2 class="is-size-4 is-kbalpha-color">{{employee.employeeTitle}}
-                    <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
-                </div>
+              <!--Head shot-->
+              <div id="profilePicture">
+                <figure class="image container is-rounded is-128x128" >
+                  <img class="is-rounded" src="{{employee.employeeProfilePicture}}" alt="{{ employee.employeeTitle }}"/>
+                </figure>
               </div>
-            </mat-grid-tile>
-          </mat-grid-list>
 
-        </div>
+              <br>
+
+              <!--The title and linkdin button-->
+              <div id="employeeSocialsAndTitle">
+                <h2 class="s-size-4 is-kbalpha-color has-text-centered">{{employee.employeeTitle}}
+                  <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
+              </div>
+
+            </div>
+
+          </div>
+
+        
 </div>
 
 <hr>
+</div>
 
 
