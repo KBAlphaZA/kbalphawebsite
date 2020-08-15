@@ -11,8 +11,8 @@ import { HostListener,Component, OnInit } from '@angular/core';
 export class LandingpagecomponentComponent implements OnInit {
 
   constructor() { }
-  public innerHeight: any;
-  public innerWidth: number;
+  public innerHeight: number;
+  public innerWidth: any;
   //public marginBottom: number;
   ngOnInit(): void {
     //this.innerHeight = window.innerHeight;
@@ -22,7 +22,7 @@ export class LandingpagecomponentComponent implements OnInit {
   onResize(event) {
   this.innerHeight = window.innerHeight;
   this.innerWidth = window.innerWidth;
-  console.log(innerWidth,"x",innerHeight);
+  console.log(innerWidth , "x" , innerHeight);
 }
-  
+
 }
