@@ -1,6 +1,6 @@
-<br>
+<div id="outterDivWrapper">
 
-<h2 class="title is-1 has-text-centered">You deserve a great software engineering team</h2>
+  <h2 class="title is-1 has-text-centered">You deserve a great software engineering team</h2>
 
 <!--main content tag-->
 <div id="boxWindow">
@@ -8,31 +8,32 @@
         <div class="section">
 
 
-          <h3 class="subtitle is-1 has-text-centered" style="color: black;"> Meet Our team</h3>
+          <h3 class="subtitle is-1 has-text-centered" style="color: black; font-size: 3rem;"> Meet Our team</h3>
 
-          <mat-grid-list cols="2" rowHeight="2:1" id="containerGrid">
-            <mat-grid-tile *ngFor="let employee of ListOfTeamMemebers">
-              <div>
-                <!--Name of employee-->
-                <h2 class="subtitle has-text-centered">{{employee.employeeName}}</h2>
+          <div class="columns">
 
-                <!--Head shot-->
-                <div id="profilePicture">
-                  <figure class="image is-rounded is-128x128">
-                    <img class="is-rounded" src="{{employee.employeeProfilePicture}}" alt="{{ employee.employeeTitle }}"/>
-                  </figure>
-                </div>
+            <div *ngFor="let employee of ListOfTeamMemebers" class="column">
+              <!--Name of employee-->
+              <h2 class="subtitle has-text-centered">{{employee.employeeName}}</h2>
 
-                <br>
-
-                <!--The title and linkdin button-->
-                <div>
-                  <h2 class="subtitle">{{employee.employeeTitle}}
-                    <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
-                </div>
+              <!--Head shot-->
+              <div id="profilePicture">
+                <figure class="image is-rounded is-1by1">
+                  <img class="is-rounded" src="{{employee.employeeProfilePicture}}" alt="{{ employee.employeeTitle }}"/>
+                </figure>
               </div>
-            </mat-grid-tile>
-          </mat-grid-list>
+
+              <br>
+
+              <!--The title and linkdin button-->
+              <div id="employeeSocialsAndTitle">
+                <h2 class="subtitle has-text-centered">{{employee.employeeTitle}}
+                  <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -40,5 +41,6 @@
   </div>
 
 <hr>
+</div>
 
 
