@@ -16,12 +16,12 @@
 }
 
 #boxWindow {
-  max-width: 100%;
+  max-height: 80%;
   height: auto;
 }
 
 #bannerStyle {
-  height: auto;
+  max-height: 700px;
   background-color: #2c3e7b;
 }
 

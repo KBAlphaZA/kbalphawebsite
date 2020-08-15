@@ -1,18 +1,15 @@
 <br>
 
-<h2 class="title is-1 has-text-centered">You deserve a great software engineering team</h2>
+<h2 class=" is-size-1 has-text-centered is-kbalpha-color">You deserve a great software engineering team</h2>
 
 <!--main content tag-->
 <div id="boxWindow">
-    <div class="card" id="box-css">
-        <h3 class="subtitle is-1 has-text-centered" style="color: black;"> Meet Our team</h3>
-
         <div class="section">
           <mat-grid-list cols="2" rowHeight="2:1" id="containerGrid">
             <mat-grid-tile *ngFor="let employee of ListOfTeamMemebers">
               <div>
                 <!--Name of employee-->
-                <h2 class="subtitle has-text-centered">{{employee.employeeName}}</h2>
+                <h2 class="is-size-3 has-text-centered is-kbalpha-color">{{employee.employeeName}}</h2>
 
                 <!--Head shot-->
                 <div id="profilePicture">
@@ -25,7 +22,7 @@
 
                 <!--The title and linkdin button-->
                 <div>
-                  <h2 class="subtitle">{{employee.employeeTitle}}
+                  <h2 class="is-size-4 is-kbalpha-color">{{employee.employeeTitle}}
                     <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
                 </div>
               </div>
@@ -33,9 +30,7 @@
           </mat-grid-list>
 
         </div>
-
-    </div>
-  </div>
+</div>
 
 <hr>
 
