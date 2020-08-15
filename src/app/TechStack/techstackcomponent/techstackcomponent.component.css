@@ -10,7 +10,7 @@
   align-content: center;
   margin-left: 50px;
   margin-right: 50px;
-  border-radius: 100px 100px 0px 0px;
+  border-radius: 6.25rem 6.25rem 0px 0px;
 }
 
 #imageSizing{
@@ -46,7 +46,7 @@
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
-  height: 80%;
+  height: 100%;
   padding-top: 10%;
 }
 
