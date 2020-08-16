@@ -23,16 +23,15 @@ export class ContactusComponent implements OnInit {
   customerName = '';
   customerCellphone = '';
   customerEmail = '';
-  subjectChoosen = '';
   customerMessage = '';
   customerCompany = '';
+  subjectSelected = Subjects.GeneralEnquiry;
 
   /*This enable two way binding between the text field and updated values*/
   clientCellphone = '';
   clientMessage = '';
   clientEmail = '';
   clientName = '';
-  clientsubjectChoosen = '';
   clientCompanyName = '';
 
    serviceOfferings: Service[] = [
@@ -50,11 +49,6 @@ export class ContactusComponent implements OnInit {
 
   }
 
-  // Creates the meta deta to be sent to the database
-  GenerateMetaData(date, time, location){
-
-  }
-
   onSendRequest() {
 
       /*take all the user data and send it to database.*/
@@ -64,6 +58,8 @@ export class ContactusComponent implements OnInit {
       this.customerMessage = this.clientMessage;
       this.customerEmail = this.customerEmail;
       this.customerCompany = this.clientCompanyName;
+      // set the subject selectd here from the front end
+      this.subjectSelected = Subjects.GeneralEnquiry;
 
       // The actual details of the customer
       const customerDets: Customer = {
@@ -82,7 +78,12 @@ export class ContactusComponent implements OnInit {
         };
 
       // the data to be sent to the database, commented out for now
-      const potentialClient: CustomerEnquiry = { CustomerDetails: customerDets, CustomerMessage: this.clientMessage, MetaData: meta, CustomerEnquiry: Subjects.Careers };
+      const potentialClient: CustomerEnquiry = {
+        CustomerDetails: customerDets,
+        CustomerMessage: this.clientMessage,
+        MetaData: meta,
+        CustomerEnquiry: this.subjectSelected
+      };
 
       // finally send to the data private theSnackBar: MatSnackBar
 
