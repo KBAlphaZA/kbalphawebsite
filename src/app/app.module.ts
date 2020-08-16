@@ -27,6 +27,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {HttpClientModule} from '@angular/common/http';
+import { ContactyouanimationComponent } from './components/subcomponent/animation/communicationanimations/contactyouanimation/contactyouanimation.component';
 
 
 
@@ -51,6 +52,7 @@ export function playerFactory(){
     LandingpagecomponentComponent,
     PlatformofferingcomponentComponent,
     ScrollanimationComponent,
+    ContactyouanimationComponent,
   ],
   imports: [
     BrowserModule,

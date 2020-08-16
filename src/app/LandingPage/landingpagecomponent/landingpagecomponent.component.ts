@@ -1,4 +1,4 @@
-import { HostListener,Component, OnInit } from '@angular/core';
+import { HostListener, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-landingpagecomponent',
