@@ -5,9 +5,10 @@ import {EnquiryMetaData} from '../Models/EnquiryMetaData';
 import { Location, PlatformLocation } from '@angular/common';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import {Subjects} from '../Models/SubjectEnum';
 
 interface Service{
-  serviceName: string;
+  serviceName: Subjects;
   viewValue: string;
 }
 
@@ -35,12 +36,12 @@ export class ContactusComponent implements OnInit {
   clientCompanyName = '';
 
    serviceOfferings: Service[] = [
-     {serviceName: 'General-00', viewValue: 'General enquiry'},
-     {serviceName: 'softwaredevelopment-0', viewValue : 'Software development'},
-     {serviceName: 'SerapisMedical-1', viewValue: 'Serapis Medical'},
-     {serviceName: 'PescadoFarms-2', viewValue: 'Pescado Farms'},
-     {serviceName: 'Gamedevelopment-3', viewValue: 'KB Alpha Interactive'},
-     {serviceName: 'Career-4', viewValue: 'Careers'}
+     {serviceName: Subjects.GeneralEnquiry, viewValue: 'General enquiry'},
+     {serviceName: Subjects.SoftwareDevelopment, viewValue : 'Software development'},
+     {serviceName: Subjects.SerapisMedical, viewValue: 'Serapis Medical'},
+     {serviceName: Subjects.PescadoFarms, viewValue: 'Pescado Farms'},
+     {serviceName: Subjects.KbAlphaInteractive, viewValue: 'KB Alpha Interactive'},
+     {serviceName: Subjects.Careers, viewValue: 'Careers'}
    ];
 
   constructor() { this.ngOnInit(); }
@@ -81,13 +82,13 @@ export class ContactusComponent implements OnInit {
         };
 
       // the data to be sent to the database, commented out for now
-      // const potentialClient: CustomerEnquiry = { CustomerDetails: customerDets, CustomerMessage: this.clientMessage, MetaData: meta };
+      const potentialClient: CustomerEnquiry = { CustomerDetails: customerDets, CustomerMessage: this.clientMessage, MetaData: meta, CustomerEnquiry: Subjects.Careers };
 
       // finally send to the data private theSnackBar: MatSnackBar
 
       // Notify the user the message went through
-      let bar: MatSnackBar;
-      bar.open('hi', 'cancel', {duration: 2000});
+      // let bar: MatSnackBar;
+      // bar.open('hi', 'cancel', {duration: 2000});
 
   }
 
