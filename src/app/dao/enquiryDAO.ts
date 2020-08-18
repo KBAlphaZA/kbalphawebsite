@@ -19,16 +19,16 @@ export default class EnquiryDAO{
 
 
 
-  static async addEnquiryToDb(enquiryId, CustomerEnquiry){
-    try{
+  // static async addEnquiryToDb(CustomerEnquiry){
+  //   try{
 
-        // Construct the document that is to be inserted into MongoDB
-        const enquiry= {someField: CustomerEnquiry};
+  //       // Construct the document that is to be inserted into MongoDB
+  //       const enquiry= {someField: CustomerEnquiry};
 
-        return await enquiry;
-    }
-    catch (e){
-        console.error('There was a technical problem: ' + e);
-    }
-  }
+  //       return await enquiry;
+  //   }
+  //   catch (e){
+  //       console.error('There was a technical problem: ' + e);
+  //   }
+  // }
 }
