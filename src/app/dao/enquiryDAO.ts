@@ -4,6 +4,7 @@ import { CustomerEnquiry } from '../Models/CustomerEnquiry';
 let enquiry;
 
 export default class EnquiryDAO{
+
   static async injectDB(conn){
     if (enquiry){
       return;
@@ -16,12 +17,18 @@ export default class EnquiryDAO{
     }
   }
 
-  static async addEnquiryToDb(enquiryId, ){
+
+
+  static async addEnquiryToDb(enquiryId, CustomerEnquiry){
     try{
 
+        // Construct the document that is to be inserted into MongoDB
+        const enquiry= {someField: CustomerEnquiry};
+
+        return await enquiry;
     }
     catch (e){
-
+        console.error('There was a technical problem: ' + e);
     }
   }
 }

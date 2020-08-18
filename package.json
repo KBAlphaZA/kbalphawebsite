@@ -29,12 +29,13 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "lottie-web": "^5.7.0",
+    "mongodb": "^3.6.0",
     "mongoose": "^5.9.28",
     "ngx-lottie": "^6.2.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "typescript": "~3.9.6"
+    "typescript": "~3.9.6",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.901.12",
