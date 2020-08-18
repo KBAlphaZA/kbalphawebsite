@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const port = 4200;
-
+const connectionString = 'mongodb+srv://coFounderKhanyi:TW0d53RQiYW9gegb@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
 
 /* Mongo connection
   const database = mongoose.connect('http://localhost:4200', (err, response) => {
@@ -35,7 +35,9 @@ const app = express();
 
 // Serve only the static files from the dist directory
 app.use(express.static(__dirname + '/dist/kbalphawebsite'));
-
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.get('/*', (req, res) =>
 {
     res.sendFile(path.join(__dirname + '/dist/kbalphawebsite/index.html'));
@@ -43,3 +45,6 @@ app.get('/*', (req, res) =>
 
 
 app.listen(process.env.PORT || 4200);
+
+// Register api routes
+app.use('/api/postEnquiry', );

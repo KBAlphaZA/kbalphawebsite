@@ -7,6 +7,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import {Subjects} from '../Models/SubjectEnum';
 
+
 interface Service{
   serviceName: Subjects;
   viewValue: string;
@@ -19,6 +20,7 @@ interface Service{
 })
 
 export class ContactusComponent implements OnInit {
+
 
   customerName = '';
   customerCellphone = '';
@@ -49,8 +51,8 @@ export class ContactusComponent implements OnInit {
 
   }
 
-  onSendRequest() {
 
+  onSendRequest() {
       /*take all the user data and send it to database.*/
 
       this.customerCellphone = this.clientCellphone;
@@ -90,7 +92,6 @@ export class ContactusComponent implements OnInit {
       // Notify the user the message went through
       // let bar: MatSnackBar;
       // bar.open('hi', 'cancel', {duration: 2000});
-
   }
 
 }
