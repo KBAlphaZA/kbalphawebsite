@@ -8,13 +8,11 @@ const port = 4200;
 const { MongoClient } = require('mongodb');
 
 
-
-
 // Connect toit the Database
 // async function run(){
 //   // attempt to establish a connection
 //   try{
-//     await client.connect();
+//     await MongoClient.connect(process.env.KB_ALPHA_DB_URI);
 
 //     const database = 'PotentialClientDb';
 //     const collection = 'customers';
@@ -25,32 +23,6 @@ const { MongoClient } = require('mongodb');
 
 //   }
 // }
-
-/* Mongo connection
-  const database = mongoose.connect('http://localhost:4200', (err, response) => {
-  if (err){console.log(err); }
-  else{console.log('Connected to' + database + ' ' + response); }
-
-
-  app.use(bodyParser());
-app.use(bodyParser.json({limit: '7mb'}));
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Orgin', 'http://localhost:4200');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type');
-  next();
-});
-
-
-let schema = mongoose.Schema;
-
-app.post()
-});
-*/
-
-
 
 
 const app = express();

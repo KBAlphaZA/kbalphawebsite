@@ -3,6 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './Home/home/home.component';
 import {SoftwaredevserviceComponent} from './softwaredevservice/softwaredevservice.component';
 import {SerapismedicalComponent} from './serapismedical/serapismedical.component';
+import { MongoClient } from 'mongodb';
+
+// estblish a connection
+MongoClient.connect(process.env.KB_ALPHA_DB_URI,
+    // TODO: Connection Pooling
+  // Set the poolSize to 50 connections.
+  // TODO: Timeouts
+  // Set the write timeout limit to 2500 milliseconds.
+  {useNewUrlParser: true},
+  console.log('On port: ' + process.env.PORT)
+
+  );
 
 
 
@@ -19,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
