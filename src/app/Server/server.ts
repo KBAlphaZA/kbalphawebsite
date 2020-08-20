@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+
 // Connect toit the Database
 // async function run(){
 //   // attempt to establish a connection
@@ -35,7 +36,7 @@ app.get('/*', (req, res) =>
 });
 
 
-app.listen(process.env.PORT || 4200);
+app.listen(process.env.PORT || 8000);
 
 // Register api routes
 app.use('/api/postEnquiry', );
