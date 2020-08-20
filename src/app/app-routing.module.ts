@@ -16,8 +16,6 @@ import { MongoClient } from 'mongodb';
 
 //   );
 
-
-
 const routes: Routes = [
    {path: '', component: HomeComponent},
    {path: 'softwaredevservice', component: SoftwaredevserviceComponent} ,
