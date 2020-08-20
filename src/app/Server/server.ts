@@ -1,10 +1,30 @@
+import { async } from "@angular/core/testing";
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const port = 4200;
-const connectionString = 'mongodb+srv://coFounderKhanyi:TW0d53RQiYW9gegb@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
+const { MongoClient } = require('mongodb');
+
+
+
+
+// Connect toit the Database
+// async function run(){
+//   // attempt to establish a connection
+//   try{
+//     await client.connect();
+
+//     const database = 'PotentialClientDb';
+//     const collection = 'customers';
+
+
+//   }
+//   catch (e){
+
+//   }
+// }
 
 /* Mongo connection
   const database = mongoose.connect('http://localhost:4200', (err, response) => {
@@ -29,6 +49,8 @@ let schema = mongoose.Schema;
 app.post()
 });
 */
+
+
 
 
 const app = express();

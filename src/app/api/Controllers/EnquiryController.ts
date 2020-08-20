@@ -1,37 +1,23 @@
 // import * as express from 'express';
 import { CustomerEnquiry } from 'src/app/Models/CustomerEnquiry';
+import { EnquiryDAO } from 'src/app/dao/enquiryDAO';
 
+export class EnquiryController {
 
-// class EnquiryController {
-//   public path = '/enquiries';
-//   public router = express.Router();
+   private customerEnquiry: CustomerEnquiry;
 
-//   private customerEnquiry: CustomerEnquiry;
+   static async apiEnquirylodege(req, res, next){
+     // attempt to post the enquiry to the data base
+     try{
+        const enquiry = req.body.customerEnquiry;
+        res.json({status: 'sucess', enquiry});
 
-//   constructor() {
-//     this.intializeRoutes();
-//   }
+        const postEnquiry = await EnquiryDAO.postEnquiry(enquiry);
+     }
+     catch (e){
+       console.log();
+       return console.error('Trying to post the customers info failed:' + e);
+     }
+   }
 
-//   public intializeRoutes() {
-//     this.router.post(this.path, this.createEnquiry);
-//   }
-
-//   createEnquiry = (request: express.Request, response: express.Reponse) => {
-//     const clientenquiry: CustomerEnquiry = request.body;
-//     response.send(clientenquiry);
-//   }
-
-// }
-
-export class TestEnquiryController {
-
-  private customerEnquiry: CustomerEnquiry;
-
-  constructor(){}
-
-   public sendPostToBackend(enq: any): void {
-    console.log(enq);
-  }
-}
-
-// export default EnquiryController;
+ }

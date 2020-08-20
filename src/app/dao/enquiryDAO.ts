@@ -1,19 +1,23 @@
 import {ObjectId} from 'bson';
 import { CustomerEnquiry } from '../Models/CustomerEnquiry';
 
-let enquiry;
+let enquiry: CustomerEnquiry;
 
-export default class EnquiryDAO{
+export class EnquiryDAO{
 
-  static async injectDB(conn){
-    if (enquiry){
+  public static async postEnquiry(localEnquiryVar: CustomerEnquiry){
+    enquiry = localEnquiryVar;
+    if (enquiry == null){
+      // It's empty so do nothing
       return;
     }
     try{
-      enquiry = await conn.db('PotentialCustomers').collection('customers');
+        // return await post to the mongodatabase
     }
     catch (e){
       // log the error
+      console.error('Unabale to post a comment');
+
     }
   }
 

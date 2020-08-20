@@ -6,6 +6,7 @@ import { Location, PlatformLocation } from '@angular/common';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import {Subjects} from '../Models/SubjectEnum';
+import { EnquiryController } from '../api/Controllers/EnquiryController';
 
 
 interface Service{
@@ -88,6 +89,7 @@ export class ContactusComponent implements OnInit {
       };
 
       // finally send to the data private theSnackBar: MatSnackBar
+      // EnquiryController.apiEnquirylodege(potentialClient);
 
       // Notify the user the message went through
       // let bar: MatSnackBar;
