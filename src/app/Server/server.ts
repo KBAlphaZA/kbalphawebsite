@@ -4,9 +4,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const port = 4200;
-const { MongoClient } = require('mongodb');
-
 
 // Connect toit the Database
 // async function run(){
