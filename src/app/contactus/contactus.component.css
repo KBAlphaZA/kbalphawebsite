@@ -10,12 +10,11 @@
 
 #columnOne{
   max-height: 100%;
-  padding-left: 2.5%;
-  padding-top: 1%;
+  margin-left: 2.5%;
+  margin-top: 1%;
 }
 
 #columnTwo{
-
   height: 100%;
 }
 

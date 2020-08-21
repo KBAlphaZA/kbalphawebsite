@@ -5,9 +5,12 @@ import {EnquiryMetaData} from '../Models/EnquiryMetaData';
 import { Location, PlatformLocation } from '@angular/common';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import {Subjects} from '../Models/SubjectEnum';
+import { EnquiryController } from '../api/Controllers/EnquiryController';
+
 
 interface Service{
-  serviceName: string;
+  serviceName: Subjects;
   viewValue: string;
 }
 
@@ -19,28 +22,28 @@ interface Service{
 
 export class ContactusComponent implements OnInit {
 
+
   customerName = '';
   customerCellphone = '';
   customerEmail = '';
-  subjectChoosen = '';
   customerMessage = '';
   customerCompany = '';
+  subjectSelected = Subjects.GeneralEnquiry;
 
   /*This enable two way binding between the text field and updated values*/
   clientCellphone = '';
   clientMessage = '';
   clientEmail = '';
   clientName = '';
-  clientsubjectChoosen = '';
   clientCompanyName = '';
 
    serviceOfferings: Service[] = [
-     {serviceName: 'General-00', viewValue: 'General enquiry'},
-     {serviceName: 'softwaredevelopment-0', viewValue : 'Software development'},
-     {serviceName: 'SerapisMedical-1', viewValue: 'Serapis Medical'},
-     {serviceName: 'PescadoFarms-2', viewValue: 'Pescado Farms'},
-     {serviceName: 'Gamedevelopment-3', viewValue: 'KB Alpha Interactive'},
-     {serviceName: 'Career-4', viewValue: 'Careers'}
+     {serviceName: Subjects.GeneralEnquiry, viewValue: 'General enquiry'},
+     {serviceName: Subjects.SoftwareDevelopment, viewValue : 'Software development'},
+     {serviceName: Subjects.SerapisMedical, viewValue: 'Serapis Medical'},
+     {serviceName: Subjects.PescadoFarms, viewValue: 'Pescado Farms'},
+     {serviceName: Subjects.KbAlphaInteractive, viewValue: 'KB Alpha Interactive'},
+     {serviceName: Subjects.Careers, viewValue: 'Careers'}
    ];
 
   constructor() { this.ngOnInit(); }
@@ -49,13 +52,8 @@ export class ContactusComponent implements OnInit {
 
   }
 
-  // Creates the meta deta to be sent to the database
-  GenerateMetaData(date, time, location){
-
-  }
 
   onSendRequest() {
-
       /*take all the user data and send it to database.*/
 
       this.customerCellphone = this.clientCellphone;
@@ -63,6 +61,8 @@ export class ContactusComponent implements OnInit {
       this.customerMessage = this.clientMessage;
       this.customerEmail = this.customerEmail;
       this.customerCompany = this.clientCompanyName;
+      // set the subject selectd here from the front end
+      this.subjectSelected = Subjects.GeneralEnquiry;
 
       // The actual details of the customer
       const customerDets: Customer = {
@@ -81,14 +81,19 @@ export class ContactusComponent implements OnInit {
         };
 
       // the data to be sent to the database, commented out for now
-      // const potentialClient: CustomerEnquiry = { CustomerDetails: customerDets, CustomerMessage: this.clientMessage, MetaData: meta };
+      const potentialClient: CustomerEnquiry = {
+        CustomerDetails: customerDets,
+        CustomerMessage: this.clientMessage,
+        MetaData: meta,
+        CustomerEnquiry: this.subjectSelected
+      };
 
       // finally send to the data private theSnackBar: MatSnackBar
+      // EnquiryController.apiEnquirylodege(potentialClient);
 
       // Notify the user the message went through
-      let bar: MatSnackBar;
-      bar.open('hi', 'cancel', {duration: 2000});
-
+      // let bar: MatSnackBar;
+      // bar.open('hi', 'cancel', {duration: 2000});
   }
 
 }
