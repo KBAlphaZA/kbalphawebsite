@@ -1,9 +1,9 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './Home/home/home.component';
-import {SoftwaredevserviceComponent} from './softwaredevservice/softwaredevservice.component';
-import {SerapismedicalComponent} from './serapismedical/serapismedical.component';
-import { MongoClient } from 'mongodb';
+import { HomeComponent } from './Home/home/home.component';
+import { SoftwaredevserviceComponent } from './softwaredevservice/softwaredevservice.component';
+import { SerapismedicalComponent } from './serapismedical/serapismedical.component';
+//import { MongoClient } from 'mongodb';
 
 // estblish a connection
 // MongoClient.connect(process.env.KB_ALPHA_DB_URI,
