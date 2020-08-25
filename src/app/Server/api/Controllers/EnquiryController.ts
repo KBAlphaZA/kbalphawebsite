@@ -7,6 +7,8 @@ const router = express.Router();
 
 router.post('/post',(req,res) =>{
   //fill in data
+  const CustomerName: req.body.name;
+  const CustomerEmail: req.body.email;
   const date = Date.now();
   
   //FILTER
@@ -24,10 +26,13 @@ router.post('/post',(req,res) =>{
           'result':false
         });        
     //example data is added below
+    //The data maps 1:1 if the names match so this eg. {Name: Name} is the same as just { Name } 
     const newCustomer = new CustomerLead({
-      CustomerName:req.body.name 
+
+      CustomerName,
+      CustomerEmail
     });//etc
-  //RESPONSE
+  //RESPONSE & Database Access
     newCustomer
       .save()
       .then(customer =>{
