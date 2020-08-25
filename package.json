@@ -30,8 +30,10 @@
     "express": "^4.17.1",
     "lottie-web": "^5.7.0",
     "mongodb": "^3.6.0",
-    "mongoose": "^5.9.28",
+    "mongoose": "^5.10.0",
+    "morgan": "^1.10.0",
     "ngx-lottie": "^6.2.1",
+    "nodemon": "^2.0.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "typescript": "~3.9.6",
@@ -61,7 +63,7 @@
     "node": "12.14.1",
     "npm": "6.13.4"
   },
-  "browser":{
+  "browser": {
     "crypto": false
   }
 }

@@ -3,7 +3,19 @@ import { CustomerEnquiry } from '../Models/CustomerEnquiry';
 
 let enquiry: CustomerEnquiry;
 
-export class EnquiryDAO{
+export default class EnquiryDAO{
+  
+  static async injectDB(conn) {
+    if (enquiry) {
+      return
+    }
+    try {
+      var dburl = 'mongodb+srv://coFounderBonga:12345@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
+      enquiry = await conn.db(dburl).collection("enquiry")
+    } catch (e) {
+      console.error(`Unable to establish collection handles in userDAO: ${e}`)
+    }
+  }
 
   public static async postEnquiry(localEnquiryVar: CustomerEnquiry){
     enquiry = localEnquiryVar;
