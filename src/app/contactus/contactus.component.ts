@@ -1,12 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CustomerEnquiry } from '../Models/CustomerEnquiry';
-import { Customer } from '../Models/Customer';
-import {EnquiryMetaData} from '../Models/EnquiryMetaData';
+import { CustomerEnquiry } from '../Server/Models/CustomerEnquiry';
+import {EnquiryMetaData} from '../Server/Models/EnquiryMetaData';
 import { Location, PlatformLocation } from '@angular/common';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import {Subjects} from '../Models/SubjectEnum';
-import { EnquiryController } from '../api/Controllers/EnquiryController';
+import {Subjects} from '../Server/Models/SubjectEnum';
+// import { EnquiryController } from '../Server/api/Controllers/EnquiryController';
 
 
 interface Service{
@@ -64,13 +63,13 @@ export class ContactusComponent implements OnInit {
       // set the subject selectd here from the front end
       this.subjectSelected = Subjects.GeneralEnquiry;
 
-      // The actual details of the customer
-      const customerDets: Customer = {
-         CustomerFullName: this.clientName,
-         CustomerEmail: this.clientEmail,
-         CustomerPhoneNumber: this.clientCellphone,
-         CustomerCompanyName: this.clientCompanyName
-        };
+      // The actual details of the customer (KHanyisani's code)
+      // const customerDets: Customer = {
+      //    CustomerFullName: this.clientName,
+      //    CustomerEmail: this.clientEmail,
+      //    CustomerPhoneNumber: this.clientCellphone,
+      //    CustomerCompanyName: this.clientCompanyName
+      //   };
 
         // The data about the enquiry itself
       const localDate: Date = new Date();
@@ -82,7 +81,6 @@ export class ContactusComponent implements OnInit {
 
       // the data to be sent to the database, commented out for now
       const potentialClient: CustomerEnquiry = {
-        CustomerDetails: customerDets,
         CustomerMessage: this.clientMessage,
         MetaData: meta,
         CustomerEnquiry: this.subjectSelected
