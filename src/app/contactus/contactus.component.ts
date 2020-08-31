@@ -5,7 +5,7 @@ import { Location, PlatformLocation } from '@angular/common';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import {Subjects} from '../Server/Models/SubjectEnum';
-// import { EnquiryController } from '../Server/api/Controllers/EnquiryController';
+import { HttpBackend, HttpClient } from '@angular/common/http';
 
 
 interface Service{
@@ -20,6 +20,9 @@ interface Service{
 })
 
 export class ContactusComponent implements OnInit {
+
+  // http client protocols
+  http: HttpClient;
 
 
   customerName = '';
@@ -85,6 +88,8 @@ export class ContactusComponent implements OnInit {
         MetaData: meta,
         CustomerEnquiry: this.subjectSelected
       };
+
+      // return this.http.post('http://localhost:4200/Enquiry/post', potentialClient);
 
       // finally send to the data private theSnackBar: MatSnackBar
       // EnquiryController.apiEnquirylodege(potentialClient);
