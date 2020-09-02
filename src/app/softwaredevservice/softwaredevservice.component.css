@@ -15,6 +15,12 @@
   color: #2c3e7b;
 }
 
+.bodyOfText{
+  margin: 3%;
+  font-size: 100%;
+  line-height: 150%;
+}
+
 #boxWindow {
   max-height: 80%;
   height: auto;
@@ -32,3 +38,9 @@
 #cardSubtitle {
   font-size: 40px;
 }
+
+.TitleStyling{
+  margin: 2%;
+  line-height: 100%;
+}
+
