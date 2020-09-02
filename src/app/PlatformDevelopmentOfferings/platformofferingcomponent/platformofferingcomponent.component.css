@@ -48,3 +48,8 @@
   justify-content: start;
   height: 100%;
 }
+
+.titleStyling{
+  margin: 2%;
+  line-height: 100%;
+}
