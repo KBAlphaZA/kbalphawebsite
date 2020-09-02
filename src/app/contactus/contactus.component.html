@@ -3,14 +3,15 @@
 <div id="mainContainer" class="columns">
 
     <div id="columnOne" class="column" >
+      <form #f="ngForm"  (ngSubmit)="onSendRequest(f)">
         <mat-form-field class="example-full-width">
-          <mat-label>Name</mat-label>
-          <input required matInput placeholder="Name" [(ngModel)]="clientName">
+          <mat-label>Full Name</mat-label>
+          <input required matInput name="fullname" #fullname="ngModel" placeholder="Full Name" [(ngModel)]="clientName">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Cellphone number</mat-label>
-          <input required matInput type="text" placeholder="Cell phone number" [(ngModel)]="clientCellphone">
+          <input id="cellphone" name="cellphone" required matInput type="text" placeholder="Cell phone number" [(ngModel)]="clientCellphone" #cellphone="ngModel">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -23,13 +24,13 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Company</mat-label>
-          <input required matInput type="text" placeholder="Company name" [(ngModel)]="clientCompanyName">
+          <input required name="company" #company="ngModel" matInput type="text" placeholder="Company name" [(ngModel)]="clientCompanyName">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Subject</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let serviceItem of serviceOfferings" [value]="serviceItem.serviceName">
+            <mat-select n>
+              <mat-option  *ngFor="let serviceItem of serviceOfferings" [value]="serviceItem.serviceName">
                   {{serviceItem.viewValue}}
               </mat-option>
             </mat-select>
@@ -38,19 +39,16 @@
       <div class="field">
         <label id="formLabel" class="label">Message</label>
         <div class="control">
-          <textarea style="outline: 3px solid #2C3E7B;" required.minlength="4" matInput class="textarea" placeholder="What can we help you with?" [(ngModel)]="clientMessage"></textarea>
+          <textarea style="outline: 3px solid #2C3E7B;" name="message" #message="ngModel" required.minlength="4" matInput class="textarea" placeholder="What can we help you with?" [(ngModel)]="clientMessage"></textarea>
         </div>
       </div>
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link is-kbalpha-color" style="background-color: #2C3E7B;" (click)="onSendRequest()">Submit</button>
-        </div>
-        <div class="control">
-          <button class="button is-link is-light">Cancel</button>
+          <button type="submit" class="button is-link is-kbalpha-color" style="background-color: #2C3E7B;">Submit</button>
         </div>
       </div>
-
+      </form>
     </div>
 
     <div id="columnTwo" class="column">

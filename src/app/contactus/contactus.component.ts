@@ -6,6 +6,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import {Subjects} from '../Server/Models/SubjectEnum';
 import { HttpBackend, HttpClient } from '@angular/common/http';
+import { isNull } from 'util';
+import { NgForm } from '@angular/forms';
 
 
 interface Service{
@@ -55,7 +57,7 @@ export class ContactusComponent implements OnInit {
   }
 
 
-  onSendRequest() {
+  onSendRequest(f: NgForm) {
       /*take all the user data and send it to database.*/
 
       this.customerCellphone = this.clientCellphone;
@@ -89,14 +91,21 @@ export class ContactusComponent implements OnInit {
         CustomerEnquiry: this.subjectSelected
       };
 
-      // return this.http.post('http://localhost:4200/Enquiry/post', potentialClient);
+      // return this.http.post('http://localhost:4200/Enquiry/post', f);
 
-      // finally send to the data private theSnackBar: MatSnackBar
-      // EnquiryController.apiEnquirylodege(potentialClient);
+      // Finally reset the form
+      f.resetForm();
+  }
 
-      // Notify the user the message went through
-      // let bar: MatSnackBar;
-      // bar.open('hi', 'cancel', {duration: 2000});
+
+  // clear data method
+  private clearForm(){
+    this.clientCellphone = '';
+    this.clientCompanyName = '';
+    this.clientEmail = '';
+    this.clientMessage = '';
+    this.clientName = '';
+    this.subjectSelected = Subjects.none;
   }
 
 }

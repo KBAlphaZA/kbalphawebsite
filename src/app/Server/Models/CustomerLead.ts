@@ -6,7 +6,7 @@ const CustomerLeadSchema = new mongoose.Schema({
   },
   CustomerPhoneNumber:{
     type: String,
-    
+
   },
   CustomerEmail:{
     type: String,

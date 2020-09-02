@@ -4,5 +4,6 @@ export enum Subjects{
   SerapisMedical = 2,
   PescadoFarms = 3,
   KbAlphaInteractive = 4,
-  Careers = 5
+  Careers = 5,
+  none = 6
 }
