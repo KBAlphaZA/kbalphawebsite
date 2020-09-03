@@ -1,5 +1,7 @@
 
-  <h2 class="titleStyling is-horizontal-center is-size-1 is-kbalpha-color has-text-centered">You deserve a great software engineering team</h2>
+  <h2 role="heading" class="titleStyling is-horizontal-center is-size-1 is-kbalpha-color has-text-centered">You deserve a great software engineering team</h2>
+
+  <br>
 
 <!--main content tag-->
 <div id="boxWindow">
@@ -9,7 +11,7 @@
 
     <div *ngFor="let employee of ListOfTeamMemebers" class="column">
       <!--Name of employee-->
-      <h2 class="is-size-5 has-text-centered is-kbalpha-color">{{employee.employeeName}}</h2>
+      <h2 class="is-size-3 has-text-centered is-kbalpha-color">{{employee.employeeName}}</h2>
 
 
       <br>
@@ -25,7 +27,7 @@
 
       <!--The title and linkdin button-->
       <div id="employeeSocialsAndTitle">
-        <h2 class="is-size-6 is-kbalpha-color has-text-centered">{{employee.employeeTitle}}
+        <h2 class="is-size-4 is-kbalpha-color has-text-centered">{{employee.employeeTitle}}
           <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
       </div>
 
