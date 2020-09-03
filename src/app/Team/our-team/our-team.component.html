@@ -3,36 +3,37 @@
 
 <!--main content tag-->
 <div id="boxWindow">
-  <div class="section">
-    <div class="columns">
 
-      <div *ngFor="let employee of ListOfTeamMemebers" class="column">
-        <!--Name of employee-->
-        <h2 class="is-size-3 has-text-centered is-kbalpha-color">{{employee.employeeName}}</h2>
 
-        <!--Head shot-->
-        <div id="profilePicture">
-          <figure class="image container is-rounded is-128x128" >
-            <img class="is-rounded" src="{{employee.employeeProfilePicture}}" alt="{{ employee.employeeTitle }}"/>
-          </figure>
-        </div>
+  <div class="columns">
 
-        <br>
+    <div *ngFor="let employee of ListOfTeamMemebers" class="column">
+      <!--Name of employee-->
+      <h2 class="is-size-5 has-text-centered is-kbalpha-color">{{employee.employeeName}}</h2>
 
-        <!--The title and linkdin button-->
-        <div id="employeeSocialsAndTitle">
-          <h2 class="s-size-4 is-kbalpha-color has-text-centered">{{employee.employeeTitle}}
-            <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
-        </div>
 
+      <br>
+
+      <!--Head shot-->
+      <div id="profilePicture">
+        <figure class="image container is-rounded is-128x128" >
+          <img class="is-rounded" src="{{employee.employeeProfilePicture}}" alt="{{ employee.employeeTitle }}"/>
+        </figure>
+      </div>
+
+      <br>
+
+      <!--The title and linkdin button-->
+      <div id="employeeSocialsAndTitle">
+        <h2 class="is-size-6 is-kbalpha-color has-text-centered">{{employee.employeeTitle}}
+          <span><a href="{{employee.employeeLinkdInLink}}"><i class="fab fa-linkedin is-large" alt="kb alpha employee linkdIn link"></i></a></span></h2>
       </div>
 
     </div>
 
+  </div>
 
-</div>
 
-<hr>
 </div>
 
 
