@@ -31,7 +31,6 @@ import { ContactyouanimationComponent } from './components/subcomponent/animatio
 
 
 
-
 export function playerFactory(){
     return import('lottie-web');
 }

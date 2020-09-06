@@ -3,8 +3,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/post', (req, res) => {
+router.post('/api/v1/customerlead', (req, res) => {
   //fill in data
+  console.log('Server data recieved => ',req)
   const CustomerName = req.body.name;
   const CustomerEmail = req.body.email;
   const date = Date.now();

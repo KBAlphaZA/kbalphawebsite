@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { CustomerEnquiry } from '../Server/Models/CustomerEnquiry';
 import {EnquiryMetaData} from '../Server/Models/EnquiryMetaData';
 import { Location, PlatformLocation } from '@angular/common';
@@ -8,7 +8,7 @@ import {Subjects} from '../Server/Models/SubjectEnum';
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { isNull } from 'util';
 import { NgForm } from '@angular/forms';
-
+import { CustomerLeadService} from '../Services/CustomerLeadService';
 
 interface Service{
   serviceName: Subjects;
@@ -22,7 +22,7 @@ interface Service{
 })
 
 export class ContactusComponent implements OnInit {
-
+  @Output() postcontact: EventEmitter<any> = new EventEmitter();
   // http client protocols
   http: HttpClient;
 
@@ -50,7 +50,7 @@ export class ContactusComponent implements OnInit {
      {serviceName: Subjects.Careers, viewValue: 'Careers'}
    ];
 
-  constructor() { this.ngOnInit(); }
+  constructor(private customerLeadService:CustomerLeadService) { this.ngOnInit(); }
 
   ngOnInit(): void {
 
@@ -90,9 +90,11 @@ export class ContactusComponent implements OnInit {
         MetaData: meta,
         CustomerEnquiry: this.subjectSelected
       };
-
-      // return this.http.post('http://localhost:4200/Enquiry/post', f);
-
+      console.log('form results =>',potentialClient );
+      this.customerLeadService.postcontact(potentialClient);
+      
+      // return this.http.post('http ://localhost:4200/Enquiry/post', f);
+        
       // Finally reset the form
       f.resetForm();
   }
