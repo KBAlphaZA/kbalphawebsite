@@ -33,7 +33,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
-
 export function playerFactory(){
     return import('lottie-web');
 }
