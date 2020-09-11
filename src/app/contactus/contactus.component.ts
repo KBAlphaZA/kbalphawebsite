@@ -6,8 +6,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import {Subjects} from '../Server/Models/SubjectEnum';
 import { HttpBackend, HttpClient } from '@angular/common/http';
-import { isNull } from 'util';
 import { NgForm } from '@angular/forms';
+import { ThankyoupopComponent } from '../components/subcomponent/popups/thankyoupop/thankyoupop.component';
 
 
 interface Service{
@@ -21,11 +21,15 @@ interface Service{
   styleUrls: ['./contactus.component.css']
 })
 
+
 export class ContactusComponent implements OnInit {
 
   // http client protocols
   http: HttpClient;
 
+  snackbar: MatSnackBar;
+
+  duration = 5;
 
   customerName = '';
   customerCellphone = '';
@@ -54,6 +58,7 @@ export class ContactusComponent implements OnInit {
 
   ngOnInit(): void {
 
+
   }
 
 
@@ -67,14 +72,6 @@ export class ContactusComponent implements OnInit {
       this.customerCompany = this.clientCompanyName;
       // set the subject selectd here from the front end
       this.subjectSelected = Subjects.GeneralEnquiry;
-
-      // The actual details of the customer (KHanyisani's code)
-      // const customerDets: Customer = {
-      //    CustomerFullName: this.clientName,
-      //    CustomerEmail: this.clientEmail,
-      //    CustomerPhoneNumber: this.clientCellphone,
-      //    CustomerCompanyName: this.clientCompanyName
-      //   };
 
         // The data about the enquiry itself
       const localDate: Date = new Date();
@@ -95,17 +92,22 @@ export class ContactusComponent implements OnInit {
 
       // Finally reset the form
       f.resetForm();
+
+      // visual feedback on forms being sent
+      this.openPopUp();
+
   }
 
 
-  // clear data method
-  private clearForm(){
-    this.clientCellphone = '';
-    this.clientCompanyName = '';
-    this.clientEmail = '';
-    this.clientMessage = '';
-    this.clientName = '';
-    this.subjectSelected = Subjects.none;
+  // snackbar method
+  private openPopUp(){
+
+    this.snackbar.openFromComponent(ThankyoupopComponent,
+      {duration: this.duration * 1000,  verticalPosition: 'bottom'}
+      );
+
   }
 
 }
+
+

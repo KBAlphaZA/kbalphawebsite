@@ -28,6 +28,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {HttpClientModule} from '@angular/common/http';
 import { ContactyouanimationComponent } from './components/subcomponent/animation/communicationanimations/contactyouanimation/contactyouanimation.component';
+import { ThankyoupopComponent } from './components/subcomponent/popups/thankyoupop/thankyoupop.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -53,6 +55,7 @@ export function playerFactory(){
     PlatformofferingcomponentComponent,
     ScrollanimationComponent,
     ContactyouanimationComponent,
+    ThankyoupopComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,8 @@ export function playerFactory(){
     MatListModule,
     MatCardModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
