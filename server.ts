@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('./dist/'));
 //routes
 app.use(
-  '/customerlead',
+  '/api/v1',
   require('./src/app/Server/api/Controllers/EnquiryController.ts')
 );
 

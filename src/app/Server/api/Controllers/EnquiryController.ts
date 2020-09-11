@@ -2,8 +2,9 @@
 //var EnquiryDAO = require('../../dao/enquiryDAO');
 const express = require('express');
 const router = express.Router();
+const Customer = require('../../Models/');
 
-router.post('/api/v1/customerlead', (req, res) => {
+router.post('/register', (req, res) => {
   //fill in data
   console.log('Server data recieved => ',req)
   const CustomerName = req.body.name;
@@ -17,7 +18,7 @@ router.post('/api/v1/customerlead', (req, res) => {
     res.send({ 'Error Message': 'There is no data to process' });
 
   //VALIDATE DATA
-  CustomerLead.findOne({ email: req.body.email }).then((customer) => {
+  Customer.findOne({ email: req.body.email }).then((customer) => {
     if (customer)
       res.send({
         reason: 'Customer email already exists',
@@ -25,7 +26,7 @@ router.post('/api/v1/customerlead', (req, res) => {
       });
     //example data is added below
     //The data maps 1:1 if the names match so this eg. {Name: Name} is the same as just { Name }
-    const newCustomer = new CustomerLead({
+    const newCustomer = new Customer({
       CustomerName,
       CustomerEmail,
     }); //etc
