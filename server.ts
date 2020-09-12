@@ -4,11 +4,11 @@ var cors = require('cors');
 var morgan = require('morgan');
 //var enquiry = require("../Server/api/Controllers/Enquiry.route")
 var mongoose = require('mongoose');
-
+var cors = require('cors');
 const app = express();
 
 //cors setup
-
+app.use(cors())
 //mongodb
 const dburl =
   'mongodb+srv://coFounderBonga:12345@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
