@@ -24,6 +24,7 @@ import { MatInputModule  } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule, MatDivider } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -33,6 +34,7 @@ import { ContactyouanimationComponent } from './components/subcomponent/animatio
 import { ThankyoupopComponent } from './components/subcomponent/popups/thankyoupop/thankyoupop.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AdminViewComponent } from './components/Login/admin-view/admin-view.component';
+import { DialogQuoteFormComponent } from './dialog-quote-form/dialog-quote-form.component';
 
 
 
@@ -59,6 +61,7 @@ export function playerFactory(){
     ContactyouanimationComponent,
     ThankyoupopComponent,
     AdminViewComponent,
+    DialogQuoteFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ export function playerFactory(){
     HttpClientModule,
     MatSnackBarModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
