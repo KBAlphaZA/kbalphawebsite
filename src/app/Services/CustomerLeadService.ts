@@ -11,15 +11,16 @@ const httpOptions = {
     providedIn: 'root'
 })
 export class CustomerLeadService{
-  private baseUrl = 'http:localhost:8000'; //URL to web server
+  public PORT = process.env.PORT;
+  private baseUrl = `http:localhost:${PORT}`; //URL to web server
   constructor(private http:HttpClient) {} 
 
-  postcontact(CustomerEnquiry:CustomerEnquiry) {
+  postcontact( CustomerEnquiry:CustomerEnquiry ) {
     console.log('post contact was reached')
     const tempurl = `${this.baseUrl}/api/v1/customer/register`;
     console.log(tempurl);
-    var values = this.http.post<CustomerEnquiry>( tempurl ,CustomerEnquiry,httpOptions);
-    console.log('returned values=> ', values)
+    this.http.post<CustomerEnquiry>( tempurl , CustomerEnquiry, httpOptions);
+    
   }
 }
 
