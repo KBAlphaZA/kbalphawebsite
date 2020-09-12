@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const Customer = require('../../Models/CustomerLead.ts');
-
+//Post
 router.post('/register', (req, res) => {
   //fill in data
   console.log('Server data recieved => ',req)
