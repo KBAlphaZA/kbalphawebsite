@@ -24,12 +24,15 @@ import { MatInputModule  } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule, MatDivider } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
 import {HttpClientModule} from '@angular/common/http';
 import { ContactyouanimationComponent } from './components/subcomponent/animation/communicationanimations/contactyouanimation/contactyouanimation.component';
 import { ThankyoupopComponent } from './components/subcomponent/popups/thankyoupop/thankyoupop.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AdminViewComponent } from './components/Login/admin-view/admin-view.component';
 
 
 
@@ -55,6 +58,7 @@ export function playerFactory(){
     ScrollanimationComponent,
     ContactyouanimationComponent,
     ThankyoupopComponent,
+    AdminViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,9 @@ export function playerFactory(){
     MatCardModule,
     MatGridListModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

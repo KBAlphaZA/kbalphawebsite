@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './Home/home/home.component';
 import { SoftwaredevserviceComponent } from './softwaredevservice/softwaredevservice.component';
 import { SerapismedicalComponent } from './serapismedical/serapismedical.component';
-import { LoginComponent} from './components/Login/Login.component'
+import { LoginComponent} from './components/Login/Login.component';
+import { AdminViewComponent } from './components/Login/admin-view/admin-view.component';
 
 //import { MongoClient } from 'mongodb';
 
@@ -23,7 +24,8 @@ const routes: Routes = [
    {path: 'softwaredevservice', component: SoftwaredevserviceComponent} ,
    {path: 'about', component: SoftwaredevserviceComponent} ,
    {path: 'serapismedical', component: SerapismedicalComponent},
-   {path: 'admin/login', component: LoginComponent}, 
+   {path: 'admin/login', component: LoginComponent},
+   {path: 'admin/login/adminView', component: AdminViewComponent}
    // { path: '**', component: HomeComponent },
  // { path: '**', component: HomeComponent },  // Wildcard route for a 404 page[PAGE NOT FOUND]
   ];
