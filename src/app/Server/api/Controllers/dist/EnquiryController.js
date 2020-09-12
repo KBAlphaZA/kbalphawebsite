@@ -2,7 +2,7 @@
 //var EnquiryDAO = require('../../dao/enquiryDAO');
 var express = require('express');
 var router = express.Router();
-var Customer = require('../../Models/');
+var Customer = require('../../Models/CustomerLead.ts');
 router.post('/register', function (req, res) {
     //fill in data
     console.log('Server data recieved => ', req);
@@ -16,7 +16,7 @@ router.post('/register', function (req, res) {
         res.send({ 'Error Message': 'There is no data to process' });
     //VALIDATE DATA
     Customer.findOne({ email: req.body.email }).then(function (customer) {
-        if (customer)
+        if (customer == req.body.email)
             res.send({
                 reason: 'Customer email already exists',
                 result: false
@@ -25,7 +25,8 @@ router.post('/register', function (req, res) {
         //The data maps 1:1 if the names match so this eg. {Name: Name} is the same as just { Name }
         var newCustomer = new Customer({
             CustomerName: CustomerName,
-            CustomerEmail: CustomerEmail
+            CustomerEmail: CustomerEmail,
+            date: date
         }); //etc
         //RESPONSE & Database Access
         newCustomer

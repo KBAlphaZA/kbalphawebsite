@@ -1,9 +1,9 @@
 var express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const morgan = require('morgan');
+var bodyParser = require('body-parser');
+var cors = require('cors');
+var morgan = require('morgan');
 //var enquiry = require("../Server/api/Controllers/Enquiry.route")
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 const app = express();
 
@@ -13,7 +13,6 @@ const app = express();
 const dburl =
   'mongodb+srv://coFounderBonga:12345@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
 //Mongo Connection
-
 mongoose
   .connect(dburl, {
     useNewUrlParser: true,
@@ -35,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('./dist/'));
 //routes
 app.use(
-  '/api/v1',
+  '/api/v1/customer',
   require('./src/app/Server/api/Controllers/EnquiryController.ts')
 );
 

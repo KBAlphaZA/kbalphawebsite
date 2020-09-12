@@ -1,4 +1,4 @@
-
+const mongoose = require('mongoose');
 const CustomerLeadSchema = new mongoose.Schema({
 
   CustomerName:{
@@ -10,7 +10,7 @@ const CustomerLeadSchema = new mongoose.Schema({
   },
   CustomerEmail:{
     type: String,
-    required: true
+    
   },
   CustomerCompanyName:{
     type: String,

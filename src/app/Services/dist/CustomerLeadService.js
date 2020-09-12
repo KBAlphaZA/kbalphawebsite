@@ -17,12 +17,14 @@ var httpOptions = {
 var CustomerLeadService = /** @class */ (function () {
     function CustomerLeadService(http) {
         this.http = http;
-        this.baseUrl = 'https:localhost:8000'; //URL to web server
+        this.baseUrl = 'http:localhost:8000'; //URL to web server
     }
     CustomerLeadService.prototype.postcontact = function (CustomerEnquiry) {
         console.log('post contact was reached');
-        var tempurl = this.baseUrl + "/api/v1/customerlead";
-        return this.http.post(tempurl, CustomerEnquiry, httpOptions);
+        var tempurl = this.baseUrl + "/api/v1/customer/register";
+        console.log(tempurl);
+        var values = this.http.post(tempurl, CustomerEnquiry, httpOptions);
+        console.log('returned values=> ', values);
     };
     CustomerLeadService = __decorate([
         core_1.Injectable({
