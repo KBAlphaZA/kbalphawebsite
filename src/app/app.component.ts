@@ -21,9 +21,7 @@ export class AppComponent {
   dialog: MatDialog;
 
   popUpDialog(){
-    console.log(DialogQuoteFormComponent.length);
     const dialogRef = this.dialog.open(DialogQuoteFormComponent);
     dialogRef.afterClosed().subscribe(result => {console.log('Dialog result: ${result}'); });
   }
 }
-
