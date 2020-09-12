@@ -12,12 +12,12 @@ const httpOptions = {
 })
 export class CustomerLeadService{
   public PORT = process.env.PORT;
-  private baseUrl = `http:localhost:${PORT}`; //URL to web server
+  
   constructor(private http:HttpClient) {} 
 
   postcontact( CustomerEnquiry:CustomerEnquiry ) {
     console.log('post contact was reached')
-    const tempurl = `${this.baseUrl}/api/v1/customer/register`;
+    const tempurl = `/api/v1/customer/register`;
     console.log(tempurl);
     this.http.post<CustomerEnquiry>( tempurl , CustomerEnquiry, httpOptions);
     

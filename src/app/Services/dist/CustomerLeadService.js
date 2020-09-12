@@ -18,11 +18,10 @@ var CustomerLeadService = /** @class */ (function () {
     function CustomerLeadService(http) {
         this.http = http;
         this.PORT = process.env.PORT;
-        this.baseUrl = "http:localhost:" + PORT; //URL to web server
     }
     CustomerLeadService.prototype.postcontact = function (CustomerEnquiry) {
         console.log('post contact was reached');
-        var tempurl = this.baseUrl + "/api/v1/customer/register";
+        var tempurl = "/api/v1/customer/register";
         console.log(tempurl);
         this.http.post(tempurl, CustomerEnquiry, httpOptions);
     };
