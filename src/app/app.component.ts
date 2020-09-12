@@ -20,8 +20,9 @@ export class AppComponent {
 
   dialog: MatDialog;
 
+  constructor(public dialogTwo: MatDialog){}
+
   popUpDialog(){
-    const dialogRef = this.dialog.open(DialogQuoteFormComponent);
-    dialogRef.afterClosed().subscribe(result => {console.log('Dialog result: ${result}'); });
+     const dialogRef = this.dialogTwo.open(DialogQuoteFormComponent);
   }
 }
