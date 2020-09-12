@@ -33,7 +33,7 @@ import { Component, OnInit } from '@angular/core';
                         <li><a href="#">Support</a></li>
                         <li><a href="#">Partners & Clients</a></li>
                         <li><a href="#">Integration</a></li>
-                        <li><a href="#">Admin Portal</a></li>
+                        <li><a href="/admin/login">Admin Portal</a></li>
                         <li><a href="#">Submit An Idea</a></li>
                     </ul>
                 </div>

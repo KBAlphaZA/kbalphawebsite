@@ -2,7 +2,7 @@
 //var EnquiryDAO = require('../../dao/enquiryDAO');
 const express = require('express');
 const router = express.Router();
-const Customer = require('../../Models/');
+const Customer = require('../../Models/CustomerLead.ts');
 
 router.post('/register', (req, res) => {
   //fill in data
@@ -10,7 +10,6 @@ router.post('/register', (req, res) => {
   const CustomerName = req.body.name;
   const CustomerEmail = req.body.email;
   const date = Date.now();
-
   //FILTER
   const filter = {};
   // UPDATE
@@ -19,7 +18,7 @@ router.post('/register', (req, res) => {
 
   //VALIDATE DATA
   Customer.findOne({ email: req.body.email }).then((customer) => {
-    if (customer)
+    if (customer == req.body.email)
       res.send({
         reason: 'Customer email already exists',
         result: false,
@@ -29,6 +28,7 @@ router.post('/register', (req, res) => {
     const newCustomer = new Customer({
       CustomerName,
       CustomerEmail,
+      date
     }); //etc
     //RESPONSE & Database Access
     newCustomer
