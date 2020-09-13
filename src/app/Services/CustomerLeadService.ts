@@ -16,7 +16,7 @@ export class CustomerLeadService{
 
   postcontact( CustomerEnquiry:any ) {
     console.log('post contact was reached')
-    const tempurl = `/api/v1/customer/register`;
+    const tempurl = `www.kbalpha.co.za/api/v1/customer/register`;
     console.log(tempurl);
     var httpvalue = this.http.post( tempurl , CustomerEnquiry, httpOptions);
     console.log(httpvalue);
