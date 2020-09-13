@@ -11,7 +11,6 @@ const httpOptions = {
     providedIn: 'root'
 })
 export class CustomerLeadService{
-  public PORT = process.env.PORT;
   
   constructor(private http:HttpClient) {} 
 

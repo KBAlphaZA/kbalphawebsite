@@ -2,16 +2,26 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
+var csurf = require('csurf');
+var cookieParser = require('cookie-parser');
 //var enquiry = require("../Server/api/Controllers/Enquiry.route")
 var mongoose = require('mongoose');
 var cors = require('cors');
 const app = express();
 
 //cors setup
-app.use(cors())
+app.use(cors());
 //mongodb
-const dburl =
-  'mongodb+srv://coFounderBonga:12345@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
+const dburl ='mongodb+srv://coFounderBonga:12345@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
+
+const csrfMiddleware = csurf({
+  cookie: true
+});
+
+app.use(cookieParser());
+app.use(csrfMiddleware);
+
+
 //Mongo Connection
 mongoose
   .connect(dburl, {
@@ -36,7 +46,7 @@ app.use(express.static('./dist/'));
 app.use(
   '/api/v1/customer',
   require('./src/app/Server/api/Controllers/EnquiryController.ts')
-);
+  );
 
 app.use(express.static('./dist/kbalphawebsite'));
 

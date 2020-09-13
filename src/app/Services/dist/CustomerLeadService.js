@@ -17,7 +17,6 @@ var httpOptions = {
 var CustomerLeadService = /** @class */ (function () {
     function CustomerLeadService(http) {
         this.http = http;
-        this.PORT = process.env.PORT;
     }
     CustomerLeadService.prototype.postcontact = function (CustomerEnquiry) {
         console.log('post contact was reached');
