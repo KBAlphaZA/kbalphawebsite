@@ -1,25 +1,48 @@
-<div id="mainBox">
-  <h2 mat-dialog-title>Get Quote</h2>
+<h2 mat-dialog-title>Get Quote</h2>
 
-<mat-dialog-content class="mat-typography">
-  <div>
-    <mat-form-field class="example-full-width">
-      <mat-label>Full Name</mat-label>
-      <input matInput placeholder="Full Name">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Company</mat-label>
-      <input matInput placeholder="Company">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Cellphone</mat-label>
-      <input matInput placeholder="Cellphone">
-    </mat-form-field>
+<form #quoteForm="ngForm" (ngSubmit)="submitQuote(quoteForm)">
+  <mat-dialog-content>
+      <mat-horizontal-stepper>
+          <mat-step [stepControl]="firstGroup">
+
+          </mat-step>
+
+          <mat-step [stepControl]="secondGroup">
+
+          </mat-step>
+
+          <mat-step>
+
+          </mat-step>
+
+      </mat-horizontal-stepper>
+  </mat-dialog-content>
+
+
+  <div class="columns">
+
+    <div class="column">
+      <div class="file">
+          <label class="file-label">
+            <input class="file-input" type="file" name="designSpec">
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span>
+                Upload design specification document
+              </span>
+            </span>
+          </label>
+      </div>
+    </div>
+
+    <mat-dialog-actions align="center" class="column">
+      <button type="submit" mat-raised-button [mat-dialog-close]="true" color="primary">Get Quote</button>
+      <button mat-raised-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
   </div>
-</mat-dialog-content>
 
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" style="background-color: #2C3E7B;">Get Quote</button>
-</mat-dialog-actions>
-</div>
+</form>
+
+

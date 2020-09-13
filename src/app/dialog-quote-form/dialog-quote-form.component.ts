@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Form } from '@angular/forms';
 
 @Component({
   selector: 'app-dialog-quote-form',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogQuoteFormComponent implements OnInit {
 
+  firstGroup: FormGroup;
+  secondGroup: FormGroup;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  submitQuote(quoteForm){
+
+  }
 }

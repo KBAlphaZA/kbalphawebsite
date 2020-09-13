@@ -1,0 +1,15 @@
+#mainDialogBox{
+  width: auto;
+  height: auto;
+  background-color:white;
+}
+
+
+.example-full-width {
+  width: 100%;
+  height: 100%;
+}
+
+.checkBoxStyling{
+  margin-right: 2%;
+}

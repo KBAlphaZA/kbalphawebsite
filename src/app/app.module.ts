@@ -29,12 +29,15 @@ import {MatTableModule} from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatStepperModule} from '@angular/material/stepper';
 import {HttpClientModule} from '@angular/common/http';
 import { ContactyouanimationComponent } from './components/subcomponent/animation/communicationanimations/contactyouanimation/contactyouanimation.component';
 import { ThankyoupopComponent } from './components/subcomponent/popups/thankyoupop/thankyoupop.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AdminViewComponent } from './components/Login/admin-view/admin-view.component';
 import { DialogQuoteFormComponent } from './dialog-quote-form/dialog-quote-form.component';
+
 
 
 
@@ -79,7 +82,9 @@ export function playerFactory(){
     MatSnackBarModule,
     MatTabsModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
