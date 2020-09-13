@@ -9,9 +9,9 @@ var mongoose = require('mongoose');
 var cors = require('cors');
 const app = express();
 
-//cors setup
+// Cors Setup
 app.use(cors());
-//mongodb
+// Mongodb Key
 const dburl ='mongodb+srv://coFounderBonga:12345@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
 
 const csrfMiddleware = csurf({
@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(csrfMiddleware);
 
 
-//Mongo Connection
+// MongoDB Connection
 mongoose
   .connect(dburl, {
     useNewUrlParser: true,
@@ -35,22 +35,20 @@ mongoose
   });
 
 app.use(cors());
-process.env.NODE_ENV !== 'prod' && app.use(morgan('dev'));
+// process.env.NODE_ENV !== 'prod' && 
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Replace the '/dist/<to_your_project_name>'
 
 app.use(express.static('./dist/'));
-//routes
-app.use(
-  '/api/v1/customer',
-  require('./src/app/Server/api/Controllers/EnquiryController.ts')
-  );
+
+// Routes
+app.use('/api/v1/customer', require('./src/app/Server/api/Controllers/EnquiryController.ts'));
 
 app.use(express.static('./dist/kbalphawebsite'));
 
-app.get('/*', function (req, res) {
+app.get('/*', (req, res) => {
   res.sendFile('index.html', { root: 'dist/kbalphawebsite' });
 });
 

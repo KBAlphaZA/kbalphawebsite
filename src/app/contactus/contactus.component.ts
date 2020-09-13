@@ -89,13 +89,12 @@ export class ContactusComponent implements OnInit {
         MetaData: meta,
         CustomerEnquiry: this.subjectSelected
       };
-      //console.log('Form Results=>',f.value);
       this.customerLeadService.postcontact(f.value);
       
       // Finally reset the form
       f.resetForm();
       
-      // visual feedback on forms being sent
+      // visual feedback on forms being sen8-6t
       this.openPopUp();
 
   }

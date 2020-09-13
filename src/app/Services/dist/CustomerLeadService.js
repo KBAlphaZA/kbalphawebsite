@@ -22,7 +22,8 @@ var CustomerLeadService = /** @class */ (function () {
         console.log('post contact was reached');
         var tempurl = "/api/v1/customer/register";
         console.log(tempurl);
-        this.http.post(tempurl, CustomerEnquiry, httpOptions);
+        var httpvalue = this.http.post(tempurl, CustomerEnquiry, httpOptions);
+        console.log(httpvalue);
     };
     CustomerLeadService = __decorate([
         core_1.Injectable({

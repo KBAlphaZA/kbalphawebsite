@@ -3,6 +3,11 @@
 var express = require('express');
 var router = express.Router();
 var Customer = require('../../Models/CustomerLead.ts');
+//GET: /api/v1/customer/registered'
+router.get('/registered', function (req, res) {
+    res.send({ "Message": "successful" });
+});
+//POST: /api/v1/customer/register'
 router.post('/register', function (req, res) {
     //fill in data
     console.log('Server data recieved => ', req);
@@ -18,8 +23,8 @@ router.post('/register', function (req, res) {
     Customer.findOne({ email: req.body.email }).then(function (customer) {
         if (customer == req.body.email)
             res.send({
-                reason: 'Customer email already exists',
-                result: false
+                'reason': 'Customer email already exists',
+                'result': false
             });
         //example data is added below
         //The data maps 1:1 if the names match so this eg. {Name: Name} is the same as just { Name }
@@ -45,26 +50,4 @@ router.post('/register', function (req, res) {
         });
     });
 });
-/**
-export class EnquiryController {
-   private customerEnquiry;//: CustomerEnquiry;
-
-   static async apiEnquirylodege(req, res, next){
-     // attempt to post the enquiry to the data base
-     try{
-        const enquiry = req.body.customerEnquiry;
-        res.json({status: 'sucess', enquiry});
-
-        const postEnquiry = await EnquiryDAO.postEnquiry(enquiry);
-        
-     }
-     catch (e){
-       console.log();
-       return console.error('Trying to post the customers info failed:' + e);
-     }
-     
-   }
-
- }
- */
 module.exports = router;

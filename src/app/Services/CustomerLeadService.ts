@@ -18,7 +18,9 @@ export class CustomerLeadService{
     console.log('post contact was reached')
     const tempurl = `/api/v1/customer/register`;
     console.log(tempurl);
-    this.http.post<any>( tempurl , CustomerEnquiry, httpOptions);
+    var httpvalue = this.http.post( tempurl , CustomerEnquiry, httpOptions);
+    console.log(httpvalue);
+    
   }
 }
 
