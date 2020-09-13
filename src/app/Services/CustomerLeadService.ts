@@ -14,12 +14,11 @@ export class CustomerLeadService{
   
   constructor(private http:HttpClient) {} 
 
-  postcontact( CustomerEnquiry:CustomerEnquiry ) {
+  postcontact( CustomerEnquiry:any ) {
     console.log('post contact was reached')
     const tempurl = `/api/v1/customer/register`;
     console.log(tempurl);
-    this.http.post<CustomerEnquiry>( tempurl , CustomerEnquiry, httpOptions);
-    
+    this.http.post<any>( tempurl , CustomerEnquiry, httpOptions);
   }
 }
 

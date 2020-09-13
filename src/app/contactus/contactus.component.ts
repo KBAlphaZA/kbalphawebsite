@@ -90,11 +90,11 @@ export class ContactusComponent implements OnInit {
         CustomerEnquiry: this.subjectSelected
       };
       //console.log('Form Results=>',f.value);
-      this.http.post('http://localhost:4200/Enquiry/post', f.value);
-
+      this.customerLeadService.postcontact(f.value);
+      
       // Finally reset the form
       f.resetForm();
-
+      
       // visual feedback on forms being sent
       this.openPopUp();
 
