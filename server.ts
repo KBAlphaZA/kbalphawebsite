@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
-var csurf = require('csurf');
+var csrf  = require('csurf');
 var cookieParser = require('cookie-parser');
 //var enquiry = require("../Server/api/Controllers/Enquiry.route")
 var mongoose = require('mongoose');
@@ -14,12 +14,10 @@ app.use(cors());
 // Mongodb Key
 const dburl ='mongodb+srv://coFounderBonga:12345@cluster0.kkaq0.azure.mongodb.net/PotentialClientDb?retryWrites=true&w=majority';
 
-const csrfMiddleware = csurf({
-  cookie: true
-});
+
 
 app.use(cookieParser());
-app.use(csrfMiddleware);
+app.use(csrf({ cookie: true }));
 
 
 // MongoDB Connection
