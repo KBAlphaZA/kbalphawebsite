@@ -13,3 +13,8 @@
 .checkBoxStyling{
   margin-right: 2%;
 }
+
+#mainContent{
+  height: 80%;
+  width: auto;
+}

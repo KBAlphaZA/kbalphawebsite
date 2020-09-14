@@ -4,17 +4,17 @@
   <mat-dialog-content>
       <mat-horizontal-stepper>
           <mat-step [stepControl]="firstGroup">
-            <form>
+            <form [formGroup]="firstGroup">
                 <ng-template matStepLabel>Contact Details</ng-template>
                 <div>
                   <mat-form-field class="example-full-width">
                     <mat-label>Full Name</mat-label>
-                    <input type="text" matInput placeholder="Full Name">
+                    <input type="text" matInput placeholder="Full Name" formControlName="fullName">
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Cellphone</mat-label>
-                    <input height="150px" type="tel" matInput placeholder="Cellphone">
+                    <input type="tel" matInput placeholder="Cellphone">
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width">
@@ -147,6 +147,15 @@
                   <h2>Before Submitting to use please double check all your information</h2>
               </div>
 
+
+
+              <!--Main content-->
+              <div id="mainContent" style="background-color: greenyellow;">
+
+              </div>
+
+
+              <!--Bottom commands-->
               <div class="columns">
 
                 <div class="column">
@@ -163,6 +172,10 @@
                         </span>
                       </label>
                   </div>
+
+                  <br>
+
+                  <label>File name goes here</label>
                 </div>
 
                 <mat-dialog-actions align="center" class="column">

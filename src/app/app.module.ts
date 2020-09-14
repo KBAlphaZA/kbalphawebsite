@@ -17,7 +17,7 @@ import { TechstackcomponentComponent } from './TechStack/techstackcomponent/tech
 import { OurTeamComponent } from './Team/our-team/our-team.component';
 import { LandingpagecomponentComponent } from './LandingPage/landingpagecomponent/landingpagecomponent.component';
 import { PlatformofferingcomponentComponent } from './PlatformDevelopmentOfferings/platformofferingcomponent/platformofferingcomponent.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ScrollanimationComponent } from './components/subcomponent/animation/scrollanimation/scrollanimation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule  } from '@angular/material/input';
@@ -86,7 +86,8 @@ export function playerFactory(){
     MatDialogModule,
     MatCheckboxModule,
     MatStepperModule,
-    MatSliderModule
+    MatSliderModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
