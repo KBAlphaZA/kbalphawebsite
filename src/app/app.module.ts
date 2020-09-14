@@ -31,6 +31,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
+import { MatSliderModule } from '@angular/material/slider';
 import {HttpClientModule} from '@angular/common/http';
 import { ContactyouanimationComponent } from './components/subcomponent/animation/communicationanimations/contactyouanimation/contactyouanimation.component';
 import { ThankyoupopComponent } from './components/subcomponent/popups/thankyoupop/thankyoupop.component';
@@ -84,7 +85,8 @@ export function playerFactory(){
     MatTableModule,
     MatDialogModule,
     MatCheckboxModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

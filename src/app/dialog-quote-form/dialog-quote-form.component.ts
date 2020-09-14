@@ -6,15 +6,21 @@ import { FormGroup, Form } from '@angular/forms';
   templateUrl: './dialog-quote-form.component.html',
   styleUrls: ['./dialog-quote-form.component.css']
 })
+
 export class DialogQuoteFormComponent implements OnInit {
 
   firstGroup: FormGroup;
   secondGroup: FormGroup;
 
+  sliderValue = 1;
+
+  disabled = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
   submitQuote(quoteForm){
 

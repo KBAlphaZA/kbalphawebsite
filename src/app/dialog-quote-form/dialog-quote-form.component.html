@@ -4,44 +4,179 @@
   <mat-dialog-content>
       <mat-horizontal-stepper>
           <mat-step [stepControl]="firstGroup">
+            <form>
+                <ng-template matStepLabel>Contact Details</ng-template>
+                <div>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Full Name</mat-label>
+                    <input type="text" matInput placeholder="Full Name">
+                  </mat-form-field>
 
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Cellphone</mat-label>
+                    <input height="150px" type="tel" matInput placeholder="Cellphone">
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput placeholder="Email">
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Company</mat-label>
+                    <input type="text" matInput placeholder="Company">
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Vat number</mat-label>
+                    <input type="text" matInput placeholder="Vat No.">
+                  </mat-form-field>
+
+                  <div>
+                    <button mat-button matStepperNext color="primary">Next</button>
+                  </div>
+                </div>
+            </form>
           </mat-step>
 
           <mat-step [stepControl]="secondGroup">
+              <form>
+                <ng-template matStepLabel>Project Details</ng-template>
 
+                  <div>
+
+                    <h1 class="title">Pick the platforms you want the solution to be made for</h1>
+
+                    <!--Mobile Development-->
+                    <div>
+                      <label class="checkbox">
+                        <input type="checkbox">
+                        Mobile Development
+                      </label>
+                    </div>
+
+                    <br>
+
+                    <!--Web Development-->
+                    <div>
+                      <label class="checkbox">
+                        <input type="checkbox">
+                          Web Development
+                      </label>
+                    </div>
+
+                    <br>
+
+                    <!--IoT Development-->
+                    <div>
+                      <label class="checkbox">
+                        <input type="checkbox">
+                          IoT Development
+                      </label>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <!--Industry-->
+                  <div>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Industry</mat-label>
+                      <input type="text" matInput placeholder="Industry">
+                    </mat-form-field>
+                  </div>
+
+                  <br>
+
+                  <!--Use cases-->
+                  <div>
+
+                    <h1>How many features must this application have</h1>
+
+                    <br>
+
+                      <label>{{sliderValue.toString()}}</label>
+
+
+                    <div>
+                      <mat-slider id="matSlider" [(ngModel)]="sliderValue"
+                      [disabled]="disabled"
+                      tickInterval="1"
+                      min="1"
+                      max="10"
+                      [step]="1"
+                      >
+                    </mat-slider>
+                    </div>
+
+                    <br>
+
+                    <!--use case list with text boxes-->
+                    <div>
+                        <h3>1 0f 10</h3>
+
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Feature 1</mat-label>
+                          <input type="text" matInput placeholder="feature description">
+                        </mat-form-field>
+                    </div>
+
+                    <!--Previous and next buttons-->
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button matStepperNext>Next</button>
+                    </div>
+
+
+                  </div>
+
+                  <!--Upload a design spec document-->
+                  <div>
+
+                  </div>
+              </form>
           </mat-step>
 
           <mat-step>
+            <form>
+              <ng-template matStepLabel>Finish</ng-template>
 
+              <!--Summary with editable input labels-->
+              <div>
+                  <!--header label-->
+                  <h2>Before Submitting to use please double check all your information</h2>
+              </div>
+
+              <div class="columns">
+
+                <div class="column">
+                  <div class="file">
+                      <label class="file-label">
+                        <input class="file-input" type="file" name="designSpec">
+                        <span class="file-cta">
+                          <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                          </span>
+                          <span>
+                            Upload design specification document
+                          </span>
+                        </span>
+                      </label>
+                  </div>
+                </div>
+
+                <mat-dialog-actions align="center" class="column">
+                  <button type="submit" mat-raised-button [mat-dialog-close]="true" color="primary">Get Quote</button>
+                  <button mat-raised-button mat-dialog-close>Cancel</button>
+                </mat-dialog-actions>
+              </div>
+            </form>
           </mat-step>
 
       </mat-horizontal-stepper>
   </mat-dialog-content>
 
 
-  <div class="columns">
-
-    <div class="column">
-      <div class="file">
-          <label class="file-label">
-            <input class="file-input" type="file" name="designSpec">
-            <span class="file-cta">
-              <span class="file-icon">
-                <i class="fas fa-upload"></i>
-              </span>
-              <span>
-                Upload design specification document
-              </span>
-            </span>
-          </label>
-      </div>
-    </div>
-
-    <mat-dialog-actions align="center" class="column">
-      <button type="submit" mat-raised-button [mat-dialog-close]="true" color="primary">Get Quote</button>
-      <button mat-raised-button mat-dialog-close>Cancel</button>
-    </mat-dialog-actions>
-  </div>
 
 </form>
 
