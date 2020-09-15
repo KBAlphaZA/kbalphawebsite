@@ -186,9 +186,98 @@
       </div>
   </mat-tab>
 
+  <!--FINANCE-->
   <mat-tab label="Finance">
     <!--Reports-->
       <div class="container">
+
+        <div class="columns">
+          <!--List of current accounts and amounts owed-->
+          <div class="column">
+            <label class="title">Current Clients</label>
+              <mat-card class="cardSizing">
+                <mat-card-header>
+                  <mat-card-title>Altron Technologies</mat-card-title>
+                  <mat-card-subtitle>Altron@technologies.com</mat-card-subtitle>
+                  <mat-card-subtitle>Total Amount Due: R5000</mat-card-subtitle>
+                </mat-card-header>
+
+                <!--List of clients that are under billing-->
+                <mat-card-content>
+
+                  <div class="columns">
+
+                    <div class="column">
+                        <label>On maintiance plan</label>
+                        <br>
+                      <label>No</label>
+                    </div>
+
+                    <div class="column">
+                        <label>Total Paid</label>
+
+                        <br>
+                        <br>
+                        <mat-progress-bar mode="determinate" [value]=90></mat-progress-bar>
+
+                    </div>
+
+                  </div>
+
+                </mat-card-content>
+
+              </mat-card>
+          </div>
+
+
+          <!--Goals for end of year-->
+          <div class="column">
+            <label class="title">Financials</label>
+            <mat-card class="cardSizing">
+              <mat-card-header>
+                <mat-card-title>Revenue (2020) </mat-card-title>
+                <mat-card-subtitle>R 0</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+
+              </mat-card-content>
+
+
+            </mat-card>
+
+            <br>
+
+            <mat-card class="cardSizing">
+              <mat-card-header>
+                <mat-card-title>Costs (2020) </mat-card-title>
+                <mat-card-subtitle>R - 0</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+
+              </mat-card-content>
+
+
+            </mat-card>
+
+            <br>
+
+            <mat-card class="cardSizing">
+              <mat-card-header>
+                <mat-card-title>Profit/Loss (2020) </mat-card-title>
+                <mat-card-subtitle>R 0</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+
+              </mat-card-content>
+
+
+            </mat-card>
+          </div>
+
+      </div>
 
       </div>
   </mat-tab>
