@@ -38,6 +38,9 @@ import { ThankyoupopComponent } from './components/subcomponent/popups/thankyoup
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AdminViewComponent } from './components/Login/admin-view/admin-view.component';
 import { DialogQuoteFormComponent } from './dialog-quote-form/dialog-quote-form.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 
@@ -87,7 +90,10 @@ export function playerFactory(){
     MatCheckboxModule,
     MatStepperModule,
     MatSliderModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressBarModule,
+    MatChipsModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
