@@ -1,53 +1,139 @@
-<div id="mainContainer">
-  <mat-tab-group mat-align-tabs="center">
+<mat-tab-group mat-align-tabs="center">
 
-    <mat-tab label="Customer leads">
-        <!--Main container-->
-        <div class="columns">
+  <mat-tab label="Customer leads">
+      <!--Main container to send quotes-->
+      <div class="container">
+        <mat-card class="cardSizing">
+          <!--Company name-->
+           <mat-card-header>
+            <mat-card-title>Altron Technologies</mat-card-title>
+            <mat-card-subtitle>@Altrontech.com</mat-card-subtitle>
+           </mat-card-header>
 
-            <!--list of leads-->
-            <div class="column">
-              <mat-list>
-                <div mat-subheader>Customer leads</div>
-                <mat-list-item>
-                  <div mat></div>
-                </mat-list-item>
-              </mat-list>
-            </div>
-            <!--Details of customer-->
-            <div class="column" style="background-color: green;">
-                <mat-card>
-                  <!--Customer Details-->
-                  <mat-card-header>
-                    <mat-card-title>Customer Name</mat-card-title>
-                    <mat-card-subtitle>Customer email</mat-card-subtitle>
-                  </mat-card-header>
+           <mat-card-content>
+             <!--Main column container-->
+             <div class="columns">
+                <!--Left column-->
+                <div class="column">
+                    <label class="title">Quote Summary</label>
 
-                  <mat-card-content>
-                    <p>
-                      List of features with entry box of how long it will take to implemnt that feature
-                    </p>
-                    <input>
-                  </mat-card-content>
+                    <br>
+                    <br>
 
-                  <button>Generate Quote</button>
 
-                </mat-card>
-            </div>
-        </div>
-    </mat-tab>
 
-    <mat-tab label="Current Projects">
-        <div>
+                </div>
 
-        </div>
-    </mat-tab>
+                <!--Right column features and hours needed to complete-->
+                <div class="column">
+                    <label class="subtitle">Hours needed for feature</label>
+                    <br>
+                    <br>
+                    <div>
+                      <mat-label>We need a GPS location feature </mat-label>
+                      <input title="hours">
+                    </div>
+                </div>
+             </div>
 
-    <mat-tab label="Finance">
-        <div>
 
-        </div>
-    </mat-tab>
+           </mat-card-content>
 
-  </mat-tab-group>
-</div>
+           <mat-card-footer>
+             <!--Generate Quote-->
+             <button>Generate Quote</button>
+           </mat-card-footer>
+
+        </mat-card>
+      </div>
+  </mat-tab>
+
+  <mat-tab label="Current Projects">
+    <!--Progress report on projects-->
+      <div class="container">
+        <mat-card class="cardSizing">
+          <mat-card-header>
+              <mat-card-title>Altron Technologies</mat-card-title>
+              <mat-card-subtitle>@Altrontech.com</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+              <div class="columns">
+
+                <!--Job Details-->
+                <div class="column">
+                  <label class="subtitle">Platforms:
+                    <span>
+                      <mat-chip-list>
+                        <mat-chip color="primary">Mobile</mat-chip>
+                        <mat-chip color="primary">Web</mat-chip>
+                        <mat-chip color="primary">IoT</mat-chip>
+                      </mat-chip-list>
+                    </span>
+                  </label>
+                  <br>
+                  <label class="subtitle">Industry: Engineering and Science</label>
+
+
+                  <!--Feature list-->
+                  <div>
+                    <br>
+                     <h3 class="subtitle"><b>5 features</b></h3>
+
+                     <label>1. The App must have a GPS</label>
+                     <br>
+                     <label>2. The App must have a Emailer</label>
+                     <br>
+                     <label>3. The App must have a Sql database</label>
+                     <br>
+                     <label>4. The App must have a google docs api</label>
+                     <br>
+                     <label>5. The App must have a payment system</label>
+
+                     <br>
+                     <br>
+
+                     <button>Design Specification</button>
+
+                  </div>
+                </div>
+
+                <!--Progress bar and project data input area-->
+                <div class="column">
+                  <h3 class="subtitle">Project progress</h3>
+                  <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+
+                  <br>
+                  <br>
+
+                  <!--Development cycle-->
+                  <h3 class="subtitle"><b>Development cycle sheet</b></h3>
+
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Design and development</mat-radio-button>
+                    <br>
+                    <br>
+                    <mat-radio-button value="2">Maintaince</mat-radio-button>
+                  </mat-radio-group>
+
+                  <br>
+                  <br>
+
+                  <button style="background-color: red; text-decoration-color: white;">Delete Project</button>
+
+                </div>
+              </div>
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+  </mat-tab>
+
+  <mat-tab label="Finance">
+    <!--Reports-->
+      <div class="container">
+
+      </div>
+  </mat-tab>
+
+</mat-tab-group>
