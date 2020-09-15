@@ -41,6 +41,7 @@ import { DialogQuoteFormComponent } from './dialog-quote-form/dialog-quote-form.
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -93,7 +94,8 @@ export function playerFactory(){
     ReactiveFormsModule,
     MatProgressBarModule,
     MatChipsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
