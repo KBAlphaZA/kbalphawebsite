@@ -20,7 +20,56 @@
                     <br>
                     <br>
 
+                    <label>Submitted on 15/09/2020</label>
 
+                    <br>
+                    <br>
+
+                    <label>Valid until {{dateValidity}}</label>
+
+
+                    <br>
+                    <br>
+
+                    <!--Number table-->
+                    <table class="table">
+
+
+                      <!--Column titles-->
+                      <thead>
+                        <tr>
+                          <th>Description</th>
+                          <th>Hours</th>
+                          <th>Hourly Rate</th>
+                          <th>Cost</th>
+                        </tr>
+                      </thead>
+
+                      <!--Table Body-->
+                      <tbody>
+                        <td>The Applciation must have GPS location</td>
+                        <td>8</td>
+                        <td>R156.67</td>
+                        <td>R2400.65</td>
+                      </tbody>
+
+                    </table>
+                    <br>
+
+                    <label class="subtitle">Subtotal:  R4682</label>
+
+                    <br>
+
+                    <label class="subtitle">Tax (15%): R709.04</label>
+
+                    <br>
+
+                    <label class="subtitle">Adjustments: R700</label>
+
+                    <br>
+                    <br>
+
+                    <label class="subtitle" style="outline-color: lightblue;"><b>Total: R5289. 94</b></label>
 
                 </div>
 
@@ -31,7 +80,14 @@
                     <br>
                     <div>
                       <mat-label>We need a GPS location feature </mat-label>
-                      <input title="hours">
+                      <input>
+                    </div>
+
+                    <br>
+
+                    <div>
+                      <mat-label>Adjustments </mat-label>
+                      <input>
                     </div>
                 </div>
              </div>
@@ -48,6 +104,8 @@
       </div>
   </mat-tab>
 
+
+  <!--CURRENT PROJECT-->
   <mat-tab label="Current Projects">
     <!--Progress report on projects-->
       <div class="container">
@@ -101,7 +159,7 @@
                 <!--Progress bar and project data input area-->
                 <div class="column">
                   <h3 class="subtitle">Project progress</h3>
-                  <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+                  <mat-progress-bar mode="determinate" [value]=80></mat-progress-bar>
 
                   <br>
                   <br>
@@ -109,11 +167,10 @@
                   <!--Development cycle-->
                   <h3 class="subtitle"><b>Development cycle sheet</b></h3>
 
-                  <mat-radio-group aria-label="Select an option">
-                    <mat-radio-button value="1">Design and development</mat-radio-button>
+                  <mat-radio-group *ngFor="let stage of stages" [(ngModel)]="localStageLabel" aria-label="Select an option">
+                    <mat-radio-button [value]="stage">{{stage}}</mat-radio-button>
                     <br>
                     <br>
-                    <mat-radio-button value="2">Maintaince</mat-radio-button>
                   </mat-radio-group>
 
                   <br>
