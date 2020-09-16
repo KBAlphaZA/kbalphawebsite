@@ -7,8 +7,8 @@
         <mat-card class="cardSizing">
           <!--Company name-->
            <mat-card-header>
-            <mat-card-title>Altron Technologies</mat-card-title>
-            <mat-card-subtitle>@Altrontech.com</mat-card-subtitle>
+            <mat-card-title>{{companyName}}</mat-card-title>
+            <mat-card-subtitle>{{companyEmail}}</mat-card-subtitle>
            </mat-card-header>
 
            <mat-card-content>
@@ -21,7 +21,7 @@
                     <br>
                     <br>
 
-                    <label>Submitted on 15/09/2020</label>
+                    <label>Submitted on {{quoteSubmissionDate}}</label>
 
                     <br>
                     <br>
@@ -50,27 +50,27 @@
                       <tbody>
                         <td>The Applciation must have GPS location</td>
                         <td>8</td>
-                        <td>R156.67</td>
+                        <td>R156.56</td>
                         <td>R2400.65</td>
                       </tbody>
 
                     </table>
                     <br>
 
-                    <label class="subtitle">Subtotal:  R4682</label>
+                    <label class="subtitle">Subtotal:  R {{pvtQuoteFigures.subTotal}}</label>
 
                     <br>
 
-                    <label class="subtitle">Tax (15%): R709.04</label>
+                    <label class="subtitle">Tax (15%): R {{pvtQuoteFigures.tax}}</label>
 
                     <br>
 
-                    <label class="subtitle">Adjustments: R700</label>
+                    <label class="subtitle">Adjustments: R {{pvtQuoteFigures.adjustments}}</label>
 
                     <br>
                     <br>
 
-                    <label class="subtitle" style="outline-color: lightblue;"><b>Total: R5289. 94</b></label>
+                    <label class="subtitle" style="outline-color: lightblue;"><b>Total: R {{pvtQuoteFigures.total}}</b></label>
 
                 </div>
 
@@ -87,8 +87,8 @@
 
                     <tbody>
                       <tr>
-                        <td><Label>GPS is needed for locating drivers</Label></td>
-                        <td><input matInput placeholder="hours required"></td>
+                        <td><Label>Feature description</Label></td>
+                        <td><input matInput placeholder="hours required" type="number" required> hrs</td>
                       </tr>
                     </tbody>
                   </table>
