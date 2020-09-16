@@ -22,6 +22,10 @@ export class AdminViewComponent implements OnInit {
 
   nowSDate = new Date();
 
+
+  // Number of features ordered
+  numberOfChecks: number;
+
   // Development Stage
   stages: string[] = ['Design and development', 'Maintaince'];
 

@@ -1,15 +1,11 @@
 // This the model for a quote that is made
 
 export class Quote{
-  public fullName: string;
-  public cellphone: string;
-  public email: string;
-  public company: string;
-  public vatNumber: string;
-  public platforms: string[];
-  public industry: string;
-  public numberOfFeaturees: number;
-  public featureDetails: string;
-  public designSpecification: string;
+  public validityDateOfQuote: string;
   public dateTimeOfQuote: string;
+  public acceptedQuote: boolean;
+  public total: number;
+  public subTotal: number;
+  public hourlyRate: number;
+  public adjustmentAmount: number;
 }
