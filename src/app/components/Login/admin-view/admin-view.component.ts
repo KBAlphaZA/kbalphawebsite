@@ -111,7 +111,9 @@ export class AdminViewComponent implements OnInit {
 
   // Open PDF
   openPDFFile(){
-
+      // Note: Pass the id for google drive
+      // 1. Open a new tab on chrome with the pdf reader.
+      window.open( 'pdf', '_blank');
   }
 
 }
