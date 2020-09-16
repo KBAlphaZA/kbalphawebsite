@@ -1,6 +1,7 @@
 // This the model for a quote that is made
 
 export class Quote{
+  public quoteId: string;
   public validityDateOfQuote: string;
   public dateTimeOfQuote: string;
   public acceptedQuote: boolean;
