@@ -58,6 +58,7 @@ export class AdminViewComponent implements OnInit {
   // Get and initalize from backend
   localStageLabel: string;
 
+
   ngOnInit(): void {
 
     // Pass the date from the backend object
@@ -72,6 +73,45 @@ export class AdminViewComponent implements OnInit {
     // dateQuoteRequested = dateQuoteRequested + constant value;
 
     return dateQuoteRequested;
+  }
+
+   createQuote(){
+    // take an arguemnt with the quote id
+    const pvtId = '';
+
+    // try running the command
+    try {
+
+      if (pvtId != null){
+
+        // 1. create and format invoice
+
+        // 2. send email to email address with link for accpeting the quote
+
+        // 3. update the data on backend
+
+      }
+
+    }
+    catch (error) {
+      console.log(error);
+    }
+
+  }
+
+  // button to delete the project becuase the client wants to leave and we no longer run the project
+  deleteProject(){
+    // pass the projectId
+    const pvtId = null;
+
+    // 1. check if the passed id is not empty
+    // 2. api qury to delete the project in the database
+
+  }
+
+  // Open PDF
+  openPDFFile(){
+
   }
 
 }

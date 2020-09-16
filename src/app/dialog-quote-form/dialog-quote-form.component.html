@@ -95,11 +95,12 @@
 
                     <br>
 
-                      <label>{{sliderValue.toString()}}</label>
+                      <label>{{sliderValue.value}}</label>
 
 
                     <div>
-                      <mat-slider id="matSlider" [(ngModel)]="sliderValue"
+                      <mat-slider id="matSlider"
+                      #sliderValue
                       [disabled]="disabled"
                       tickInterval="1"
                       min="1"
@@ -113,11 +114,13 @@
 
                     <!--use case list with text boxes-->
                     <div>
-                        <h3>1 0f 10</h3>
+                        <h3>{{sliderValue.value}} of 10</h3>
 
                         <mat-form-field class="example-full-width">
                           <mat-label>Feature 1</mat-label>
-                          <input type="text" matInput placeholder="feature description">
+                          <div>
+                            <input type="text" matInput placeholder="feature description">
+                          </div>
                         </mat-form-field>
                     </div>
 
