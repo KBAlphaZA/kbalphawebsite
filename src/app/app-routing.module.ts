@@ -5,6 +5,8 @@ import { SoftwaredevserviceComponent } from './softwaredevservice/softwaredevser
 import { SerapismedicalComponent } from './serapismedical/serapismedical.component';
 import { LoginComponent} from './components/Login/Login.component';
 import { AdminViewComponent } from './components/Login/admin-view/admin-view.component';
+import { DialogQuoteFormComponent } from './dialog-quote-form/dialog-quote-form.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //import { MongoClient } from 'mongodb';
 
@@ -31,7 +33,7 @@ const routes: Routes = [
   ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), MatDialogModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

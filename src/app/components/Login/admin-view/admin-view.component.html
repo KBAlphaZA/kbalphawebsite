@@ -1,53 +1,326 @@
-<div id="mainContainer">
-  <mat-tab-group mat-align-tabs="center">
+<mat-tab-group mat-align-tabs="center">
 
-    <mat-tab label="Customer leads">
-        <!--Main container-->
+  <!--Customer leads from Get quote section-->
+  <mat-tab label="Customer leads">
+      <!--Main container to send quotes-->
+      <div class="container">
+        <mat-card class="cardSizing">
+          <!--Company name-->
+           <mat-card-header>
+            <mat-card-title>{{companyName}}</mat-card-title>
+            <mat-card-subtitle>{{companyEmail}}</mat-card-subtitle>
+           </mat-card-header>
+
+           <mat-card-content>
+             <!--Main column container-->
+             <div class="columns">
+                <!--Left column-->
+                <div class="column">
+                    <label class="title">Quote Summary</label>
+
+                    <br>
+                    <br>
+
+                    <label>Submitted on {{quoteSubmissionDate}}</label>
+
+                    <br>
+                    <br>
+
+                    <label>Valid until {{dateValidity}}</label>
+
+
+                    <br>
+                    <br>
+
+                    <!--Number table-->
+                    <table class="table">
+
+
+                      <!--Column titles-->
+                      <thead>
+                        <tr>
+                          <th>Description</th>
+                          <th>Hours</th>
+                          <th>Hourly Rate</th>
+                          <th>Cost</th>
+                        </tr>
+                      </thead>
+
+                      <!--Table Body-->
+                      <tbody>
+                        <td>The Applciation must have GPS location</td>
+                        <td>8</td>
+                        <td>R156.56</td>
+                        <td>R2400.65</td>
+                      </tbody>
+
+                    </table>
+                    <br>
+
+                    <label class="subtitle">Subtotal:  R {{pvtQuoteFigures.subTotal}}</label>
+
+                    <br>
+
+                    <label class="subtitle">Tax (15%): R {{pvtQuoteFigures.tax}}</label>
+
+                    <br>
+
+                    <label class="subtitle">Adjustments: R {{pvtQuoteFigures.adjustments}}</label>
+
+                    <br>
+                    <br>
+
+                    <label class="subtitle" style="outline-color: lightblue;"><b>Total: R {{pvtQuoteFigures.total}}</b></label>
+
+                </div>
+
+                <!--Right column features and hours needed to complete-->
+                <div class="column">
+                  <!--Editable table for filling quote-->
+                  <table class="table is-fullwidth is-bordered">
+                    <thead>
+                      <tr>
+                        <th>Feature</th>
+                        <th>Hours Required</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td><Label>Feature description</Label></td>
+                        <td><input matInput placeholder="hours required" type="number" required> hrs</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <!--ADjustment Amount-->
+                  <input matInput placeholder="Adjustment amount">
+                </div>
+             </div>
+
+
+           </mat-card-content>
+
+           <mat-card-footer style="margin-bottom: 2%; margin-left: 1%;">
+             <!--Generate Quote-->
+             <button mat-raised-button color="primary">Generate Quote</button>
+           </mat-card-footer>
+
+        </mat-card>
+      </div>
+  </mat-tab>
+
+
+  <!--CURRENT PROJECT-->
+  <mat-tab label="Current Projects">
+    <!--Progress report on projects-->
+      <div class="container">
+        <mat-card class="cardSizing">
+          <mat-card-header>
+              <mat-card-title>Altron Technologies</mat-card-title>
+              <mat-card-subtitle>@Altrontech.com</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+              <div class="columns">
+
+                <!--Job Details-->
+                <div class="column">
+                  <label class="subtitle">Platforms:
+                    <span>
+                      <mat-chip-list aria-label="Fish selection">
+                        <mat-chip color="primary">Mobile</mat-chip>
+                        <mat-chip color="primary" selected>Web</mat-chip>
+                        <mat-chip color="primary" selected>IoT</mat-chip>
+                      </mat-chip-list>
+                    </span>
+                  </label>
+                  <br>
+                  <label class="subtitle">Industry: Engineering and Science</label>
+
+
+                  <!--Feature list-->
+                  <div>
+                    <br>
+                     <h3 class="subtitle"><b>5 features</b></h3>
+
+                     <mat-checkbox> The App must have a GPS</mat-checkbox>
+                     <br>
+                     <mat-checkbox> The App must have a Emailer</mat-checkbox>
+                     <br>
+                     <mat-checkbox> The App must have a Sql database</mat-checkbox>
+                     <br>
+                     <mat-checkbox>The App must have a google docs api</mat-checkbox>
+                     <br>
+                     <mat-checkbox>The App must have a payment system</mat-checkbox>
+
+                     <br>
+                     <br>
+
+                     <button mat-raised-button color="primary">Design Specification</button>
+
+                  </div>
+                </div>
+
+                <!--Progress bar and project data input area-->
+                <div class="column">
+                  <h3 class="subtitle">Project progress</h3>
+                  <mat-progress-bar mode="determinate" [value]=80></mat-progress-bar>
+
+                  <br>
+                  <br>
+
+                  <!--Development cycle-->
+                  <h3 class="subtitle"><b>Development cycle sheet</b></h3>
+
+                  <mat-radio-group *ngFor="let stage of stages" [(ngModel)]="localStageLabel" aria-label="Select an option">
+                    <mat-radio-button [value]="stage">{{stage}}</mat-radio-button>
+                    <br>
+                    <br>
+                  </mat-radio-group>
+
+                  <br>
+                  <br>
+
+                  <button mat-raised-button color="warn">Delete Project</button>
+
+                </div>
+              </div>
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+  </mat-tab>
+
+  <!--FINANCE-->
+  <mat-tab label="Finance">
+    <!--Reports-->
+      <div class="container">
+
         <div class="columns">
+          <!--List of current accounts and amounts owed-->
+          <div class="column">
+            <label class="title">Current Clients</label>
+              <mat-card class="cardSizing">
+                <mat-card-header>
+                  <mat-card-title>Altron Technologies</mat-card-title>
+                  <mat-card-subtitle>Altron@technologies.com</mat-card-subtitle>
+                  <mat-card-subtitle>Total Amount Due: R5000</mat-card-subtitle>
+                </mat-card-header>
 
-            <!--list of leads-->
-            <div class="column">
-              <mat-list>
-                <div mat-subheader>Customer leads</div>
-                <mat-list-item>
-                  <div mat></div>
-                </mat-list-item>
-              </mat-list>
-            </div>
-            <!--Details of customer-->
-            <div class="column" style="background-color: green;">
-                <mat-card>
-                  <!--Customer Details-->
-                  <mat-card-header>
-                    <mat-card-title>Customer Name</mat-card-title>
-                    <mat-card-subtitle>Customer email</mat-card-subtitle>
-                  </mat-card-header>
+                <!--List of clients that are under billing-->
+                <mat-card-content>
 
-                  <mat-card-content>
-                    <p>
-                      List of features with entry box of how long it will take to implemnt that feature
-                    </p>
-                    <input>
-                  </mat-card-content>
+                  <div class="columns">
 
-                  <button>Generate Quote</button>
+                    <div class="column">
+                        <label>On maintiance plan</label>
+                        <br>
+                      <label>No</label>
+                    </div>
 
-                </mat-card>
-            </div>
-        </div>
-    </mat-tab>
+                    <div class="column">
+                        <label>Total Paid</label>
 
-    <mat-tab label="Current Projects">
-        <div>
+                        <br>
+                        <br>
+                        <mat-progress-bar mode="determinate" [value]=90></mat-progress-bar>
 
-        </div>
-    </mat-tab>
+                    </div>
 
-    <mat-tab label="Finance">
-        <div>
+                  </div>
 
-        </div>
-    </mat-tab>
+                </mat-card-content>
 
-  </mat-tab-group>
-</div>
+              </mat-card>
+          </div>
+
+
+          <!--Goals for end of year-->
+          <div class="column">
+            <label class="title">Financials</label>
+            <mat-card class="cardSizing">
+              <mat-card-header>
+                <mat-card-title>Revenue (2020) </mat-card-title>
+                <mat-card-subtitle>R 0</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+
+              </mat-card-content>
+
+
+            </mat-card>
+
+            <br>
+
+            <mat-card class="cardSizing">
+              <mat-card-header>
+                <mat-card-title>Costs (2020) </mat-card-title>
+                <mat-card-subtitle>R - 0</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+
+              </mat-card-content>
+
+
+            </mat-card>
+
+            <br>
+
+            <mat-card class="cardSizing">
+              <mat-card-header>
+                <mat-card-title>Profit/Loss (2020) </mat-card-title>
+                <mat-card-subtitle>R 0</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+
+              </mat-card-content>
+
+
+            </mat-card>
+          </div>
+
+      </div>
+
+      </div>
+  </mat-tab>
+
+  <!--Contact us list from those-->
+  <mat-tab label="Enquires">
+    <div class="container">
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Full name</th>
+            <th>Cellphone number</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Subject</th>
+          </tr>
+        </thead>
+        <!--Data body-->
+        <tbody>
+          <tr>
+            <td>Khanyisani Buthelezi</td>
+            <td>0609887758</td>
+            <td>khanyisani.buthelezi03@gmail.com</td>
+            <td>KB Alpha</td>
+            <td>Software development</td>
+          </tr>
+
+          <tr>
+            <td>Bonga Ngcobo</td>
+            <td>0709887758</td>
+            <td>Bonga.developer@outlook.com</td>
+            <td>Blades grocery</td>
+            <td>Pescado Farms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>
