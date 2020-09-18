@@ -89,7 +89,8 @@ export class ContactusComponent implements OnInit {
         MetaData: meta,
         CustomerEnquiry: this.subjectSelected
       };
-      this.customerLeadService.postcontact(f.value);
+      console.log(f.value);
+      this.customerLeadService.postcontact(f.value);// we need to return this function and use the sever messages
       
       // Finally reset the form
       f.resetForm();

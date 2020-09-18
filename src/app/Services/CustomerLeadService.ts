@@ -11,15 +11,19 @@ const httpOptions = {
     providedIn: 'root'
 })
 export class CustomerLeadService{
-  
-  constructor(private http:HttpClient) {} 
 
-  postcontact( CustomerEnquiry:any ) {
-    console.log('post contact was reached')
-    const tempurl = `www.kbalpha.co.za/api/v1/customer/register`;
+  constructor(private http:HttpClient) {}
+
+  postcontact( CustomerEnquiry: any ) {
+    console.log('post contact was reached');
+    // const tempurl = `www.kbalpha.co.za/api/v1/customer/register`;
+    const tempurl = `https://kbalphawebapi.herokuapp.com/api/v1/customer/register`;
     console.log(tempurl);
-    this.http.post( tempurl , CustomerEnquiry, httpOptions);
-    
+    return this.http.post( tempurl , CustomerEnquiry, {observe: 'response'})
+    .subscribe(resp => {
+      console.log(' Response => ', resp);
+    });
+
   }
 }
 
