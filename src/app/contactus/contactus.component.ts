@@ -56,7 +56,8 @@ export class ContactusComponent implements OnInit {
      {serviceName: Subjects.Careers, viewValue: 'Careers'}
    ];
 
-  constructor(private customerLeadService:CustomerLeadService) { this.ngOnInit(); }
+  
+  constructor(private customerLeadService:CustomerLeadService, private pvtsnackBar: MatSnackBar) { this.ngOnInit(); }
 
   ngOnInit(): void {
 
@@ -67,11 +68,8 @@ export class ContactusComponent implements OnInit {
   onSendRequest(f: NgForm) {
       /*take all the user data and send it to database.*/
 
-      this.customerCellphone = this.clientCellphone;
       this.customerName = this.clientName;
-      this.customerMessage = this.clientMessage;
-      this.customerEmail = this.customerEmail;
-      this.customerCompany = this.clientCompanyName;
+      
       // set the subject selectd here from the front end
       this.subjectSelected = Subjects.GeneralEnquiry;
 
@@ -89,24 +87,23 @@ export class ContactusComponent implements OnInit {
         MetaData: meta,
         CustomerEnquiry: this.subjectSelected
       };
-      console.log(f.value);
-      this.customerLeadService.postcontact(f.value);// we need to return this function and use the sever messages
-      
+
+      this.customerLeadService.postcontact(f.value);// we need to return this function and use the sever messages   
+
+      // visual feedback on forms being sent
+      this.openPopUp(this.clientName);
+
       // Finally reset the form
       f.resetForm();
-      
-      // visual feedback on forms being sen8-6t
-      this.openPopUp();
-
   }
 
 
   // snackbar method
-  private openPopUp(){
+  private openPopUp(leadName: string){
 
-    this.snackbar.openFromComponent(ThankyoupopComponent,
-      {duration: this.duration * 1000,  verticalPosition: 'bottom'}
-      );
+    const formattedString = 'Thank you ' + leadName + ', we\'ll keep touch' ;
+
+    this.pvtsnackBar.open(formattedString, 'close', {duration: 1000 * this.duration});
 
   }
 

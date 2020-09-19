@@ -15,7 +15,7 @@ export class DialogQuoteFormComponent implements OnInit {
   firstGroup: FormGroup;
   secondGroup: FormGroup;
 
-  sliderValue = 1;
+  numberOfFeatureInputs: string[];
 
   disabled = false;
 

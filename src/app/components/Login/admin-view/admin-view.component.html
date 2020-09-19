@@ -49,7 +49,7 @@
                       <!--Table Body-->
                       <tbody>
                         <td>The Applciation must have GPS location</td>
-                        <td>8</td>
+                        <td>{{hoursNeeded.value}}</td>
                         <td>R156.56</td>
                         <td>R2400.65</td>
                       </tbody>
@@ -65,7 +65,7 @@
 
                     <br>
 
-                    <label class="subtitle">Adjustments: R {{pvtQuoteFigures.adjustments}}</label>
+                    <label class="subtitle">Adjustments: R {{adjustableAmount.value}}</label>
 
                     <br>
                     <br>
@@ -88,13 +88,13 @@
                     <tbody>
                       <tr>
                         <td><Label>Feature description</Label></td>
-                        <td><input matInput placeholder="hours required" type="number" required> hrs</td>
+                        <td><input #hoursNeeded matInput placeholder="hours required" type="number" required></td>
                       </tr>
                     </tbody>
                   </table>
 
                   <!--ADjustment Amount-->
-                  <input matInput placeholder="Adjustment amount">
+                  <input #adjustableAmount matInput placeholder="Adjustment amount">
                 </div>
              </div>
 
@@ -103,7 +103,7 @@
 
            <mat-card-footer style="margin-bottom: 2%; margin-left: 1%;">
              <!--Generate Quote-->
-             <button mat-raised-button color="primary">Generate Quote</button>
+             <button (click)="createQuote()" mat-raised-button color="primary">Generate Quote</button>
            </mat-card-footer>
 
         </mat-card>
@@ -157,7 +157,7 @@
                      <br>
                      <br>
 
-                     <button mat-raised-button color="primary">Design Specification</button>
+                     <button (click)="openPDFFile()" mat-raised-button color="primary">Design Specification</button>
 
                   </div>
                 </div>
@@ -182,7 +182,7 @@
                   <br>
                   <br>
 
-                  <button mat-raised-button color="warn">Delete Project</button>
+                  <button (click)="deleteProject()" mat-raised-button color="warn">Delete Project</button>
 
                 </div>
               </div>
