@@ -54,7 +54,7 @@ export class ContactusComponent implements OnInit {
      {serviceName: Subjects.Careers, viewValue: 'Careers'}
    ];
 
-  constructor() { this.ngOnInit(); }
+  constructor(private pvtsnackBar: MatSnackBar) { this.ngOnInit(); }
 
   ngOnInit(): void {
 
@@ -90,21 +90,20 @@ export class ContactusComponent implements OnInit {
 
       // return this.http.post('http://localhost:4200/Enquiry/post', f);
 
+      // visual feedback on forms being sent
+      this.openPopUp(this.clientName);
+
       // Finally reset the form
       f.resetForm();
-
-      // visual feedback on forms being sent
-      this.openPopUp();
-
   }
 
 
   // snackbar method
-  private openPopUp(){
+  private openPopUp(leadName: string){
 
-    this.snackbar.openFromComponent(ThankyoupopComponent,
-      {duration: this.duration * 1000,  verticalPosition: 'bottom'}
-      );
+    const formattedString = 'Thank you ' + leadName + ', we\'ll keep touch' ;
+
+    this.pvtsnackBar.open(formattedString, 'close', {duration: 1000 * this.duration});
 
   }
 
