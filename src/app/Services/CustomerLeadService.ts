@@ -11,15 +11,19 @@ const httpOptions = {
     providedIn: 'root'
 })
 export class CustomerLeadService{
-  private baseUrl = 'http:localhost:8000'; //URL to web server
-  constructor(private http:HttpClient) {} 
 
-  postcontact(CustomerEnquiry:CustomerEnquiry) {
-    console.log('post contact was reached')
-    const tempurl = `${this.baseUrl}/api/v1/customer/register`;
+  constructor(private http:HttpClient) {}
+
+  postcontact( CustomerEnquiry: any ) {
+    console.log('post contact was reached');
+    // const tempurl = `www.kbalpha.co.za/api/v1/customer/register`;
+    const tempurl = `https://kbalphawebapi.herokuapp.com/api/v1/customer/register`;
     console.log(tempurl);
-    var values = this.http.post<CustomerEnquiry>( tempurl ,CustomerEnquiry,httpOptions);
-    console.log('returned values=> ', values)
+    return this.http.post( tempurl , CustomerEnquiry, {observe: 'response'})
+    .subscribe(resp => {
+      console.log(' Response => ', resp);
+    });
+
   }
 }
 
