@@ -4,9 +4,10 @@ import { HomeComponent } from './Home/home/home.component';
 import { SoftwaredevserviceComponent } from './softwaredevservice/softwaredevservice.component';
 import { SerapismedicalComponent } from './serapismedical/serapismedical.component';
 import { LoginComponent} from './components/Login/Login.component';
-import { AdminViewComponent } from './components/Login/admin-view/admin-view.component';
+import {AdminviewComponent} from './components/Portal/Admin/adminview/adminview.component';
 import { DialogQuoteFormComponent } from './dialog-quote-form/dialog-quote-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { from } from 'rxjs';
 
 //import { MongoClient } from 'mongodb';
 
@@ -27,7 +28,7 @@ const routes: Routes = [
    {path: 'about', component: SoftwaredevserviceComponent} ,
    {path: 'serapismedical', component: SerapismedicalComponent},
    {path: 'admin/login', component: LoginComponent},
-   {path: 'admin/login/adminView', component: AdminViewComponent}
+   {path: 'admin/login/adminView', component: AdminviewComponent}
    // { path: '**', component: HomeComponent },
  // { path: '**', component: HomeComponent },  // Wildcard route for a 404 page[PAGE NOT FOUND]
   ];

@@ -31,7 +31,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatIconModule} from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import {HttpClientModule} from '@angular/common/http';
 import { ContactyouanimationComponent } from './components/subcomponent/animation/communicationanimations/contactyouanimation/contactyouanimation.component';
 import { ThankyoupopComponent } from './components/subcomponent/popups/thankyoupop/thankyoupop.component';
@@ -47,6 +49,7 @@ import { CurrentprojectsviewComponent } from './components/Portal/CurrentProject
 import { FinancesviewComponent } from './components/Portal/Finances/financesview/financesview.component';
 import { CrmdataviewComponent } from './components/Portal/CRMData/crmdataview/crmdataview.component';
 import { AdminviewComponent } from './components/Portal/Admin/adminview/adminview.component';
+import { ViewContainerComponent } from './components/Portal/ViewContainer/view-container/view-container.component';
 
 
 
@@ -80,6 +83,7 @@ export function playerFactory(){
     FinancesviewComponent,
     CrmdataviewComponent,
     AdminviewComponent,
+    ViewContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,7 +109,9 @@ export function playerFactory(){
     MatProgressBarModule,
     MatChipsModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
