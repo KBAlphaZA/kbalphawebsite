@@ -147,7 +147,7 @@
               <!--Summary with editable input labels-->
               <div>
                   <!--header label-->
-                  <h2>Before Submitting to use please double check all your information</h2>
+                  <h2>Before Submitting to use, please double check all your information</h2>
               </div>
 
 
@@ -164,7 +164,7 @@
                 <div class="column">
                   <div class="file">
                       <label class="file-label">
-                        <input class="file-input" type="file" name="designSpec">
+                        <input class="file-input" (change)="handleFileInput($event.target.files)" type="file" name="designSpec">
                         <span class="file-cta">
                           <span class="file-icon">
                             <i class="fas fa-upload"></i>
@@ -178,7 +178,13 @@
 
                   <br>
 
-                  <label>File name goes here</label>
+                  <mat-label>
+                    <span>
+                      <i class="fas fa-file"></i>
+                    </span>
+                    <span>{{ fileName }}</span>
+                  </mat-label>
+
                 </div>
 
                 <mat-dialog-actions align="center" class="column">

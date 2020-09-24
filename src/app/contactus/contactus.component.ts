@@ -28,7 +28,7 @@ export class ContactusComponent implements OnInit {
   // http client protocols
   http: HttpClient;
   @Output() postcontact: EventEmitter<any> = new EventEmitter();
-  
+
   snackbar: MatSnackBar;
 
   duration = 5;
@@ -56,7 +56,7 @@ export class ContactusComponent implements OnInit {
      {serviceName: Subjects.Careers, viewValue: 'Careers'}
    ];
 
-  
+
   constructor(private customerLeadService:CustomerLeadService, private pvtsnackBar: MatSnackBar) { this.ngOnInit(); }
 
   ngOnInit(): void {
@@ -69,7 +69,7 @@ export class ContactusComponent implements OnInit {
       /*take all the user data and send it to database.*/
 
       this.customerName = this.clientName;
-      
+
       // set the subject selectd here from the front end
       this.subjectSelected = Subjects.GeneralEnquiry;
 
@@ -88,7 +88,7 @@ export class ContactusComponent implements OnInit {
         CustomerEnquiry: this.subjectSelected
       };
 
-      this.customerLeadService.postcontact(f.value);// we need to return this function and use the sever messages   
+      this.customerLeadService.postcontact(f.value);// we need to return this function and use the sever messages
 
       // visual feedback on forms being sent
       this.openPopUp(this.clientName);

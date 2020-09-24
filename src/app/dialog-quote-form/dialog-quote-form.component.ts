@@ -19,6 +19,12 @@ export class DialogQuoteFormComponent implements OnInit {
 
   disabled = false;
 
+  private maxFileSize = 4000000;
+
+  fileToUpload: File;
+
+  fileName = '';
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -26,6 +32,32 @@ export class DialogQuoteFormComponent implements OnInit {
       this.secondGroup = this.formBuilder.group({someValue: ['']});
   }
 
+  handleFileInput(pvtFileToUpload: FileList){
+
+    this.fileToUpload = pvtFileToUpload.item(0);
+    const fileSize = this.fileToUpload.size;
+    const fileType = this.fileToUpload.type;
+    this.fileName = this.fileToUpload.name;
+
+    // 1. Check if the size is 4mb or less
+    if (this.checkFileSize(fileSize, fileType)){
+        // Add data and file data to the document
+    }
+    else{
+      // Open snack-bar with red background to alert the user that an error occured
+      if (fileSize > this.maxFileSize){
+        // use the pop up dialog to tell the user that the file is too big
+      }
+      // Error messages
+      else{
+      if ( fileType.substring(12) !== '/pdf' ||
+             fileType.substring(12) !== '/docx'){
+          // display a file type error
+        }
+      }
+    }
+
+  }
 
   private compileToCompletQuote(pvtFirstGroup: FormGroup, pvtSecondGroup: FormGroup): Quote {
 
@@ -42,5 +74,17 @@ export class DialogQuoteFormComponent implements OnInit {
     // http.post(completeForm);
 
     // 3. reset the form and close the dialog
+  }
+
+
+    // This method is used to check the file size and type due to the fact that
+    private checkFileSize(pvtFileSize: number, pvtFileType: string): boolean{
+    if ((pvtFileSize <= this.maxFileSize) && (pvtFileType === 'application/pdf' || pvtFileType === 'application.docx'))
+    {
+       return true;
+    }
+    else{
+      return false;
+    }
   }
 }

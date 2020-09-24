@@ -42,6 +42,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
+import { QuotegenerationviewComponent } from './components/Portal/quotegenerationview/quotegenerationview.component';
+import { CurrentprojectsviewComponent } from './components/Portal/CurrentProjects/currentprojectsview/currentprojectsview.component';
+import { FinancesviewComponent } from './components/Portal/Finances/financesview/financesview.component';
+import { CrmdataviewComponent } from './components/Portal/CRMData/crmdataview/crmdataview.component';
+import { AdminviewComponent } from './components/Portal/Admin/adminview/adminview.component';
 
 
 
@@ -70,6 +75,11 @@ export function playerFactory(){
     ThankyoupopComponent,
     AdminViewComponent,
     DialogQuoteFormComponent,
+    QuotegenerationviewComponent,
+    CurrentprojectsviewComponent,
+    FinancesviewComponent,
+    CrmdataviewComponent,
+    AdminviewComponent,
   ],
   imports: [
     BrowserModule,
