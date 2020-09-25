@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { MatSlider } from '@angular/material/slider';
 import { Quote } from 'src/app/Server/Models/Quote';
 
 @Component({
@@ -9,15 +10,16 @@ import { Quote } from 'src/app/Server/Models/Quote';
 })
 
 export class DialogQuoteFormComponent implements OnInit {
-
+  form: FormGroup;
   quoteForm: Quote;
-
+  
   firstGroup: FormGroup;
   secondGroup: FormGroup;
 
   numberOfFeatureInputs: string[];
 
   disabled = false;
+  numbers: number[];
 
   private maxFileSize = 4000000;
 
@@ -25,9 +27,13 @@ export class DialogQuoteFormComponent implements OnInit {
 
   fileName = '';
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {
+      this.numbers = Array(10).fill(1).map((x, i) => i);
+   }
+
 
   ngOnInit(): void {
+      
       this.firstGroup = this.formBuilder.group({fullName: ['']});
       this.secondGroup = this.formBuilder.group({someValue: ['']});
   }
@@ -56,6 +62,10 @@ export class DialogQuoteFormComponent implements OnInit {
         }
       }
     }
+
+  pitch(event: any) {
+    console.log('pitch=>  ', event.value);
+    this.numbers = Array(event.value).fill(0).map((x, i) => i);
 
   }
 
