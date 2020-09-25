@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Quote } from 'src/app/Server/Models/Quote';
 import { CurrentProjectInfo } from 'src/app/Server/Models/CurrentProjectInformation';
 import { QuoteFinance } from 'src/app/Server/Models/Finance';
+import { utils } from 'protractor';
+import { Equations } from 'src/app/Server/Utils/Equations';
 
 @Component({
   selector: 'app-admin-view',
@@ -15,8 +17,13 @@ export class AdminViewComponent implements OnInit {
 
 
   constructor() { }
+
   // Object with the quote infomation
   quoteObj: Quote;
+
+
+  // Calculator
+  calculator: Equations = new Equations();
 
   // object with all the project details
   currentProjectObj: CurrentProjectInfo;
@@ -58,13 +65,22 @@ export class AdminViewComponent implements OnInit {
   // Get and initalize from backend
   localStageLabel: string;
 
+  // hourly rate
+  pvtHourlyRate = this.calculator.hourlyRate;
+
+  // Feature cost (Use the calculator defined in the class equation to calculate)
+  featureCost: number;
+
+  // test var
+  hrs = 0;
 
   ngOnInit(): void {
 
     // Pass the date from the backend object
     this.dateValidity = this.generateExpiryDateLabel(this.nowSDate).toString();
-
+    this.featureCost = this.pvtHourlyRate * this.hrs;
   }
+
 
   // Quote validity date generator
   private generateExpiryDateLabel(dateQuoteRequested: Date): Date {

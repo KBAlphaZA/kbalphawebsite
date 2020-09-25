@@ -50,8 +50,8 @@
                       <tbody>
                         <td>The Applciation must have GPS location</td>
                         <td>{{hoursNeeded.value}}</td>
-                        <td>R156.56</td>
-                        <td>R2400.65</td>
+                        <td>R {{ pvtHourlyRate }}</td>
+                        <td>R {{ featureCost }}</td>
                       </tbody>
 
                     </table>
@@ -88,7 +88,7 @@
                     <tbody>
                       <tr>
                         <td><Label>Feature description</Label></td>
-                        <td><input #hoursNeeded matInput placeholder="hours required" type="number" required></td>
+                        <td><input [(ngModel)]="hrs" #hoursNeeded matInput placeholder="hours required" type="number" required></td>
                       </tr>
                     </tbody>
                   </table>
@@ -286,41 +286,6 @@
       </div>
 
       </div>
-  </mat-tab>
-
-  <!--Contact us list from those-->
-  <mat-tab label="Enquires">
-    <div class="container">
-      <table class="table is-fullwidth">
-        <thead>
-          <tr>
-            <th>Full name</th>
-            <th>Cellphone number</th>
-            <th>Email</th>
-            <th>Company</th>
-            <th>Subject</th>
-          </tr>
-        </thead>
-        <!--Data body-->
-        <tbody>
-          <tr>
-            <td>Khanyisani Buthelezi</td>
-            <td>0609887758</td>
-            <td>khanyisani.buthelezi03@gmail.com</td>
-            <td>KB Alpha</td>
-            <td>Software development</td>
-          </tr>
-
-          <tr>
-            <td>Bonga Ngcobo</td>
-            <td>0709887758</td>
-            <td>Bonga.developer@outlook.com</td>
-            <td>Blades grocery</td>
-            <td>Pescado Farms</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </mat-tab>
 
 </mat-tab-group>

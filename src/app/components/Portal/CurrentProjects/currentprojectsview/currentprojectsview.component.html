@@ -1,0 +1,77 @@
+<!--Progress report on projects-->
+<div class="container">
+  <mat-card class="cardSizing">
+    <mat-card-header>
+        <mat-card-title>Altron Technologies</mat-card-title>
+        <mat-card-subtitle>@Altrontech.com</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div class="columns">
+
+          <!--Job Details-->
+          <div class="column">
+            <label class="subtitle">Platforms:
+              <span>
+                <mat-chip-list aria-label="Fish selection">
+                  <mat-chip color="primary">Mobile</mat-chip>
+                  <mat-chip color="primary" selected>Web</mat-chip>
+                  <mat-chip color="primary" selected>IoT</mat-chip>
+                </mat-chip-list>
+              </span>
+            </label>
+            <br>
+            <label class="subtitle">Industry: Engineering and Science</label>
+
+
+            <!--Feature list-->
+            <div>
+              <br>
+               <h3 class="subtitle"><b>5 features</b></h3>
+
+               <mat-checkbox> The App must have a GPS</mat-checkbox>
+               <br>
+               <mat-checkbox> The App must have a Emailer</mat-checkbox>
+               <br>
+               <mat-checkbox> The App must have a Sql database</mat-checkbox>
+               <br>
+               <mat-checkbox>The App must have a google docs api</mat-checkbox>
+               <br>
+               <mat-checkbox>The App must have a payment system</mat-checkbox>
+
+               <br>
+               <br>
+
+               <button (click)="openPDFFile()" mat-raised-button color="primary">Design Specification</button>
+
+            </div>
+          </div>
+
+          <!--Progress bar and project data input area-->
+          <div class="column">
+            <h3 class="subtitle">Project progress</h3>
+            <mat-progress-bar mode="determinate" [value]=80></mat-progress-bar>
+
+            <br>
+            <br>
+
+            <!--Development cycle-->
+            <h3 class="subtitle"><b>Development cycle sheet</b></h3>
+
+            <mat-radio-group *ngFor="let stage of stages" [(ngModel)]="localStageLabel" aria-label="Select an option">
+              <mat-radio-button [value]="stage">{{stage}}</mat-radio-button>
+              <br>
+              <br>
+            </mat-radio-group>
+
+            <br>
+            <br>
+
+            <button (click)="deleteProject()" mat-raised-button color="warn">Delete Project</button>
+
+          </div>
+        </div>
+    </mat-card-content>
+
+  </mat-card>
+</div>
