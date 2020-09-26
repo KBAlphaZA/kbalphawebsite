@@ -103,6 +103,7 @@
                       #sliderValue
                       [disabled]="disabled"
                       tickInterval="1"
+                      (input)="pitch($event)"
                       min="1"
                       max="10"
                       [step]="1"
@@ -111,17 +112,22 @@
                     </div>
 
                     <br>
-
+                    
                     <!--use case list with text boxes-->
                     <div>
-                        <h3>{{sliderValue.value}} of 10</h3>
-
-                        <mat-form-field class="example-full-width">
-                          <mat-label>Feature 1</mat-label>
-                          <div>
-                            <input type="text" matInput placeholder="feature description">
-                          </div>
+                        <h3> {{ sliderValue.value }} of 10</h3>
+                        
+                        <mat-form-field class="example-full-width" [formGroup]="form">
+                          <mat-card id="matform-card-1" *ngFor="let x of numbers" >  
+                          <br/>
+                            <mat-label> Feature {{ x }} </mat-label>
+                            <div>
+                              <br/>
+                              <input type="text"  matInput placeholder="feature description">
+                            </div>
+                          </mat-card>
                         </mat-form-field>
+                        
                     </div>
 
                     <!--Previous and next buttons-->
