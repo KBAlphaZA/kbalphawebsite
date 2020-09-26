@@ -2,8 +2,8 @@
 
 export class Equations{
 
-  // How we charge per hour of development
-  private hourlyRate = 156.23;
+  // How we charge per hour for development
+  public readonly hourlyRate = 156.23;
 
   // South African tax rate
   private taxRate = 0.15;
@@ -34,11 +34,24 @@ export class Equations{
   }
 
 
-  // Subtotal calculator
+  // Subtotal calculator (Before tax)
   private calculateSubTotal(pvtTimeReq: number): number{
     const subTotal = this.totalFeatureCost * this.hourlyRate;
 
     return subTotal;
+  }
+
+  // Returns the amount to be paid as a deposit which is 10%
+  public calculateDepostAmount(pvtTotal): number{
+    const depositAmount = pvtTotal * 0.10;
+
+    return depositAmount;
+  }
+
+  // calculates the individual item cost
+  public featureCost(pvtHoursReq: number): number{
+    let itemFeatureCost: number;
+    return itemFeatureCost = pvtHoursReq * this.hourlyRate;
   }
 
   // Calculates the Total amount for the invoice

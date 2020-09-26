@@ -1,0 +1,106 @@
+<!--Main container to send quotes-->
+<div class="container">
+  <mat-card class="cardSizing">
+    <!--Company name-->
+     <mat-card-header>
+      <mat-card-title>{{companyName}}</mat-card-title>
+      <mat-card-subtitle>{{companyEmail}}</mat-card-subtitle>
+     </mat-card-header>
+
+     <mat-card-content>
+       <!--Main column container-->
+       <div class="columns">
+          <!--Left column-->
+          <div class="column">
+              <label class="title">Quote Summary</label>
+
+              <br>
+              <br>
+
+              <label>Submitted on: {{quoteSubmissionDate}}</label>
+
+              <br>
+              <br>
+
+              <label>Valid until: insert expiry date here</label>
+
+
+              <br>
+              <br>
+
+              <!--Number table-->
+              <table class="table">
+
+
+                <!--Column titles-->
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>Hours</th>
+                    <th>Hourly Rate</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+
+                <!--Table Body-->
+                <tbody>
+                  <td>The Applciation must have GPS location</td>
+                  <td>{{hoursNeeded.value}}</td>
+                  <td>R {{ pvtHourlyRate }}</td>
+                  <td>R {{ featureCost }}</td>
+                </tbody>
+
+              </table>
+              <br>
+
+              <label class="subtitle">Subtotal:  R {{pvtQuoteFigures.subTotal}}</label>
+
+              <br>
+
+              <label class="subtitle">Tax (15%): R {{pvtQuoteFigures.tax}}</label>
+
+              <br>
+
+              <label class="subtitle">Adjustments: R {{adjustableAmount.value}}</label>
+
+              <br>
+              <br>
+
+              <label class="subtitle" style="outline-color: lightblue;"><b>Total: R {{pvtQuoteFigures.total}}</b></label>
+
+          </div>
+
+          <!--Right column features and hours needed to complete-->
+          <div class="column">
+            <!--Editable table for filling quote-->
+            <table class="table is-fullwidth is-bordered">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Hours Required</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td><Label>Feature description</Label></td>
+                  <td><input [(ngModel)]="hoursReq" #hoursNeeded matInput placeholder="hours required" type="number" required></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!--ADjustment Amount-->
+            <input #adjustableAmount matInput placeholder="Adjustment amount">
+          </div>
+       </div>
+
+
+     </mat-card-content>
+
+     <mat-card-footer style="margin-bottom: 2%; margin-left: 1%;">
+       <!--Generate Quote-->
+       <button (click)="createQuote()" mat-raised-button color="primary">Generate Quote</button>
+     </mat-card-footer>
+
+  </mat-card>
+</div>
