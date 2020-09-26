@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Quote } from 'src/app/Server/Models/Quote';
 import { ClientDetails } from '../Server/Models/ClientDetails';
 import { QuoteFinance } from '../Server/Models/Finance';
-import { Project } from '../Server/Models/Project';
+import { PlatformsToDevelopOn, Project } from '../Server/Models/Project';
 
 @Component({
   selector: 'app-dialog-quote-form',
@@ -15,7 +15,7 @@ import { Project } from '../Server/Models/Project';
 
 export class DialogQuoteFormComponent implements OnInit {
 
-  quoteForm: Quote;
+  quoteForm: Quote = new Quote();
 
   form: FormGroup;
 
@@ -35,8 +35,6 @@ export class DialogQuoteFormComponent implements OnInit {
     {platformName: 'IoT Developemnt', checked: false},
     {platformName: 'AR/VR Development', checked: false}
   ];
-
-  private userSelectedPlatforms: PlatformsToDevelopOn[];
 
   unchecked = false;
 
@@ -128,7 +126,7 @@ export class DialogQuoteFormComponent implements OnInit {
 
       const pvtProjectDetails: Project = {featuresRequested: [],
                                           projectName: ' ',
-                                          platformsToBeDevelopedOn: [],
+                                          platformsToBeDevelopedOn: this.getCheckedItems(this.platforms),
                                           industry: pvtSecondGroup.get('industry').value,
                                           designSpecificationDocument: this.fileToUpload
                                         };
@@ -164,11 +162,11 @@ export class DialogQuoteFormComponent implements OnInit {
   }
 
 
-    // Get the platforms selectewd by the user
+    // Get the platforms selected by the user
     private getCheckedItems(pvtPlatformsChecked: PlatformsToDevelopOn[]): PlatformsToDevelopOn[]{
 
 
-      console.log('In the get checked Items method');
+      let userSelectedPlatforms: PlatformsToDevelopOn[];
 
       // for (const checked of pvtPlatformsChecked){
       //   // loop through to look for the checked boxes
@@ -179,9 +177,9 @@ export class DialogQuoteFormComponent implements OnInit {
       //   }
       // }
 
-      this.userSelectedPlatforms = pvtPlatformsChecked;
+      userSelectedPlatforms = pvtPlatformsChecked;
 
-      return this.userSelectedPlatforms;
+      return userSelectedPlatforms;
     }
 
 
@@ -206,7 +204,3 @@ export class DialogQuoteFormComponent implements OnInit {
   }
 }
 
-export interface PlatformsToDevelopOn{
-  platformName: string;
-  checked: boolean;
-}

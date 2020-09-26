@@ -1,7 +1,7 @@
 export class Project{
   projectName: string;
   featuresRequested: IFeatureListing[];
-  platformsToBeDevelopedOn: string[];
+  platformsToBeDevelopedOn: PlatformsToDevelopOn[];
   industry: string;
   designSpecificationDocument: File;
 }
@@ -12,4 +12,7 @@ export interface IFeatureListing{
   hoursRequired: number;
 }
 
-
+export interface PlatformsToDevelopOn{
+  platformName: string;
+  checked: boolean;
+}
