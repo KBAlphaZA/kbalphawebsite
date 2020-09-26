@@ -3,7 +3,7 @@ export class Project{
   featuresRequested: IFeatureListing[];
   platformsToBeDevelopedOn: string[];
   industry: string;
-  designSpecificationDocument: string;
+  designSpecificationDocument: File;
 }
 
 

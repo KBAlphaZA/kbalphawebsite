@@ -4,5 +4,4 @@ export class ClientDetails{
   public email: string;
   public company: string;
   public vatNumber: string;
-  public industry: string;
 }
