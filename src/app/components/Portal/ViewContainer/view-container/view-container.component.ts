@@ -2,9 +2,16 @@ import { Component, OnInit, Input, OnDestroy, ViewChild, ComponentFactoryResolve
 import { ViewItem } from '../../view-item';
 import { ViewComponent } from '../../view.component';
 import { ViewDirective } from '../../view.directive';
+
+
 @Component({
   selector: 'app-view-container',
-  templateUrl: './view-container.component.html',
+  template: `
+            <div class="mainContainer">
+            <h3>Title of Item selected</h3>
+            <ng-template someView></ng-template>
+            </div>
+  `,
   styleUrls: ['./view-container.component.css']
 })
 export class ViewContainerComponent implements OnInit, OnDestroy {
@@ -21,8 +28,9 @@ export class ViewContainerComponent implements OnInit, OnDestroy {
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
-    this.loadComponent();
-    this.getViews();
+     // this.loadComponent(); Check the documentation with the follwing Url
+     //
+     this.getViews();
   }
 
   ngOnDestroy(){
@@ -32,9 +40,10 @@ export class ViewContainerComponent implements OnInit, OnDestroy {
   loadComponent(){
     this.currentViewIndex = (this.currentViewIndex + 1) % this.views.length;
     const viewItem = this.views[this.currentViewIndex];
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(viewItem.component);
-    const viewContainerRef = this.someView.viewContainerRef;
 
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(viewItem.component);
+
+    const viewContainerRef = this.someView.viewContainerRef;
     viewContainerRef.clear();
 
     const componentRef = viewContainerRef.createComponent<ViewComponent>(componentFactory);
@@ -42,7 +51,9 @@ export class ViewContainerComponent implements OnInit, OnDestroy {
   }
 
   getViews(){
-    this.interval = setInterval(() => {this.loadComponent(); }, 3000);
+    this.interval = setInterval(() => {
+      this.loadComponent();
+    }, 3000);
   }
 
 }

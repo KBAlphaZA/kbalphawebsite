@@ -1,8 +1,9 @@
 <!--Drawer Main container-->
 <mat-drawer-container class="example-container">
   <mat-drawer position="Start" mode="side" opened style="height: auto; width: auto;">
-      <mat-selection-list [multiple]="false">
-        <mat-list-option *ngFor="let menuitem of menuitems">
+      <mat-selection-list [multiple]="false" #itemSelected>
+        <mat-list-option *ngFor="let menuitem of menuitems" [value]="itemSelected">
+          <mat-divider></mat-divider>
           <mat-icon mat-list-icon>{{menuitem.menuItemIcon}}</mat-icon>
           <div mat-line>{{menuitem.menuItemText}}</div>
         </mat-list-option>
@@ -12,6 +13,7 @@
   <!--The drawer content-->
   <mat-drawer-content>
       <!--Load view here-->
-      <!--<app-view-container view></app-view-container>-->
+      <!--<app-view-container [views]="views"></app-view-container>-->
+      <app-view-container></app-view-container>
   </mat-drawer-content>
 </mat-drawer-container>

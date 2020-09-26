@@ -2,7 +2,6 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Quote } from 'src/app/Server/Models/Quote';
 import { CurrentProjectInfo } from 'src/app/Server/Models/CurrentProjectInformation';
 import { QuoteFinance } from 'src/app/Server/Models/Finance';
-import { utils } from 'protractor';
 import { Equations } from 'src/app/Server/Utils/Equations';
 
 @Component({

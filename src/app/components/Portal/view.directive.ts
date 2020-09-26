@@ -1,7 +1,7 @@
 import { Directive, ViewContainerRef} from '@angular/core';
 
 @Directive({
-   selector: '[someView]',
+   selector: '[someView]'
   })
 
 export class ViewDirective {
