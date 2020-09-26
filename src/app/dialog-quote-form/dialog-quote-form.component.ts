@@ -22,7 +22,7 @@ export class DialogQuoteFormComponent implements OnInit {
   numbers: number[];
 
   constructor(private formBuilder: FormBuilder) {
-      this.numbers = Array(10).fill(1).map((x, i) => i);
+      this.numbers = Array(1).fill(1).map((x, i) => i);
    }
 
   ngOnInit(): void {
