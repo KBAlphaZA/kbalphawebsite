@@ -12,7 +12,7 @@ import { Quote } from 'src/app/Server/Models/Quote';
 export class DialogQuoteFormComponent implements OnInit {
   form: FormGroup;
   quoteForm: Quote;
-  
+
   firstGroup: FormGroup;
   secondGroup: FormGroup;
 
@@ -33,7 +33,7 @@ export class DialogQuoteFormComponent implements OnInit {
 
 
   ngOnInit(): void {
-      
+
       this.firstGroup = this.formBuilder.group({fullName: ['']});
       this.secondGroup = this.formBuilder.group({someValue: ['']});
   }
@@ -62,6 +62,7 @@ export class DialogQuoteFormComponent implements OnInit {
         }
       }
     }
+  }
 
   pitch(event: any) {
     console.log('pitch=>  ', event.value);
