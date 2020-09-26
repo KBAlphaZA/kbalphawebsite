@@ -42,7 +42,7 @@ export class DialogQuoteFormComponent implements OnInit {
 
   numbers: number[];
 
-  private maxFileSize = 4000000;
+  private readonly maxFileSize = 4000000;
 
   fileToUpload: File;
 
@@ -84,17 +84,27 @@ export class DialogQuoteFormComponent implements OnInit {
     else{
       // Open snack-bar with red background to alert the user that an error occured
       if (fileSize > this.maxFileSize){
-        this.dialogsnackbar.open('This file is too big, try compressing it or using another file', '', {duration: 7000});
+        this.dialogsnackbar.open('This file is too big, try compressing it or using another file', '',
+                                  {duration: 7000}
+                                );
       }
       // Error messages
       else{
       if ( fileType.substring(12) !== '/pdf' ||
              fileType.substring(12) !== '/docx' ||
-             fileType.substring(12) !== '/zip'){
+             fileType.substring(12) !== '/x-zip-compressed'){
+
           // display a file type error
+          this.dialogsnackbar.open('Error due to wrong file format', ' ',
+                                    {duration: 6000}
+                                  );
+          this.fileName = ' ';
         }
       }
     }
+
+    // 2. See what icon to display for that file type
+    // Use a switch statement
   }
 
   pitch(event: any) {
@@ -177,7 +187,12 @@ export class DialogQuoteFormComponent implements OnInit {
 
     // This method is used to check the file size and type due to the fact that
     private checkFileSize(pvtFileSize: number, pvtFileType: string): boolean{
-    if ((pvtFileSize <= this.maxFileSize) && (pvtFileType === 'application/pdf' || pvtFileType === 'application.docx'))
+    if ((pvtFileSize <= this.maxFileSize) &&
+        (pvtFileType === 'application/pdf' ||
+          pvtFileType === 'application/docx' ||
+          pvtFileType === 'application/x-zip-compressed'
+          )
+        )
     {
        return true;
     }
