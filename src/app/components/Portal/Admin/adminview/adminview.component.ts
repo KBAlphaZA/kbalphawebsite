@@ -11,9 +11,9 @@ import { ViewService } from '../../view.service';
 })
 export class AdminviewComponent implements OnInit {
 
-  view: ViewItem[];
+  views: ViewItem[];
 
-  constructor() { }
+  selectedItem: string;
 
   menuitems: Menu[] =  [
     {menuItemText: 'Quotes', menuItemIcon: 'receipt', viewLink: ' '},
@@ -23,9 +23,12 @@ export class AdminviewComponent implements OnInit {
     {menuItemText: 'Dev ops', menuItemIcon: 'code', viewLink: ''}
   ];
 
+
+  constructor() { }
+
   ngOnInit(): void {
      // goes in the constructor --> private viewService: ViewService
-     // this.view = this.viewService.getViews();
+     // this.views = this.viewService.getViews();
   }
 
 }
