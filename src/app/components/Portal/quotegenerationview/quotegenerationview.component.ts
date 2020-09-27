@@ -20,6 +20,10 @@ export class QuotegenerationviewComponent implements OnInit {
   // Calculator
   calculator: Equations = new Equations();
 
+  // Subtotal local variable
+  subTotal = 0;
+
+
   // Features requested by the client
   tempFeatureList: IFeatureListing[] = [
                                           {feature: 'The Applciation must have GPS location	', hoursRequired: 0, featureCost: 0},
@@ -33,11 +37,6 @@ export class QuotegenerationviewComponent implements OnInit {
   // Get values from Quote object which gets it from backend
   pvtQuoteFigures: QuoteFinance = {total: 200000, subTotal: 2000, tax: 706, hourlyRate: 156.45, deposit: 20000, adjustments: 5000};
 
-  // hourly rate
-  pvtHourlyRate = this.calculator.hourlyRate;
-
-  // Feature cost (Use the calculator defined in the class equation to calculate)
-  featureCost: number;
 
   // hours required
   hoursReq: number;
@@ -95,13 +94,20 @@ export class QuotegenerationviewComponent implements OnInit {
     return features;
   }
 
-  pvtGetSubtTotal(pvtCostList: IFeatureListing[]): number{
-    let pvtSubtotalCost: number;
-    for (const costValue of pvtCostList){
-      pvtSubtotalCost = this.calculator.calculateSubTotal(costValue.featureCost);
+
+  getSubTotal(costs: IFeatureListing[]): number{
+    // iterate through the list
+    console.log('in the method, the subtotal is: ', this.subTotal);
+
+    console.log(costs);
+
+    this.subTotal = 0;
+
+    for (const costValue of costs){
+      this.subTotal = this.subTotal + costValue.featureCost;
     }
 
-    return pvtSubtotalCost;
+    return this.subTotal;
   }
 
   createQuote(quoteID){

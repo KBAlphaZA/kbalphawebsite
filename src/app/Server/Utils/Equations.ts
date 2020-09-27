@@ -15,7 +15,7 @@ export class Equations{
   totalFeatureCost: number;
 
   // Total Cost for services with taxes
-  totalCost: number;
+  totalCost = 0;
 
   // This method is for calculating percentages
   private percentageCalculator(numaratorValue: number, denominator: number): number{
@@ -25,7 +25,8 @@ export class Equations{
 
 
   // calculate the tax amount
-  private calculateTaxAmount(pvtsubtotal: number): number{
+  public calculateTaxAmount(pvtsubtotal: number): number{
+
     this.taxAmount = 0;
 
     this.taxAmount = pvtsubtotal * this.taxRate;
@@ -56,12 +57,12 @@ export class Equations{
   }
 
   // Calculates the Total amount for the invoice
-  private calculateTotalQuote(pvtSubTotal: number, pvtTaxAmount: number, pvtAdjustments){
+  public calculateTotalQuote(pvtSubTotal: number, pvtTaxAmount: number, pvtAdjustments): number{
 
-    this.totalCost = 0;
+    console.log('total cost value: ', this.totalCost);
+    console.log('subtotal cost value: ', pvtSubTotal);
+    console.log('Adujustment value: ', pvtAdjustments);
 
-    this.totalCost = pvtSubTotal + pvtTaxAmount + pvtAdjustments;
-
-    return this.totalCost;
+    return this.totalCost = pvtSubTotal + pvtTaxAmount + pvtAdjustments;
   }
 }

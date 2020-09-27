@@ -53,18 +53,18 @@
                   <td>{{feature.feature}}</td>
                   <td>{{feature.hoursRequired}}</td>
                   <td>R {{ calculator.hourlyRate }}</td>
-                  <td>R {{ calculator.featureCost(feature.hoursRequired) }}</td>
+                  <td [(ngModel)]="feature.featureCost" #featureCost>R {{ calculator.featureCost(feature.hoursRequired) }}</td>
                 </tbody>
 
               </table>
               <br>
 
               <!--calculator.calculateSubTotal()-->
-              <label class="subtitle">Subtotal:  R {{pvtGetSubtTotal(quote.projectReq.featuresRequested)}}</label>
+              <label class="subtitle">Subtotal:  R {{getSubTotal(quote.projectReq.featuresRequested)}}</label>
 
               <br>
 
-              <label class="subtitle">Tax (15%): R {{pvtQuoteFigures.tax}}</label>
+              <label class="subtitle">Tax (15%): R {{calculator.calculateTaxAmount(1000)}}</label>
 
               <br>
 
@@ -73,7 +73,7 @@
               <br>
               <br>
 
-              <label class="subtitle" style="outline-color: lightblue;"><b>Total: R {{pvtQuoteFigures.total}}</b></label>
+              <label class="subtitle" style="outline-color: lightblue;"><b>Total: R 0</b></label>
 
           </div>
 
