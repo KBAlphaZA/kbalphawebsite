@@ -3,5 +3,5 @@ export class ClientDetails{
   public cellphone: string;
   public email: string;
   public company: string;
-  public vatNumber: string;
+  public vatNumber ?: string;
 }

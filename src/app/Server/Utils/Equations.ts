@@ -35,15 +35,16 @@ export class Equations{
 
 
   // Subtotal calculator (Before tax)
-  private calculateSubTotal(pvtTimeReq: number): number{
-    const subTotal = this.totalFeatureCost * this.hourlyRate;
+  public calculateSubTotal(pvtCosts: number): number{
+
+    const subTotal = pvtCosts;
 
     return subTotal;
   }
 
-  // Returns the amount to be paid as a deposit which is 10%
+  // Returns the amount to be paid as a deposit which is 20%
   public calculateDepostAmount(pvtTotal): number{
-    const depositAmount = pvtTotal * 0.10;
+    const depositAmount = pvtTotal * 0.20;
 
     return depositAmount;
   }

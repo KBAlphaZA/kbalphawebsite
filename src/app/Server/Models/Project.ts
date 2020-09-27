@@ -10,6 +10,7 @@ export class Project{
 export interface IFeatureListing{
   feature: string;
   hoursRequired: number;
+  featureCost: number;
 }
 
 export interface PlatformsToDevelopOn{
