@@ -75,6 +75,8 @@ export class DialogQuoteFormComponent implements OnInit {
     const fileType = this.fileToUpload.type;
     this.fileName = this.fileToUpload.name;
 
+    console.log(fileType);
+
     // 1. Check if the size is 4mb or less
     if (this.checkFileSize(fileSize, fileType)){
         // Add data and file data to the document
@@ -156,6 +158,9 @@ export class DialogQuoteFormComponent implements OnInit {
     // http.post(completeForm);
 
     // 3. reset the form and close the dialog
+    this.firstGroup.reset();
+    this.secondGroup.reset();
+    this.thirdGroup.reset();
 
     // 4. Show the user that it went through with a snack-bar
     this.openSnackBar();
