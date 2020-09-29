@@ -9,9 +9,9 @@
         <div class="column is-5-tablet is-4-desktop is-3-widescreen">
           <form class="box">
             <div class="field">
-              <label for="" class="label">Email</label>
+              <label class="label">Email</label>
               <div class="control has-icons-left">
-                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required>
+                <input [(ngModel)]="emailTextBox"  type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required>
                 <span class="icon is-small is-left">
                   <i class="fa fa-envelope"></i>
                 </span>
@@ -20,7 +20,7 @@
             <div class="field">
               <label for="" class="label">Password</label>
               <div class="control has-icons-left">
-                <input type="password" placeholder="*******" class="input" required>
+                <input [(ngModel)]="passwordTextBox" type="password" placeholder="*******" class="input" required>
                 <span class="icon is-small is-left">
                   <i class="fa fa-lock"></i>
                 </span>

@@ -4,16 +4,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
-  selector: 'app-Login',
+  selector: 'app-login',
   templateUrl: './Login.component.html',
   styleUrls: ['./Login.component.scss']
 })
 
 export class LoginComponent implements OnInit {
 
-  LocaldbEmail = 'info@kbalpha';
+  readonly LocaldbEmail = 'info@kbalpha';
 
-  LocaldbPassword = 'LiverpoolRocks';
+  readonly LocaldbPassword = 'LiverpoolRocks';
 
   emailTextBox = '';
 
@@ -21,14 +21,19 @@ export class LoginComponent implements OnInit {
 
   constructor(private localSnackBar: MatSnackBar) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   navigateToAdminMain(){
 
-    console.log('in the method', this.emailTextBox);
+    console.log('email: ', this.emailTextBox);
 
-    if (this.userAuthentication(this.emailTextBox, this.emailTextBox)){
+    console.log('password: ', this.passwordTextBox);
+
+    // location.href = '/admin/login/adminView';
+
+
+    if (this.userAuthentication(this.emailTextBox, this.passwordTextBox)){
 
         location.href = '/admin/login/adminView';
     }
