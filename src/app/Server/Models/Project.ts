@@ -1,15 +1,19 @@
 export class Project{
   projectName: string;
   featuresRequested: IFeatureListing[];
-  platformsToBeDevelopedOn: string[];
+  platformsToBeDevelopedOn: PlatformsToDevelopOn[];
   industry: string;
-  designSpecificationDocument: string;
+  designSpecificationDocument: File;
 }
 
 
 export interface IFeatureListing{
   feature: string;
   hoursRequired: number;
+  featureCost: number;
 }
 
-
+export interface PlatformsToDevelopOn{
+  platformName: string;
+  checked: boolean;
+}

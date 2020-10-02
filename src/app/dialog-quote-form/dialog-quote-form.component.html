@@ -14,22 +14,22 @@
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Cellphone</mat-label>
-                    <input type="tel" matInput placeholder="Cellphone">
+                    <input type="tel" formControlName="cellphoneNumber" matInput placeholder="cellPhone">
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Email</mat-label>
-                    <input type="email" matInput placeholder="Email">
+                    <input type="email" formControlName="email" matInput placeholder="Email">
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Company</mat-label>
-                    <input type="text" matInput placeholder="Company">
+                    <input type="text" formControlName="companyName" matInput placeholder="Company">
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Vat number</mat-label>
-                    <input type="text" matInput placeholder="Vat No.">
+                    <input type="text" formControlName="vatNumber" matInput placeholder="Vat No.">
                   </mat-form-field>
 
                   <div>
@@ -40,40 +40,20 @@
           </mat-step>
 
           <mat-step [stepControl]="secondGroup">
-              <form>
+              <form [formGroup]="secondGroup">
                 <ng-template matStepLabel>Project Details</ng-template>
 
                   <div>
 
                     <h1 class="title">Pick the platforms you want the solution to be made for</h1>
 
-                    <!--Mobile Development-->
-                    <div>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        Mobile Development
-                      </label>
-                    </div>
-
-                    <br>
-
-                    <!--Web Development-->
-                    <div>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                          Web Development
-                      </label>
-                    </div>
-
-                    <br>
-
-                    <!--IoT Development-->
-                    <div>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                          IoT Development
-                      </label>
-                    </div>
+                    <ul>
+                      <li *ngFor="let platform of platforms">
+                        <mat-checkbox>
+                          {{platform.platformName}}
+                        </mat-checkbox>
+                      </li>
+                    </ul>
                   </div>
 
                   <br>
@@ -82,7 +62,7 @@
                   <div>
                     <mat-form-field class="example-full-width">
                       <mat-label>Industry</mat-label>
-                      <input type="text" matInput placeholder="Industry">
+                      <input type="text" formControlName="industry" matInput placeholder="Industry">
                     </mat-form-field>
                   </div>
 
@@ -112,13 +92,13 @@
                     </div>
 
                     <br>
-                    
+
                     <!--use case list with text boxes-->
                     <div>
                         <h3> {{ sliderValue.value }} of 10</h3>
-                        
+
                         <mat-form-field class="example-full-width" [formGroup]="form">
-                          <mat-card id="matform-card-1" *ngFor="let x of numbers" >  
+                          <mat-card id="matform-card-1" *ngFor="let x of numbers" >
                           <br/>
                             <mat-label> Feature {{ x }} </mat-label>
                             <div>
@@ -127,7 +107,7 @@
                             </div>
                           </mat-card>
                         </mat-form-field>
-                        
+
                     </div>
 
                     <!--Previous and next buttons-->
@@ -147,7 +127,7 @@
           </mat-step>
 
           <mat-step>
-            <form>
+            <form [formGroup]="thirdGroup">
               <ng-template matStepLabel>Finish</ng-template>
 
               <!--Summary with editable input labels-->
@@ -170,7 +150,7 @@
                 <div class="column">
                   <div class="file">
                       <label class="file-label">
-                        <input class="file-input" (change)="handleFileInput($event.target.files)" type="file" name="designSpec">
+                        <input class="file-input" formControlName="designSpecFile" (change)="handleFileInput($event.target.files)" type="file" name="designSpec">
                         <span class="file-cta">
                           <span class="file-icon">
                             <i class="fas fa-upload"></i>
@@ -188,13 +168,13 @@
                     <span>
                       <i class="fas fa-file"></i>
                     </span>
-                    <span>{{ fileName }}</span>
+                    <span> {{ fileName }}</span>
                   </mat-label>
 
                 </div>
 
                 <mat-dialog-actions align="center" class="column">
-                  <button type="submit" mat-raised-button [mat-dialog-close]="true" color="primary">Get Quote</button>
+                  <button type="submit" (click)="submitQuote(quoteForm)" mat-raised-button [mat-dialog-close]="true" color="primary">Get Quote</button>
                   <button mat-raised-button mat-dialog-close>Cancel</button>
                 </mat-dialog-actions>
               </div>

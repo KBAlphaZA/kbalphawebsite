@@ -57,7 +57,7 @@ export class ContactusComponent implements OnInit {
    ];
 
 
-  constructor(private customerLeadService:CustomerLeadService, private pvtsnackBar: MatSnackBar) { this.ngOnInit(); }
+  constructor(private customerLeadService: CustomerLeadService, private pvtsnackBar: MatSnackBar) { this.ngOnInit(); }
 
   ngOnInit(): void {
 
@@ -88,7 +88,7 @@ export class ContactusComponent implements OnInit {
         CustomerEnquiry: this.subjectSelected
       };
 
-      this.customerLeadService.postcontact(f.value);// we need to return this function and use the sever messages
+      this.customerLeadService.postcontact(f.value); // we need to return this function and use the sever messages
 
       // visual feedback on forms being sent
       this.openPopUp(this.clientName);
@@ -101,7 +101,7 @@ export class ContactusComponent implements OnInit {
   // snackbar method
   private openPopUp(leadName: string){
 
-    const formattedString = 'Thank you ' + leadName + ', we\'ll keep touch' ;
+    const formattedString = 'Thank you ' + leadName + ', we\'ll keep in touch' ;
 
     this.pvtsnackBar.open(formattedString, 'close', {duration: 1000 * this.duration});
 
