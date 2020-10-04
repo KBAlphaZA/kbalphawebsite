@@ -50,6 +50,7 @@ import { FinancesviewComponent } from './components/Portal/Finances/financesview
 import { CrmdataviewComponent } from './components/Portal/CRMData/crmdataview/crmdataview.component';
 import { AdminviewComponent } from './components/Portal/Admin/adminview/adminview.component';
 import { ViewContainerComponent } from './components/Portal/ViewContainer/view-container/view-container.component';
+import { AccpetedQuoteComponent } from './components/Portal/accpeted-quote/accpeted-quote.component';
 
 
 
@@ -84,6 +85,7 @@ export function playerFactory(){
     CrmdataviewComponent,
     AdminviewComponent,
     ViewContainerComponent,
+    AccpetedQuoteComponent,
   ],
   imports: [
     BrowserModule,

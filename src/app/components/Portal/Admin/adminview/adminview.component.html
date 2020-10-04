@@ -1,8 +1,9 @@
 <!--Drawer Main container-->
 <mat-drawer-container class="example-container">
+
   <mat-drawer position="Start" mode="side" opened style="height: auto; width: auto;">
-      <mat-selection-list [multiple]="false" #itemSelected>
-        <mat-list-option *ngFor="let menuitem of menuitems" [value]="itemSelected">
+      <mat-selection-list [multiple]="false" #itemSelected (onclick)="displayItem()">
+        <mat-list-option *ngFor="let menuitem of menuitems">
           <mat-divider></mat-divider>
           <mat-icon mat-list-icon>{{menuitem.menuItemIcon}}</mat-icon>
           <div mat-line>{{menuitem.menuItemText}}</div>
@@ -17,6 +18,6 @@
      <!-- <app-quotegenerationview></app-quotegenerationview>-->
      <!--<app-financesview></app-financesview>-->
      <!--<app-crmdataview></app-crmdataview>-->
-     <!----><app-currentprojectsview></app-currentprojectsview>
+     <!--<app-currentprojectsview></app-currentprojectsview>-->
   </mat-drawer-content>
 </mat-drawer-container>
