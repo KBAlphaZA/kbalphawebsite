@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class LoginComponent implements OnInit {
 
-  readonly LocaldbEmail = 'info@kbalpha';
+  readonly LocaldbEmail = 'info@kbalpha.co.za';
 
   readonly LocaldbPassword = 'LiverpoolRocks';
 

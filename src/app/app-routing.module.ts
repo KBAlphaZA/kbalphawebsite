@@ -3,13 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './Home/home/home.component';
 import { SoftwaredevserviceComponent } from './softwaredevservice/softwaredevservice.component';
 import { SerapismedicalComponent } from './serapismedical/serapismedical.component';
-import { LoginComponent} from './components/Login/Login.component';
+// import { LoginComponent} from './components/Login/Login.component';
 import {AdminviewComponent} from './components/Portal/Admin/adminview/adminview.component';
 import { DialogQuoteFormComponent } from './dialog-quote-form/dialog-quote-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent} from './components/Portal/Login/login/login.component';
 import { from } from 'rxjs';
 
-//import { MongoClient } from 'mongodb';
+// import { MongoClient } from 'mongodb';
 
 // estblish a connection
 // MongoClient.connect(process.env.KB_ALPHA_DB_URI,
