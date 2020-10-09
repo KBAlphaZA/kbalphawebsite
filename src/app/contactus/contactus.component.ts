@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { CustomerEnquiry } from '../Server/Models/CustomerEnquiry';
 import {EnquiryMetaData} from '../Server/Models/EnquiryMetaData';
 import { Location, PlatformLocation } from '@angular/common';

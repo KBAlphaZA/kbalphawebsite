@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Form } from '@angular/forms';
-import { MatSlider } from '@angular/material/slider';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Quote } from 'src/app/Server/Models/Quote';
 import { ClientDetails } from '../Server/Models/ClientDetails';
-import { QuoteFinance } from '../Server/Models/Finance';
+import { KBAlphaPaymentOptions, QuoteFinance } from '../Server/Models/Finance';
 import { PlatformsToDevelopOn, Project } from '../Server/Models/Project';
 
 @Component({
@@ -13,21 +12,85 @@ import { PlatformsToDevelopOn, Project } from '../Server/Models/Project';
   styleUrls: ['./dialog-quote-form.component.css']
 })
 
+
 export class DialogQuoteFormComponent implements OnInit {
 
+  // General quote information
   quoteForm: Quote = new Quote();
+
+  // Quote finaincing
+  pvtQuoteFinance: QuoteFinance = new QuoteFinance();
 
   form: FormGroup;
 
+  // Client details
   firstGroup: FormGroup;
 
+  // project details
   secondGroup: FormGroup;
 
+  // Payment options selcetions
   thirdGroup: FormGroup;
+
+  // Finlization of quote
+  fourthGroup: FormGroup;
 
   disabled: boolean;
 
   numberOfFeatureInputs: string[];
+
+  // The options card data (should come from the backend in the future)
+  paymentOptionCards: PaymentOptionsCards[] = [
+    {
+      paymentOption: {
+        optionId: 1,
+      paymentOptionName: 'Full',
+      description: 'You pay the full amount up front',
+      term: '1',
+      deposit: 1,
+      onCompletion: 0,
+      maintaince: 0
+      },
+      backgroundPicture: '/assets/1.png'
+    },
+    {
+      paymentOption: {
+      optionId: 2,
+      paymentOptionName: 'Halves',
+      description: 'You pay the half for the deposit and the other half on completion',
+      term: '2',
+      deposit: 0.50,
+      onCompletion: 0.50,
+      maintaince: 0
+      },
+      backgroundPicture: '/assets/2.png'
+    },
+    {
+      paymentOption: {
+        optionId: 3,
+        paymentOptionName: 'Thirds',
+        description: 'You pay the stipulated amount in 2 installements and a third being paid out monthly for maintiance',
+        term: '3',
+        deposit: 0.25,
+        onCompletion: 0.25,
+        maintaince: 0.50
+      },
+      backgroundPicture: '/assets/3.png'
+    },
+    {
+      paymentOption: {
+        optionId: 4,
+        paymentOptionName: 'Quarter',
+        description: 'You pay the amount up in 4 installments',
+        term: '4',
+        deposit: 0.334,
+        onCompletion: 0.334,
+        maintaince: 0.334
+      },
+      backgroundPicture: '/assets/4.png'
+    },
+
+  ];
 
   platforms: PlatformsToDevelopOn[] = [
     {platformName: 'Mobile Development', checked: false},
@@ -46,6 +109,8 @@ export class DialogQuoteFormComponent implements OnInit {
 
   fileName = '';
 
+  fileTypeIcon = '';
+
   constructor(private formBuilder: FormBuilder, private dialogsnackbar: MatSnackBar) {
       this.ngOnInit();
       this.numbers = Array(10).fill(1).map((x, i) => i);
@@ -55,16 +120,18 @@ export class DialogQuoteFormComponent implements OnInit {
   ngOnInit(): void {
 
       this.firstGroup = this.formBuilder.group(
-        {fullName: [''],
-         cellphoneNumber: [''],
-         email: [''],
-         companyName: [''],
-         vatNumber: ['']
+        {
+         fullName: '',
+         cellphoneNumber: '',
+         email: '',
+         companyName: '',
+         vatNumber: ''
       });
 
       this.secondGroup = this.formBuilder.group(
-        {industry: [''],
-         platforms: [this.getCheckedItems(this.platforms)]
+        {
+          industry: '',
+          platforms: this.getCheckedItems(this.platforms)
       });
   }
 
@@ -161,6 +228,7 @@ export class DialogQuoteFormComponent implements OnInit {
     this.firstGroup.reset();
     this.secondGroup.reset();
     this.thirdGroup.reset();
+    this.fourthGroup.reset();
 
     // 4. Show the user that it went through with a snack-bar
     this.openSnackBar();
@@ -207,5 +275,10 @@ export class DialogQuoteFormComponent implements OnInit {
   private openSnackBar(){
     this.dialogsnackbar.open('Thank you, we will stay in touch', 'close', {duration: 7000});
   }
+}
+
+interface PaymentOptionsCards{
+  paymentOption: KBAlphaPaymentOptions;
+  backgroundPicture: string;
 }
 

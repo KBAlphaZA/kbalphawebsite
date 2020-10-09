@@ -15,9 +15,9 @@ export class LoginComponent implements OnInit {
 
   readonly LocaldbPassword = 'LiverpoolRocks';
 
-  emailTextBox = '';
+  emailTextBox = ' ';
 
-  passwordTextBox = '';
+  passwordTextBox = ' ';
 
   constructor(private localSnackBar: MatSnackBar) { }
 
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
     console.log('password: ', this.passwordTextBox);
 
-    location.href = '/admin/login/adminView';
+    // location.href = '/admin/login/adminView';
 
 
     if (this.userAuthentication(this.emailTextBox, this.passwordTextBox)){

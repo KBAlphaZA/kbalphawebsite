@@ -112,7 +112,7 @@
 
                     <!--Previous and next buttons-->
                     <div>
-                      <button mat-raised-button matStepperPrevious>Back</button>
+                      <button style="margin-right: 1%;" mat-raised-button matStepperPrevious>Back</button>
                       <button mat-raised-button color="primary" matStepperNext>Next</button>
                     </div>
 
@@ -126,8 +126,74 @@
               </form>
           </mat-step>
 
-          <mat-step>
-            <form [formGroup]="thirdGroup">
+          <mat-step [stepControl]="thirdGroup">
+            <ng-template matStepLabel>Finance</ng-template>
+
+            <div>
+
+              <br>
+
+              <h3 class="title  is-1">Payment options</h3>
+
+              <label class="subclass"><b>Please pick how you want to pay for the development of the software</b></label>
+
+
+              <br>
+              <br>
+
+              <!--Options rendered here-->
+              <div class="columns">
+                <div class="column" onclick="location.href='#'" style="cursor: pointer;" *ngFor="let option of paymentOptionCards" #optionVar>
+                  <mat-card class="cardStyling" [ngStyle]="{'max-width.px': '100%'}">
+                    <mat-card-title>
+                      <img mat-card-image [src]="option.backgroundPicture">
+                    </mat-card-title>
+
+                    <mat-card-subtitle style="color: white">
+                      <b>{{option.paymentOption.paymentOptionName}}</b>
+                    </mat-card-subtitle>
+
+                    <mat-card-content>
+
+                      <label><b>Deposit: </b>{{option.paymentOption.deposit * 100}}%</label>
+
+                      <br>
+                      <br>
+
+                      <label><b>Service description: </b>{{option.paymentOption.description}}</label>
+
+                      <br>
+                      <br>
+
+                      <label><b>Amount due on completion: </b> {{option.paymentOption.onCompletion * 100}}%</label>
+
+                      <br>
+                      <br>
+
+                      <label><b>Maintaince: </b>{{option.paymentOption.maintaince * 100}}%</label>
+
+                      <br>
+                      <br>
+
+                      <label><b>Support duration: </b> {{option.paymentOption.term}} years</label>
+
+                    </mat-card-content>
+
+                  </mat-card>
+                </div>
+              </div>
+
+
+              <span>
+                <button style="margin-right: 1%;" mat-raised-button matStepperPrevious>Back</button>
+
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+              </span>
+            </div>
+          </mat-step>
+
+          <mat-step [stepControl]="fourthGroup">
+            <form [formGroup]="fourthGroup">
               <ng-template matStepLabel>Finish</ng-template>
 
               <!--Summary with editable input labels-->
@@ -135,8 +201,6 @@
                   <!--header label-->
                   <h2>Before Submitting to use, please double check all your information</h2>
               </div>
-
-
 
               <!--Main content-->
               <div id="mainContent" style="background-color: greenyellow;">

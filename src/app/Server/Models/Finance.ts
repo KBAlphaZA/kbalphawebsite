@@ -6,6 +6,7 @@ export class QuoteFinance{
   hourlyRate: number;
   subTotal: number;
   deposit: number;
+  selectedPaymentOptions: KBAlphaPaymentOptions;
 }
 
 export class ProjectFinance{
@@ -19,4 +20,14 @@ export class CompanyFinance{
   revenue: number;
   costs: number;
   pNL: number;
+}
+
+export interface KBAlphaPaymentOptions{
+  optionId: number;
+  paymentOptionName: string;
+  description: string;
+  term: string;
+  deposit: number;
+  onCompletion: number;
+  maintaince: number;
 }

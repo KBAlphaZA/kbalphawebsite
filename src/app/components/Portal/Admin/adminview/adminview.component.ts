@@ -29,11 +29,10 @@ export class AdminviewComponent implements OnInit {
   ngOnInit(): void {
      // goes in the constructor --> private viewService: ViewService
      // this.views = this.viewService.getViews();
-     this.displayItem();
   }
 
   displayItem(){
-    console.log('works');
+
   }
 
 }
