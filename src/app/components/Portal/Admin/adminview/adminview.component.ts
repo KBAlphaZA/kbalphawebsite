@@ -13,7 +13,7 @@ export class AdminviewComponent implements OnInit {
 
   views: ViewItem[];
 
-  selectedItem: string;
+  selectedItem: Menu;
 
   menuitems: Menu[] =  [
     {menuItemText: 'Quotes', menuItemIcon: 'receipt', viewLink: ' ', viewID: 'quote'},
@@ -29,10 +29,6 @@ export class AdminviewComponent implements OnInit {
   ngOnInit(): void {
      // goes in the constructor --> private viewService: ViewService
      // this.views = this.viewService.getViews();
-  }
-
-  displayItem(){
-
   }
 
 }
