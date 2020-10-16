@@ -193,7 +193,8 @@ export class DialogQuoteFormComponent implements OnInit {
                                                company: pvtFirstGroup.get('companyName').value
                                               };
 
-      const pvtProjectDetails: Project = {featuresRequested: [],
+      const pvtProjectDetails: Project = {
+                                          featuresRequested: [],
                                           projectName: ' ',
                                           platformsToBeDevelopedOn: this.getCheckedItems(this.platforms),
                                           industry: pvtSecondGroup.get('industry').value,
@@ -215,10 +216,11 @@ export class DialogQuoteFormComponent implements OnInit {
 
 
   submitQuote(quoteForm){
+
     // 1. compile into a single form using the method defined locally
     const completeForm = this.compileToCompletQuote(this.firstGroup, this.secondGroup, this.thirdGroup);
 
-    // TEsting purposes
+    // Testing purposes
     console.log(completeForm);
 
     // 2. send this information to the backend
@@ -239,20 +241,23 @@ export class DialogQuoteFormComponent implements OnInit {
     private getCheckedItems(pvtPlatformsChecked: PlatformsToDevelopOn[]): PlatformsToDevelopOn[]{
 
 
-      let userSelectedPlatforms: PlatformsToDevelopOn[];
+      const localArray = new Array();
 
-      // for (const checked of pvtPlatformsChecked){
-      //   // loop through to look for the checked boxes
+      pvtPlatformsChecked.forEach(element => {
+        if (element.checked === true){
+          localArray.push(element);
+        }
+      });
 
-      //   if (checked.checked === true){
-      //     console.log('checked');
-      //     this.userSelectedPlatforms.push(checked);
-      //   }
-      // }
+      return localArray;
+    }
 
-      userSelectedPlatforms = pvtPlatformsChecked;
+     // sets the value of the object to true on ticking
+     setValue(checked: boolean, name: string): boolean{
 
-      return userSelectedPlatforms;
+      const someObj = this.platforms.find(t => t.platformName === name);
+
+      return someObj.checked = checked;
     }
 
 

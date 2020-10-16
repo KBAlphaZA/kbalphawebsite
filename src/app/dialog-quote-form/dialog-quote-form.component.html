@@ -49,7 +49,7 @@
 
                     <ul>
                       <li *ngFor="let platform of platforms">
-                        <mat-checkbox>
+                        <mat-checkbox (ngModel)="platform.checked" (change)="setValue($event.checked, platform.platformName)">
                           {{platform.platformName}}
                         </mat-checkbox>
                       </li>
