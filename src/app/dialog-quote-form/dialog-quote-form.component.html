@@ -130,7 +130,6 @@
             <ng-template matStepLabel>Finance</ng-template>
 
             <div>
-
               <br>
 
               <h3 class="title  is-1">Payment options</h3>
@@ -143,13 +142,12 @@
 
               <!--Options rendered here-->
               <div class="columns">
-                <div class="column" onclick="location.href='#'" style="cursor: pointer;" *ngFor="let option of paymentOptionCards" #optionVar>
-                  <mat-card class="cardStyling" [ngStyle]="{'max-width.px': '100%'}">
-                    <mat-card-title>
-                      <img mat-card-image [src]="option.backgroundPicture">
-                    </mat-card-title>
+                <div class="column" (click)="optionPicked($event)" style="cursor: pointer;" *ngFor="let option of paymentOptionCards" #optionVar>
+                  <mat-card class="cardStyling" [ngStyle]="{'border-color': option.borderColour}">
 
-                    <mat-card-subtitle style="color: white">
+                    <img mat-card-image [src]="option.backgroundPicture">
+
+                    <mat-card-subtitle>
                       <b>{{option.paymentOption.paymentOptionName}}</b>
                     </mat-card-subtitle>
 

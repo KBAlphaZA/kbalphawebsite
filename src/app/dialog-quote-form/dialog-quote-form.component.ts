@@ -37,6 +37,10 @@ export class DialogQuoteFormComponent implements OnInit {
 
   disabled: boolean;
 
+  defaultBorderColour = '#2C3E7B';
+
+  selectedBorderColour = 'green';
+
   numberOfFeatureInputs: string[];
 
   // The options card data (should come from the backend in the future)
@@ -51,7 +55,8 @@ export class DialogQuoteFormComponent implements OnInit {
       onCompletion: 0,
       maintaince: 0
       },
-      backgroundPicture: '/assets/1.png'
+      backgroundPicture: '/assets/1.png',
+      borderColour: this.defaultBorderColour
     },
     {
       paymentOption: {
@@ -63,7 +68,8 @@ export class DialogQuoteFormComponent implements OnInit {
       onCompletion: 0.50,
       maintaince: 0
       },
-      backgroundPicture: '/assets/2.png'
+      backgroundPicture: '/assets/2.png',
+      borderColour: this.defaultBorderColour
     },
     {
       paymentOption: {
@@ -75,7 +81,8 @@ export class DialogQuoteFormComponent implements OnInit {
         onCompletion: 0.25,
         maintaince: 0.50
       },
-      backgroundPicture: '/assets/3.png'
+      backgroundPicture: '/assets/3.png',
+      borderColour: this.defaultBorderColour
     },
     {
       paymentOption: {
@@ -87,7 +94,8 @@ export class DialogQuoteFormComponent implements OnInit {
         onCompletion: 0.334,
         maintaince: 0.334
       },
-      backgroundPicture: '/assets/4.png'
+      backgroundPicture: '/assets/4.png',
+      borderColour: this.defaultBorderColour
     },
 
   ];
@@ -260,6 +268,16 @@ export class DialogQuoteFormComponent implements OnInit {
       return someObj.checked = checked;
     }
 
+    optionPicked(item: any){
+
+      // 1. set to null to clear any selected item
+      item = null;
+
+      // 2. set the border colour of the selected card
+      console.log('item clicked', item);
+
+      // return the selected card
+    }
 
     // This method is used to check the file size and type due to the fact that
     private checkFileSize(pvtFileSize: number, pvtFileType: string): boolean{
@@ -285,5 +303,6 @@ export class DialogQuoteFormComponent implements OnInit {
 interface PaymentOptionsCards{
   paymentOption: KBAlphaPaymentOptions;
   backgroundPicture: string;
+  borderColour: string;
 }
 
