@@ -91,51 +91,49 @@
                   <!--Use cases-->
                   <div>
 
-                    <h1>How many features must this application have</h1>
+                    <mat-form-field class="feature-form-field">
+                      <mat-label>Please Enter Your Feature</mat-label>
+					            <input matInput #fetureinput type="text" [(ngModel)]="value" placeholder="Ex. pat@example.com"> 
+					  
+                      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon>close</mat-icon>
+                      </button>
+                    </mat-form-field>
+                    <button mat-cell mat-raised-button color="accent" (click)="addfeaturevalue(fetureinput.value)"> Add </button>
 
-                    <br>
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-                      <label>{{sliderValue.value}}</label>
-
-
-                    <div>
-                      <mat-slider id="matSlider"
-                      #sliderValue
-                      [disabled]="disabled"
-                      tickInterval="1"
-                      (input)="pitch($event)"
-                      min="1"
-                      max="10"
-                      [step]="1"
-                      >
-                    </mat-slider>
-                    </div>
-
-                    <br>
+                      <!--- Note that these columns can be defined in any order.
+                            The actual rendered columns are set as a property on the row definition" -->
                     
-                    <!--use case list with text boxes-->
-                    <div>
-                        <h3> {{ sliderValue.value }} of 10</h3>
-                        
-                        <mat-form-field class="example-full-width" [formGroup]="form">
-                          <mat-card id="matform-card-1" *ngFor="let x of numbers" >  
-                          <br/>
-                            <mat-label> Feature {{ x }} </mat-label>
-                            <div>
-                              <br/>
-                              <input type="text"  matInput placeholder="feature description">
-                            </div>
-                          </mat-card>
-                        </mat-form-field>
-                        
-                    </div>
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                      </ng-container>
+                    
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="Feature">
+                        <th mat-header-cell *matHeaderCellDef> Feature </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Feature}} </td> 
+                      </ng-container>
 
-                    <!--Previous and next buttons-->
-                    <div>
-                      <button mat-raised-button matStepperPrevious>Back</button>
-                      <button mat-raised-button color="primary" matStepperNext>Next</button>
-                    </div>
-
+                      <!-- Symbol Column -->
+                      <ng-container matColumnDef="symbol">
+                        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                        <!--<td mat-cell *matCellDef="let element"> {{element.symbol}} </td> -->
+                        <mat-cell *matCellDef="let element">
+                          <button mat-cell mat-raised-button color="primary">Edit</button>
+                          <button #deleteButton class="btn-save" mat-cell mat-raised-button color="accent" (click)="deleteFeature(element)" >Delete</button>
+                        </mat-cell>
+                        
+                      </ng-container>
+                    
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    
+                    
 
                   </div>
 
@@ -153,7 +151,7 @@
               <!--Summary with editable input labels-->
               <div>
                   <!--header label-->
-                  <h2>Before Submitting to use, please double check all your information</h2>
+                  <h2>Before Submitting to use please double check all your information</h2>
               </div>
 
 
@@ -170,7 +168,7 @@
                 <div class="column">
                   <div class="file">
                       <label class="file-label">
-                        <input class="file-input" (change)="handleFileInput($event.target.files)" type="file" name="designSpec">
+                        <input class="file-input" type="file" name="designSpec">
                         <span class="file-cta">
                           <span class="file-icon">
                             <i class="fas fa-upload"></i>
@@ -184,13 +182,7 @@
 
                   <br>
 
-                  <mat-label>
-                    <span>
-                      <i class="fas fa-file"></i>
-                    </span>
-                    <span>{{ fileName }}</span>
-                  </mat-label>
-
+                  <label>File name goes here</label>
                 </div>
 
                 <mat-dialog-actions align="center" class="column">

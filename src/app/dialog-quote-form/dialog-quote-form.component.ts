@@ -1,7 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild  } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatSlider } from '@angular/material/slider';
 import { Quote } from 'src/app/Server/Models/Quote';
+import { QuoteService } from '../Services/QuoteService';
+import {MatTable} from '@angular/material/table';
+import { MatButton } from '@angular/material/button';
+
+
+export interface FeatureObject {
+  Feature: string;
+  position: number;
+  symbol: string;
+}
 
 @Component({
   selector: 'app-dialog-quote-form',
@@ -12,32 +22,57 @@ import { Quote } from 'src/app/Server/Models/Quote';
 export class DialogQuoteFormComponent implements OnInit {
   form: FormGroup;
   quoteForm: Quote;
-
+  featureData: FeatureObject[] = [];
   firstGroup: FormGroup;
   secondGroup: FormGroup;
-
   numberOfFeatureInputs: string[];
 
   disabled = false;
   numbers: number[];
-
+   value: string;
   private maxFileSize = 4000000;
 
   fileToUpload: File;
 
   fileName = '';
 
-  constructor(private formBuilder: FormBuilder) {
-      this.numbers = Array(1).fill(1).map((x, i) => i);
-   }
-
+  displayedColumns: string[] = ['position', 'Feature', 'symbol'];
+  dataSource = this.featureData;
+  @ViewChild(MatTable) table: MatTable<any>;
+  constructor(private formBuilder: FormBuilder, private quoteservice: QuoteService, private changeDetectorRefs: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-
-      this.firstGroup = this.formBuilder.group({fullName: ['']});
-      this.secondGroup = this.formBuilder.group({someValue: ['']});
+      this.firstGroup = this.formBuilder.group({fullName: [' ']});
+      this.secondGroup = this.formBuilder.group({someValue: [' ']});
+  }
+  getAllFeatures() {
+    this.quoteservice.getFeatures()
+        .subscribe(
+          (data: any) => {
+            this.dataSource = data;
+          }
+        );
+  }
+  public addfeaturevalue(theval: string)
+  {
+    const newobj: FeatureObject = {
+      position: this.dataSource.length + 1,
+      Feature: theval,
+      symbol: 'H'
+    };
+    this.quoteservice.addFeature(newobj);
+    this.getAllFeatures();
+    this.table.renderRows();
   }
 
+  public deleteFeature(button: FeatureObject)
+  {
+    const index = this.dataSource.indexOf(button, 0);
+    if (index > -1) {
+      this.dataSource.splice(index, 1);
+    }
+    this.table.renderRows();
+  }
   handleFileInput(pvtFileToUpload: FileList){
 
     this.fileToUpload = pvtFileToUpload.item(0);
@@ -66,8 +101,6 @@ export class DialogQuoteFormComponent implements OnInit {
 
   pitch(event: any) {
     console.log('pitch=>  ', event.value);
-    this.numbers = Array(event.value).fill(0).map((x, i) => i);
-
   }
 
   private compileToCompletQuote(pvtFirstGroup: FormGroup, pvtSecondGroup: FormGroup): Quote {
@@ -86,8 +119,6 @@ export class DialogQuoteFormComponent implements OnInit {
 
     // 3. reset the form and close the dialog
   }
-
-
     // This method is used to check the file size and type due to the fact that
     private checkFileSize(pvtFileSize: number, pvtFileType: string): boolean{
     if ((pvtFileSize <= this.maxFileSize) && (pvtFileType === 'application/pdf' || pvtFileType === 'application.docx'))

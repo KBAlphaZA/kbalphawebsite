@@ -11,7 +11,7 @@ const httpOptions = {
     providedIn: 'root'
 })
 export class CustomerLeadService{
-  const debug = true;
+
   constructor(private http:HttpClient) {}
 
   postcontact( CustomerEnquiry: any ) {
