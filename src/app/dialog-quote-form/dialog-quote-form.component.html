@@ -14,22 +14,22 @@
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Cellphone</mat-label>
-                    <input type="tel" matInput placeholder="Cellphone">
+                    <input type="tel" formControlName="cellphoneNumber" matInput placeholder="cellPhone">
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Email</mat-label>
-                    <input type="email" matInput placeholder="Email">
+                    <input type="email" formControlName="email" matInput placeholder="Email">
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Company</mat-label>
-                    <input type="text" matInput placeholder="Company">
+                    <input type="text" formControlName="companyName" matInput placeholder="Company">
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width">
                     <mat-label>Vat number</mat-label>
-                    <input type="text" matInput placeholder="Vat No.">
+                    <input type="text" formControlName="vatNumber" matInput placeholder="Vat No.">
                   </mat-form-field>
 
                   <div>
@@ -40,40 +40,20 @@
           </mat-step>
 
           <mat-step [stepControl]="secondGroup">
-              <form>
+              <form [formGroup]="secondGroup">
                 <ng-template matStepLabel>Project Details</ng-template>
 
                   <div>
 
                     <h1 class="title">Pick the platforms you want the solution to be made for</h1>
 
-                    <!--Mobile Development-->
-                    <div>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        Mobile Development
-                      </label>
-                    </div>
-
-                    <br>
-
-                    <!--Web Development-->
-                    <div>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                          Web Development
-                      </label>
-                    </div>
-
-                    <br>
-
-                    <!--IoT Development-->
-                    <div>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                          IoT Development
-                      </label>
-                    </div>
+                    <ul>
+                      <li *ngFor="let platform of platforms">
+                        <mat-checkbox>
+                          {{platform.platformName}}
+                        </mat-checkbox>
+                      </li>
+                    </ul>
                   </div>
 
                   <br>
@@ -82,7 +62,7 @@
                   <div>
                     <mat-form-field class="example-full-width">
                       <mat-label>Industry</mat-label>
-                      <input type="text" matInput placeholder="Industry">
+                      <input type="text" formControlName="industry" matInput placeholder="Industry">
                     </mat-form-field>
                   </div>
 
@@ -93,11 +73,9 @@
 
                     <mat-form-field class="feature-form-field">
                       <mat-label>Please Enter Your Feature</mat-label>
-					            <input matInput #fetureinput type="text" [(ngModel)]="value" placeholder="Ex. pat@example.com"> 
+                      <!-- <input matInput #fetureinput type="text" [(ngModel)]="value" placeholder="Ex. pat@example.com"> -->
+                      <input matInput #fetureinput type="text" placeholder="Ex. pat@example.com"> 
 					  
-                      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
-                        <mat-icon>close</mat-icon>
-                      </button>
                     </mat-form-field>
                     <button mat-cell mat-raised-button color="accent" (click)="addfeaturevalue(fetureinput.value)"> Add </button>
 
@@ -115,13 +93,13 @@
                       <!-- Name Column -->
                       <ng-container matColumnDef="Feature">
                         <th mat-header-cell *matHeaderCellDef> Feature </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Feature}} </td> 
+                        <td mat-cell *matCellDef="let element"> {{element.feature}} </td> 
                       </ng-container>
 
                       <!-- Symbol Column -->
                       <ng-container matColumnDef="symbol">
-                        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                        <!--<td mat-cell *matCellDef="let element"> {{element.symbol}} </td> -->
+                        <th mat-header-cell *matHeaderCellDef> Importance </th>
+                        <td mat-cell *matCellDef="let element"> {{element.importance}} </td> 
                         <mat-cell *matCellDef="let element">
                           <button mat-cell mat-raised-button color="primary">Edit</button>
                           <button #deleteButton class="btn-save" mat-cell mat-raised-button color="accent" (click)="deleteFeature(element)" >Delete</button>
@@ -145,7 +123,7 @@
           </mat-step>
 
           <mat-step>
-            <form>
+            <form [formGroup]="thirdGroup">
               <ng-template matStepLabel>Finish</ng-template>
 
               <!--Summary with editable input labels-->
@@ -168,7 +146,7 @@
                 <div class="column">
                   <div class="file">
                       <label class="file-label">
-                        <input class="file-input" type="file" name="designSpec">
+                        <input class="file-input" formControlName="designSpecFile" (change)="handleFileInput($event.target.files)" type="file" name="designSpec">
                         <span class="file-cta">
                           <span class="file-icon">
                             <i class="fas fa-upload"></i>
@@ -182,11 +160,17 @@
 
                   <br>
 
-                  <label>File name goes here</label>
+                  <mat-label>
+                    <span>
+                      <i class="fas fa-file"></i>
+                    </span>
+                    <span> {{ fileName }}</span>
+                  </mat-label>
+
                 </div>
 
                 <mat-dialog-actions align="center" class="column">
-                  <button type="submit" mat-raised-button [mat-dialog-close]="true" color="primary">Get Quote</button>
+                  <button type="submit" (click)="submitQuote(quoteForm)" mat-raised-button [mat-dialog-close]="true" color="primary">Get Quote</button>
                   <button mat-raised-button mat-dialog-close>Cancel</button>
                 </mat-dialog-actions>
               </div>

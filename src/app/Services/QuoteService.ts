@@ -1,15 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Quote } from 'src/app/Server/Models/Quote';
+import { IFeatureListing } from '../Server/Models/Project';
 
-
-import { Quote } from '../Server/Models/Quote';
-
-export interface FeatureObject {
-    Feature: string;
-    position: number;
-    symbol: string;
-  }
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -22,43 +16,46 @@ const httpOptions = {
   })
 
   export class QuoteService {
+    quoteForm: Quote;
     baseUrl: string = 'https://kbalphawebapi.azurewebsites.net/api/v1';
-    FEATURE_DATA: FeatureObject[] = [];
-    private _observableList: BehaviorSubject<FeatureObject[]> = new BehaviorSubject([]);
+    FEATURE_DATA: IFeatureListing[] = [];
+    private _observableList: BehaviorSubject<IFeatureListing[]> = new BehaviorSubject([]);
 
     constructor(private http: HttpClient) { }
 
-    get observableList(): Observable<FeatureObject[]>
+    get observableList(): Observable<IFeatureListing[]>
     {
        return this._observableList.asObservable();
       }
     // Get Quote
-  getFeatures(): Observable<FeatureObject[]> {
-    const FEATURE_DATA: FeatureObject[] = [
-      {position: 1, Feature: 'It Must look like the IDK app',  symbol: 'H'},
-      {position: 2, Feature: 'It Must look like the Bumble app',  symbol: 'He'},
-      {position: 3, Feature: 'It Must look like the IDK app', symbol: 'Li'},
-      {position: 4, Feature: 'It Must look like the Bumble app',  symbol: 'Be'},
-      {position: 5, Feature: 'It Must look like the tiner app',  symbol: 'B'},
-      {position: 6, Feature: 'It Must look like the tiner app',  symbol: 'C'},
-      {position: 7, Feature: 'It Must look like the Bumble app', symbol: 'F'},
-    ];
-    this._observableList.next(this.FEATURE_DATA)
+  getFeatures(): Observable<IFeatureListing[]> {
+
+    this._observableList.next(this.FEATURE_DATA);
     return this.observableList;
   }
 
   // Delete Quote
-  deleteFeature(todo: FeatureObject): Observable<FeatureObject> {
+  deleteFeature(todo: IFeatureListing): Observable<IFeatureListing> {
     const url = `${this.baseUrl}/${todo.position}`;
 
-    return this.http.delete<FeatureObject>(url, httpOptions);
+    // const index = this.FEATURE_DATA.indexOf(button, 0);
+    // if (index > -1) {
+    //  this.FEATURE_DATA.splice(index, 1);
+    // }
+
+    return this.http.delete<IFeatureListing>(url, httpOptions);
   }
 
   // Add Quote
-  addFeature(feature: FeatureObject){
-    console.log("ADDFEATURE SERVICE =>  ", feature);
+  addFeature(feature: IFeatureListing){
     this.FEATURE_DATA.push(feature);
     this._observableList.next(this.FEATURE_DATA);
   }
 
+  postCompletedForm(completeform)
+  {
+    const url = `${this.baseUrl}`;
+
+    this.http.post(url, completeform);
+  }
 }

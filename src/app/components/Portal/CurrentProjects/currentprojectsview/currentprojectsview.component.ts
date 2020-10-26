@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentProjectInfo } from 'src/app/Server/Models/CurrentProjectInformation';
+import { Project } from 'src/app/Server/Models/Project';
 
 @Component({
   selector: 'app-currentprojectsview',
@@ -9,6 +11,11 @@ export class CurrentprojectsviewComponent implements OnInit {
 
   constructor() { }
 
+  projectDetailObj: Project;
+
+  // 1. The list of all projects from back end
+  currentProjects: CurrentProjectInfo[] = [];
+
   // Get from currentProjectObj object
   stages: string[] = ['Design and development', 'Maintaince'];
 
@@ -16,6 +23,7 @@ export class CurrentprojectsviewComponent implements OnInit {
   localStageLabel: string;
 
   ngOnInit(): void {
+
   }
 
 

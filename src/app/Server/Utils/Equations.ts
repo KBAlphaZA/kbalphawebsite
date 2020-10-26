@@ -15,7 +15,7 @@ export class Equations{
   totalFeatureCost: number;
 
   // Total Cost for services with taxes
-  totalCost: number;
+  totalCost = 0;
 
   // This method is for calculating percentages
   private percentageCalculator(numaratorValue: number, denominator: number): number{
@@ -25,7 +25,8 @@ export class Equations{
 
 
   // calculate the tax amount
-  private calculateTaxAmount(pvtsubtotal: number): number{
+  public calculateTaxAmount(pvtsubtotal: number): number{
+
     this.taxAmount = 0;
 
     this.taxAmount = pvtsubtotal * this.taxRate;
@@ -35,15 +36,16 @@ export class Equations{
 
 
   // Subtotal calculator (Before tax)
-  private calculateSubTotal(pvtTimeReq: number): number{
-    const subTotal = this.totalFeatureCost * this.hourlyRate;
+  public calculateSubTotal(pvtCosts: number): number{
+
+    const subTotal = pvtCosts;
 
     return subTotal;
   }
 
-  // Returns the amount to be paid as a deposit which is 10%
+  // Returns the amount to be paid as a deposit which is 20%
   public calculateDepostAmount(pvtTotal): number{
-    const depositAmount = pvtTotal * 0.10;
+    const depositAmount = pvtTotal * 0.20;
 
     return depositAmount;
   }
@@ -55,12 +57,12 @@ export class Equations{
   }
 
   // Calculates the Total amount for the invoice
-  private calculateTotalQuote(pvtSubTotal: number, pvtTaxAmount: number, pvtAdjustments){
+  public calculateTotalQuote(pvtSubTotal: number, pvtTaxAmount: number, pvtAdjustments): number{
 
-    this.totalCost = 0;
+    console.log('total cost value: ', this.totalCost);
+    console.log('subtotal cost value: ', pvtSubTotal);
+    console.log('Adujustment value: ', pvtAdjustments);
 
-    this.totalCost = pvtSubTotal + pvtTaxAmount + pvtAdjustments;
-
-    return this.totalCost;
+    return this.totalCost = pvtSubTotal + pvtTaxAmount + pvtAdjustments;
   }
 }
