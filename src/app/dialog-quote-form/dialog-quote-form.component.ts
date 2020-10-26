@@ -29,6 +29,7 @@ export class DialogQuoteFormComponent implements OnInit {
   // featureData: FeatureObject[] = [];
   featureData: IFeatureListing[] = [];
 
+
   firstGroup: FormGroup;
 
   secondGroup: FormGroup;
@@ -59,7 +60,6 @@ export class DialogQuoteFormComponent implements OnInit {
   displayedColumns: string[] = ['position', 'Feature', 'symbol'];
   dataSource = this.featureData;
   @ViewChild(MatTable) table: MatTable<any>;
-
 
   constructor(private formBuilder: FormBuilder, private dialogsnackbar: MatSnackBar,  private quoteservice: QuoteService) {
       this.ngOnInit();
@@ -147,6 +147,7 @@ export class DialogQuoteFormComponent implements OnInit {
       // We need to fix this, Types need to change
       const pvtProjectDetails: Project = {
                                           featuresRequested: this.dataSource,
+
                                           projectName: ' ',
                                           platformsToBeDevelopedOn: this.getCheckedItems(this.platforms),
                                           industry: pvtSecondGroup.get('industry').value,
@@ -158,6 +159,7 @@ export class DialogQuoteFormComponent implements OnInit {
          dateTimeOfQuote: new Date(),
          acceptedQuote: false,
          quoteId: 325345345,
+
          validityDateOfQuote: new Date(),
          quoteAmount: new QuoteFinance(),
          projectReq: pvtProjectDetails
@@ -172,6 +174,7 @@ export class DialogQuoteFormComponent implements OnInit {
     const completeForm = this.compileToCompletQuote(this.firstGroup, this.secondGroup, this.thirdGroup);
 
     // Testing purposes
+
     console.log(completeForm);
 
     // 2. send this information to the backend
