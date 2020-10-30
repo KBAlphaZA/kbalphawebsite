@@ -129,65 +129,65 @@
           <mat-step [stepControl]="thirdGroup">
             <ng-template matStepLabel>Finance</ng-template>
 
-            <div>
-              <br>
+              <div>
+                <br>
 
-              <h3 class="title  is-1">Payment options</h3>
+                <h3 class="title  is-1">Payment options</h3>
 
-              <label class="subclass"><b>Please pick how you want to pay for the development of the software</b></label>
+                <label class="subclass"><b>Please pick how you want to pay for the development of the software</b></label>
 
 
-              <br>
-              <br>
+                <br>
+                <br>
 
-              <!--Options rendered here-->
-              <div class="columns">
-                <div class="column" (click)="optionPicked($event)" style="cursor: pointer;" *ngFor="let option of paymentOptionCards" #optionVar>
-                  <mat-card class="cardStyling" [ngStyle]="{'border-color': option.borderColour}">
+                <!--Options rendered here-->
+                <div class="columns">
+                  <div id="cardId" class="column" *ngFor="let option of paymentOptionCards" #optionVar>
+                    <mat-card (click)="optionPicked(optionVar)" style="cursor: pointer;" class="cardStyling" [ngStyle]="{'border-color': option.borderColour}">
 
-                    <img mat-card-image [src]="option.backgroundPicture">
+                      <img mat-card-image [src]="option.backgroundPicture">
 
-                    <mat-card-subtitle>
-                      <b>{{option.paymentOption.paymentOptionName}}</b>
-                    </mat-card-subtitle>
+                      <mat-card-subtitle>
+                        <b>{{option.paymentOption.paymentOptionName}}</b>
+                      </mat-card-subtitle>
 
-                    <mat-card-content>
+                      <mat-card-content>
 
-                      <label><b>Deposit: </b>{{option.paymentOption.deposit * 100}}%</label>
+                        <label><b>Deposit: </b>{{option.paymentOption.deposit * 100}}%</label>
 
-                      <br>
-                      <br>
+                        <br>
+                        <br>
 
-                      <label><b>Service description: </b>{{option.paymentOption.description}}</label>
+                        <label><b>Service description: </b>{{option.paymentOption.description}}</label>
 
-                      <br>
-                      <br>
+                        <br>
+                        <br>
 
-                      <label><b>Amount due on completion: </b> {{option.paymentOption.onCompletion * 100}}%</label>
+                        <label><b>Amount due on completion: </b> {{option.paymentOption.onCompletion * 100}}%</label>
 
-                      <br>
-                      <br>
+                        <br>
+                        <br>
 
-                      <label><b>Maintaince: </b>{{option.paymentOption.maintaince * 100}}%</label>
+                        <label><b>Maintaince: </b>{{option.paymentOption.maintaince * 100}}%</label>
 
-                      <br>
-                      <br>
+                        <br>
+                        <br>
 
-                      <label><b>Support duration: </b> {{option.paymentOption.term}} years</label>
+                        <label><b>Support duration: </b> {{option.paymentOption.term}} years</label>
 
-                    </mat-card-content>
+                      </mat-card-content>
 
-                  </mat-card>
+                    </mat-card>
+                  </div>
                 </div>
+
+
+                <span>
+                  <button style="margin-right: 1%;" mat-raised-button matStepperPrevious>Back</button>
+
+                  <button mat-raised-button color="primary" matStepperNext>Next</button>
+                </span>
               </div>
-
-
-              <span>
-                <button style="margin-right: 1%;" mat-raised-button matStepperPrevious>Back</button>
-
-                <button mat-raised-button color="primary" matStepperNext>Next</button>
-              </span>
-            </div>
           </mat-step>
 
           <mat-step [stepControl]="fourthGroup">
@@ -228,7 +228,7 @@
 
                   <mat-label>
                     <span>
-                      <i class="fas fa-file"></i>
+                     <i [class]="fileTypeIcon"></i>
                     </span>
                     <span> {{ fileName }}</span>
                   </mat-label>
@@ -245,8 +245,6 @@
 
       </mat-horizontal-stepper>
   </mat-dialog-content>
-
-
 
 </form>
 

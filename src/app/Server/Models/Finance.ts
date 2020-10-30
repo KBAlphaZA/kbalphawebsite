@@ -5,7 +5,7 @@ export class QuoteFinance{
   adjustments: number;
   hourlyRate: number;
   subTotal: number;
-  deposit: number;
+  depositAmount: number;
   selectedPaymentOptions: KBAlphaPaymentOptions;
 }
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Form } from '@angular/forms';
+import { MatCardSubtitle } from '@angular/material/card';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { element } from 'protractor';
+import { elementAt } from 'rxjs/operators';
 import { Quote } from 'src/app/Server/Models/Quote';
 import { ClientDetails } from '../Server/Models/ClientDetails';
 import { KBAlphaPaymentOptions, QuoteFinance } from '../Server/Models/Finance';
@@ -37,9 +40,9 @@ export class DialogQuoteFormComponent implements OnInit {
 
   disabled: boolean;
 
-  defaultBorderColour = '#2C3E7B';
-
   selectedBorderColour = 'green';
+
+  defaultBorderColour = '#2C3E7B';
 
   numberOfFeatureInputs: string[];
 
@@ -99,6 +102,8 @@ export class DialogQuoteFormComponent implements OnInit {
     },
 
   ];
+
+  selcetedPaymentOption: KBAlphaPaymentOptions;
 
   platforms: PlatformsToDevelopOn[] = [
     {platformName: 'Mobile Development', checked: false},
@@ -179,7 +184,23 @@ export class DialogQuoteFormComponent implements OnInit {
     }
 
     // 2. See what icon to display for that file type
-    // Use a switch statement
+    switch (fileType){
+      case '/pdf':
+      console.log('should change');
+      this.fileTypeIcon = 'fa fa-file-pdf-o';
+      break;
+
+      case '/docx':
+      this.fileTypeIcon = 'fa-file-text-o';
+      break;
+
+      case '/x-zip-compressed':
+      this.fileTypeIcon = 'fa-file-archive-o';
+      break;
+
+      default:
+      break;
+    }
   }
 
   pitch(event: any) {
@@ -188,7 +209,7 @@ export class DialogQuoteFormComponent implements OnInit {
 
   }
 
-  private compileToCompletQuote(pvtFirstGroup: FormGroup, pvtSecondGroup: FormGroup, pvtThirdGroup: FormGroup): Quote {
+  private compileToCompletQuote(pvtFirstGroup: FormGroup, pvtSecondGroup: FormGroup, pvtThirdGroup: FormGroup, pvtFourthGroup): Quote {
 
       // Organize the forms to make a single form
       // initalize all fields.
@@ -209,13 +230,23 @@ export class DialogQuoteFormComponent implements OnInit {
                                           designSpecificationDocument: this.fileToUpload
                                         };
 
+      const pvtselectedPaymentOption: QuoteFinance = {
+                                          total: 0,
+                                          subTotal: 0,
+                                          tax: 0,
+                                          hourlyRate: 0,
+                                          depositAmount: 0,
+                                          selectedPaymentOptions: this.selcetedPaymentOption,
+                                          adjustments: 0
+                                      };
+
       this.quoteForm = {
          clientDetails: pvtclientDetails,
          dateTimeOfQuote: new Date(),
          acceptedQuote: false,
          quoteId: '325345345',
          validityDateOfQuote: new Date(),
-         quoteAmount: new QuoteFinance(),
+         quoteAmount: pvtselectedPaymentOption,
          projectReq: pvtProjectDetails
       };
 
@@ -226,7 +257,7 @@ export class DialogQuoteFormComponent implements OnInit {
   submitQuote(quoteForm){
 
     // 1. compile into a single form using the method defined locally
-    const completeForm = this.compileToCompletQuote(this.firstGroup, this.secondGroup, this.thirdGroup);
+    const completeForm = this.compileToCompletQuote(this.firstGroup, this.secondGroup, this.thirdGroup, this.fourthGroup);
 
     // Testing purposes
     console.log(completeForm);
@@ -268,15 +299,24 @@ export class DialogQuoteFormComponent implements OnInit {
       return someObj.checked = checked;
     }
 
-    optionPicked(item: any){
+    optionPicked(item: HTMLElement){
 
-      // 1. set to null to clear any selected item
-      item = null;
+      let pvtItem: HTMLElement = null;
 
-      // 2. set the border colour of the selected card
-      console.log('item clicked', item);
+      this.selcetedPaymentOption = null;
 
-      // return the selected card
+      pvtItem = item;
+
+
+      this.paymentOptionCards.forEach(card => {
+          if (pvtItem.innerText.includes(card.paymentOption.paymentOptionName)){
+            this.selcetedPaymentOption = null;
+            this.selcetedPaymentOption = card.paymentOption;
+            card.borderColour = this.selectedBorderColour;
+            console.log(this.selcetedPaymentOption);
+          }
+      });
+
     }
 
     // This method is used to check the file size and type due to the fact that

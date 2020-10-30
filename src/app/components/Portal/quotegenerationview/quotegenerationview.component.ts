@@ -35,11 +35,12 @@ export class QuotegenerationviewComponent implements OnInit {
   quoteSubmissionDate = new Date().toDateString();
 
   // Get values from Quote object which gets it from backend
-  pvtQuoteFigures: QuoteFinance = {total: 200000,
+  pvtQuoteFigures: QuoteFinance = {
+    total: 200000,
     subTotal: 2000,
     tax: 706,
     hourlyRate: 156.45,
-    deposit: 20000,
+    depositAmount: 20000,
     adjustments: 5000,
     selectedPaymentOptions: null
   };
