@@ -1,0 +1,26 @@
+#accpetedQuoteBackground{
+  background-position: center;
+  background-color: white;
+  height: 700px;
+}
+
+#comapnyLogo{
+  justify-content: center;
+  align-items: center;
+}
+
+#acceptButton{
+  margin-left: 50%;
+  margin-top: 50%;
+  size: 20%;
+
+}
+
+#firstColumn{
+  background-color: #2C3E7B;
+
+}
+
+#secondColumn{
+  background-color: white;
+}

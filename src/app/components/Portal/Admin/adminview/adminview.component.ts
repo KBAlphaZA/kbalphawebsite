@@ -13,18 +13,18 @@ export class AdminviewComponent implements OnInit {
 
   views: ViewItem[];
 
-  selectedItem: string;
+  selectedItem: Menu;
 
   menuitems: Menu[] =  [
-    {menuItemText: 'Quotes', menuItemIcon: 'receipt', viewLink: ' '},
-    {menuItemText: 'Current Projects', menuItemIcon: 'construction', viewLink: ' '},
-    {menuItemText: 'Finances', menuItemIcon: 'attach_money', viewLink: ''},
-    {menuItemText: 'CRM', menuItemIcon: 'contacts', viewLink: ''},
-    {menuItemText: 'Dev ops', menuItemIcon: 'code', viewLink: ''}
+    {menuItemText: 'Quotes', menuItemIcon: 'receipt', viewLink: ' ', viewID: 'quote'},
+    {menuItemText: 'Current Projects', menuItemIcon: 'construction', viewLink: ' ', viewID: 'projects'},
+    {menuItemText: 'Finances', menuItemIcon: 'attach_money', viewLink: '', viewID: 'finances'},
+    {menuItemText: 'CRM', menuItemIcon: 'contacts', viewLink: '', viewID: 'crmConnect'},
+    {menuItemText: 'Dev ops', menuItemIcon: 'code', viewLink: '', viewID: 'devopspage'}
   ];
 
 
-  constructor() { }
+  constructor() { this.ngOnInit(); }
 
   ngOnInit(): void {
      // goes in the constructor --> private viewService: ViewService
@@ -37,4 +37,5 @@ export interface Menu{
   menuItemText: string;
   menuItemIcon: string;
   viewLink: string;
+  viewID: string;
 }

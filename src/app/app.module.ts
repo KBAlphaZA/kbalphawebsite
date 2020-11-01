@@ -50,7 +50,10 @@ import { FinancesviewComponent } from './components/Portal/Finances/financesview
 import { CrmdataviewComponent } from './components/Portal/CRMData/crmdataview/crmdataview.component';
 import { AdminviewComponent } from './components/Portal/Admin/adminview/adminview.component';
 import { ViewContainerComponent } from './components/Portal/ViewContainer/view-container/view-container.component';
-
+import { AccpetedQuoteComponent } from './components/Portal/accpeted-quote/accpeted-quote.component';
+import { LoginComponent } from './components/Portal/Login/login/login.component';
+import {CommonModule} from '@angular/common';
+import { DevopsviewComponent } from './components/Portal/DevOpsViews/devopsview/devopsview.component';
 
 
 
@@ -84,9 +87,13 @@ export function playerFactory(){
     CrmdataviewComponent,
     AdminviewComponent,
     ViewContainerComponent,
+    AccpetedQuoteComponent,
+    LoginComponent,
+    DevopsviewComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     LottieModule.forRoot({player: playerFactory}),
     FormsModule,

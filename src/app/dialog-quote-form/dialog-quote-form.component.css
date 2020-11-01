@@ -29,3 +29,16 @@ table {
   height: 80%;
   width: auto;
 }
+
+.radioGroupStyling{
+  display: flex;
+  flex-direction: column;
+  margin: 15px 10px;
+}
+
+.cardStyling{
+  height: 100%;
+  border-style: solid;
+  border-width: medium;
+  border-color: #2C3E7B;
+}
