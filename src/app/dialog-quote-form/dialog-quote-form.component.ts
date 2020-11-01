@@ -6,6 +6,7 @@ import { element } from 'protractor';
 import { elementAt } from 'rxjs/operators';
 import { Quote } from 'src/app/Server/Models/Quote';
 import { ClientDetails } from '../Server/Models/ClientDetails';
+import { Cycle } from '../Server/Models/DevelopmentCycle';
 import { KBAlphaPaymentOptions, QuoteFinance } from '../Server/Models/Finance';
 import { PlatformsToDevelopOn, Project } from '../Server/Models/Project';
 
@@ -124,6 +125,8 @@ export class DialogQuoteFormComponent implements OnInit {
 
   fileTypeIcon = '';
 
+  currentlySelectedCardId: number;
+
   constructor(private formBuilder: FormBuilder, private dialogsnackbar: MatSnackBar) {
       this.ngOnInit();
       this.numbers = Array(10).fill(1).map((x, i) => i);
@@ -160,6 +163,23 @@ export class DialogQuoteFormComponent implements OnInit {
     // 1. Check if the size is 4mb or less
     if (this.checkFileSize(fileSize, fileType)){
         // Add data and file data to the document
+        switch (fileType){
+          case 'application/pdf':
+          console.log('should change');
+          this.fileTypeIcon = 'fa fa-file-pdf-o';
+          break;
+
+          case 'application/docx':
+          this.fileTypeIcon = 'fa-file-text-o';
+          break;
+
+          case 'application/x-zip-compressed':
+          this.fileTypeIcon = 'fa-file-archive-o';
+          break;
+
+          default:
+          break;
+        }
     }
     else{
       // Open snack-bar with red background to alert the user that an error occured
@@ -184,23 +204,6 @@ export class DialogQuoteFormComponent implements OnInit {
     }
 
     // 2. See what icon to display for that file type
-    switch (fileType){
-      case '/pdf':
-      console.log('should change');
-      this.fileTypeIcon = 'fa fa-file-pdf-o';
-      break;
-
-      case '/docx':
-      this.fileTypeIcon = 'fa-file-text-o';
-      break;
-
-      case '/x-zip-compressed':
-      this.fileTypeIcon = 'fa-file-archive-o';
-      break;
-
-      default:
-      break;
-    }
   }
 
   pitch(event: any) {
@@ -227,7 +230,8 @@ export class DialogQuoteFormComponent implements OnInit {
                                           projectName: ' ',
                                           platformsToBeDevelopedOn: this.getCheckedItems(this.platforms),
                                           industry: pvtSecondGroup.get('industry').value,
-                                          designSpecificationDocument: this.fileToUpload
+                                          designSpecificationDocument: this.fileToUpload,
+                                          developmentCycle: Cycle.design
                                         };
 
       const pvtselectedPaymentOption: QuoteFinance = {
@@ -309,12 +313,18 @@ export class DialogQuoteFormComponent implements OnInit {
 
 
       this.paymentOptionCards.forEach(card => {
-          if (pvtItem.innerText.includes(card.paymentOption.paymentOptionName)){
-            this.selcetedPaymentOption = null;
-            this.selcetedPaymentOption = card.paymentOption;
-            card.borderColour = this.selectedBorderColour;
-            console.log(this.selcetedPaymentOption);
-          }
+
+        if (card.paymentOption.optionId === this.currentlySelectedCardId){
+          card.borderColour = this.defaultBorderColour;
+        }
+
+        if (pvtItem.innerText.includes(card.paymentOption.paymentOptionName)){
+          this.selcetedPaymentOption = null;
+          this.selcetedPaymentOption = card.paymentOption;
+          card.borderColour = this.selectedBorderColour;
+          this.currentlySelectedCardId = card.paymentOption.optionId;
+          console.log(this.selcetedPaymentOption);
+        }
       });
 
     }

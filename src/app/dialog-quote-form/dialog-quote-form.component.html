@@ -145,7 +145,7 @@
                   <div id="cardId" class="column" *ngFor="let option of paymentOptionCards" #optionVar>
                     <mat-card (click)="optionPicked(optionVar)" style="cursor: pointer;" class="cardStyling" [ngStyle]="{'border-color': option.borderColour}">
 
-                      <img mat-card-image [src]="option.backgroundPicture">
+                      <img  mat-card-image [src]="option.backgroundPicture">
 
                       <mat-card-subtitle>
                         <b>{{option.paymentOption.paymentOptionName}}</b>

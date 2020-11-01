@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentProjectInfo } from 'src/app/Server/Models/CurrentProjectInformation';
 import { Project } from 'src/app/Server/Models/Project';
+import { LocalDatabase } from 'src/app/Services/TempDataStore';
+
 
 @Component({
   selector: 'app-currentprojectsview',
@@ -11,10 +13,15 @@ export class CurrentprojectsviewComponent implements OnInit {
 
   constructor() { }
 
-  projectDetailObj: Project;
+  // Get data from temp data store class
+  dummyData = new LocalDatabase();
+
+  projectDetailObj = this.dummyData.dummyCurrentProject;
 
   // 1. The list of all projects from back end
-  currentProjects: CurrentProjectInfo[] = [];
+  currentProjects: CurrentProjectInfo[] = [
+    this.projectDetailObj
+  ];
 
   // Get from currentProjectObj object
   stages: string[] = ['Design and development', 'Maintaince'];

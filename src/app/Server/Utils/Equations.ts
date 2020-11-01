@@ -1,5 +1,8 @@
 // This file is to calculate and estimate the quote for the customer
 
+import { KBAlphaPaymentOptions } from '../Models/Finance';
+import { IFeatureListing } from '../Models/Project';
+
 export class Equations{
 
   // How we charge per hour for development
@@ -18,7 +21,7 @@ export class Equations{
   totalCost = 0;
 
   // This method is for calculating percentages
-  private percentageCalculator(numaratorValue: number, denominator: number): number{
+  public percentageCalculator(numaratorValue: number, denominator: number): number{
     const result = (numaratorValue / denominator) * 100;
     return result;
   }
@@ -36,16 +39,20 @@ export class Equations{
 
 
   // Subtotal calculator (Before tax)
-  public calculateSubTotal(pvtCosts: number): number{
+  public calculateSubTotal(pvtCosts: IFeatureListing[]): number{
 
-    const subTotal = pvtCosts;
+    let subTotal = 0;
+
+    pvtCosts.forEach(cost => {
+        subTotal = subTotal + cost.featureCost;
+    });
 
     return subTotal;
   }
 
-  // Returns the amount to be paid as a deposit which is 20%
-  public calculateDepostAmount(pvtTotal): number{
-    const depositAmount = pvtTotal * 0.20;
+  // Returns the amount to be paid as a deposit whatever is choosen
+  public calculateDepostAmount(pvtTotal, pvtdepositAmount: KBAlphaPaymentOptions): number{
+    const depositAmount = pvtTotal * pvtdepositAmount.deposit;
 
     return depositAmount;
   }

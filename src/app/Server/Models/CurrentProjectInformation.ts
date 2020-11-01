@@ -2,14 +2,14 @@ import { Project } from 'src/app/Server/Models/Project';
 import { ClientDetails } from './ClientDetails';
 import { Quote } from '@angular/compiler';
 import { ProjectFinance } from './Finance';
+import { Cycle } from './DevelopmentCycle';
 
 export class CurrentProjectInfo{
     projectId: any;
-    developmentStage: string;
     projectDetails: Project;
     clientInformation: ClientDetails;
     projectFinances: ProjectFinance;
-    developmentCycle: string;
+    developmentCycle: Cycle;
     projectTask: TaskList;
     quoteAgreedOn: Quote;
 }
