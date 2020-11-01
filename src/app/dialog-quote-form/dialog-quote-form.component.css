@@ -6,17 +6,25 @@
 #matform-card-1{
   margin-top: 2%;
 }
-
+table {
+  width: 80%;
+}
 
 .example-full-width {
-  width: 100%;
+  width: 60%;
   height: 100%;
 }
 
+.btn-save{
+  margin-left: 20px;
+}
 .checkBoxStyling{
   margin-right: 2%;
 }
 
+.feature-form-field{
+  width: 70%;
+}
 #mainContent{
   height: 80%;
   width: auto;

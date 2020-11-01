@@ -1,10 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Form } from '@angular/forms';
+
+import { Component, OnInit, ChangeDetectorRef, ViewChild  } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { MatSlider } from '@angular/material/slider';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Quote } from 'src/app/Server/Models/Quote';
+import { QuoteService } from '../Services/QuoteService';
+import {MatTable} from '@angular/material/table';
+import { MatButton } from '@angular/material/button';
+import { IFeatureListing, PlatformsToDevelopOn } from '../Server/Models/Project';
+
+
+
 import { ClientDetails } from '../Server/Models/ClientDetails';
-import { KBAlphaPaymentOptions, QuoteFinance } from '../Server/Models/Finance';
-import { PlatformsToDevelopOn, Project } from '../Server/Models/Project';
+import { QuoteFinance } from '../Server/Models/Finance';
+import { Project } from '../Server/Models/Project';
+
 
 @Component({
   selector: 'app-dialog-quote-form',
@@ -22,6 +34,10 @@ export class DialogQuoteFormComponent implements OnInit {
   pvtQuoteFinance: QuoteFinance = new QuoteFinance();
 
   form: FormGroup;
+  // quoteForm: Quote;
+  // featureData: FeatureObject[] = [];
+  featureData: IFeatureListing[] = [];
+
 
   // Client details
   firstGroup: FormGroup;
@@ -109,14 +125,15 @@ export class DialogQuoteFormComponent implements OnInit {
 
   fileName = '';
 
-  fileTypeIcon = '';
 
-  constructor(private formBuilder: FormBuilder, private dialogsnackbar: MatSnackBar) {
+  displayedColumns: string[] = ['position', 'Feature', 'symbol'];
+  dataSource = this.featureData;
+  @ViewChild(MatTable) table: MatTable<any>;
+fileTypeIcon = '';
+  constructor(private formBuilder: FormBuilder, private dialogsnackbar: MatSnackBar,  private quoteservice: QuoteService) {
       this.ngOnInit();
       this.numbers = Array(10).fill(1).map((x, i) => i);
    }
-
-
   ngOnInit(): void {
 
       this.firstGroup = this.formBuilder.group(
@@ -135,6 +152,14 @@ export class DialogQuoteFormComponent implements OnInit {
       });
   }
 
+  public deleteFeature(button: IFeatureListing)
+  {
+    const index = this.dataSource.indexOf(button, 0);
+    if (index > -1) {
+      this.dataSource.splice(index, 1);
+    }
+    this.table.renderRows();
+  }
   handleFileInput(pvtFileToUpload: FileList){
 
     this.fileToUpload = pvtFileToUpload.item(0);
@@ -176,8 +201,6 @@ export class DialogQuoteFormComponent implements OnInit {
 
   pitch(event: any) {
     console.log('pitch=>  ', event.value);
-    this.numbers = Array(event.value).fill(0).map((x, i) => i);
-
   }
 
   private compileToCompletQuote(pvtFirstGroup: FormGroup, pvtSecondGroup: FormGroup, pvtThirdGroup: FormGroup): Quote {
@@ -192,8 +215,10 @@ export class DialogQuoteFormComponent implements OnInit {
                                                email: pvtFirstGroup.get('email').value,
                                                company: pvtFirstGroup.get('companyName').value
                                               };
+      // We need to fix this, Types need to change
+      const pvtProjectDetails: Project = {
+                                          featuresRequested: this.dataSource,
 
-      const pvtProjectDetails: Project = {featuresRequested: [],
                                           projectName: ' ',
                                           platformsToBeDevelopedOn: this.getCheckedItems(this.platforms),
                                           industry: pvtSecondGroup.get('industry').value,
@@ -204,7 +229,8 @@ export class DialogQuoteFormComponent implements OnInit {
          clientDetails: pvtclientDetails,
          dateTimeOfQuote: new Date(),
          acceptedQuote: false,
-         quoteId: '325345345',
+         quoteId: 325345345,
+
          validityDateOfQuote: new Date(),
          quoteAmount: new QuoteFinance(),
          projectReq: pvtProjectDetails
@@ -218,11 +244,13 @@ export class DialogQuoteFormComponent implements OnInit {
     // 1. compile into a single form using the method defined locally
     const completeForm = this.compileToCompletQuote(this.firstGroup, this.secondGroup, this.thirdGroup);
 
-    // TEsting purposes
+    // Testing purposes
+
     console.log(completeForm);
 
     // 2. send this information to the backend
     // http.post(completeForm);
+    this.quoteservice.postCompletedForm(completeForm);
 
     // 3. reset the form and close the dialog
     this.firstGroup.reset();
@@ -232,6 +260,29 @@ export class DialogQuoteFormComponent implements OnInit {
 
     // 4. Show the user that it went through with a snack-bar
     this.openSnackBar();
+  }
+
+
+  getAllFeatures() {
+    this.quoteservice.getFeatures()
+        .subscribe(
+          (data: any) => {
+            this.dataSource = data;
+          }
+        );
+  }
+  public addfeaturevalue(theval: string)
+  {
+    const newobj: IFeatureListing = {
+      position: this.dataSource.length + 1,
+      feature: theval,
+      importance: 'High',
+      hoursRequired: 0,
+      featureCost: 0
+    };
+    this.quoteservice.addFeature(newobj);
+    this.getAllFeatures();
+    this.table.renderRows();
   }
 
 

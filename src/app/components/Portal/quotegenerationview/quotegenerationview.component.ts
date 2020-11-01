@@ -26,9 +26,12 @@ export class QuotegenerationviewComponent implements OnInit {
 
   // Features requested by the client
   tempFeatureList: IFeatureListing[] = [
-                                          {feature: 'The Applciation must have GPS location	', hoursRequired: 0, featureCost: 0},
-                                          {feature: 'It must be on Android and IOS', hoursRequired: 0, featureCost: 0},
-                                          {feature: 'It must sign in with Google, facebook and linkdin', hoursRequired: 0, featureCost: 0}
+                                          { position: 1, feature: 'The Applciation must have GPS location	',
+                                            importance: 'High', hoursRequired: 0, featureCost: 0},
+                                          { position: 2, feature: 'It must be on Android and IOS',
+                                            importance: 'High', hoursRequired: 0, featureCost: 0},
+                                          { position: 3, feature: 'It must sign in with Google, facebook and linkdin',
+                                            importance: 'High', hoursRequired: 0, featureCost: 0}
                                        ];
 
   // Get data from the quoteObj object
@@ -60,7 +63,7 @@ export class QuotegenerationviewComponent implements OnInit {
   // Dummy service DOA
   listOfAllQuotes: Quote[] = [
                                 {
-                                  quoteId: '50000',
+                                  quoteId: 50000,
                                   validityDateOfQuote: new Date(),
                                   acceptedQuote: false,
                                   dateTimeOfQuote: new Date(),
@@ -69,7 +72,7 @@ export class QuotegenerationviewComponent implements OnInit {
                                   quoteAmount: this.pvtQuoteFigures
                                 },
                                 {
-                                  quoteId: '0000',
+                                  quoteId: 10001,
                                   validityDateOfQuote: new Date(),
                                   acceptedQuote: false,
                                   dateTimeOfQuote: new Date(),
