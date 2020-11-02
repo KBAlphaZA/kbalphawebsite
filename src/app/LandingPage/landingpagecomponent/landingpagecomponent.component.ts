@@ -10,13 +10,13 @@ import { HostListener, Component, OnInit } from '@angular/core';
 
 export class LandingpagecomponentComponent implements OnInit {
 
-  constructor() { 
+  constructor() {
 
     }
   public innerHeight: any;
   public innerWidth: number;
 
-  get myStyles():any{
+  get myStyles(): any{
     return {
       'height': innerHeight
     };
