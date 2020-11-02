@@ -5,7 +5,7 @@ import { ClientDetails } from './ClientDetails';
 import { QuoteFinance } from './Finance';
 
 export class Quote{
-  public quoteId: string;
+  public quoteId: number;
   public clientDetails: ClientDetails;
   public projectReq: Project;
   public validityDateOfQuote: Date;

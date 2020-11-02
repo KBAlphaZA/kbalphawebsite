@@ -9,14 +9,22 @@ export class Project{
   developmentCycle: Cycle;
 }
 
-
-export interface IFeatureListing{
+export interface IFeatureListing {
+  position: number;
   feature: string;
+  importance: string;
   hoursRequired: number;
   featureCost: number;
 }
 
-export interface PlatformsToDevelopOn{
+export interface FeatureObject {
+  Feature: string;
+  position: number;
+  importance: string;
+}
+
+export interface PlatformsToDevelopOn {
+
   platformName: string;
   checked: boolean;
 }
