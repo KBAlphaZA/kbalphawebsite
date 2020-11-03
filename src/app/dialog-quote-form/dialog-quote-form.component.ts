@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Form } from '@angular/forms';
-
 import { Component, OnInit, ChangeDetectorRef, ViewChild  } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Form } from '@angular/forms';
 import { MatSlider } from '@angular/material/slider';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Quote } from 'src/app/Server/Models/Quote';
@@ -14,7 +11,7 @@ import { IFeatureListing, PlatformsToDevelopOn } from '../Server/Models/Project'
 
 
 import { ClientDetails } from '../Server/Models/ClientDetails';
-import { QuoteFinance } from '../Server/Models/Finance';
+import { KBAlphaPaymentOptions, QuoteFinance } from '../Server/Models/Finance';
 import { Project } from '../Server/Models/Project';
 
 
