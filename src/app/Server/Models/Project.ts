@@ -4,7 +4,7 @@ export class Project{
   platformsToBeDevelopedOn: PlatformsToDevelopOn[];
   industry: string;
   designSpecificationDocument: File;
-  // featuresRequested2: FeatureObject[];
+  
 }
 
 
