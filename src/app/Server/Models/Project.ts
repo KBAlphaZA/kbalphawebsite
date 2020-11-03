@@ -4,9 +4,7 @@ export class Project{
   platformsToBeDevelopedOn: PlatformsToDevelopOn[];
   industry: string;
   designSpecificationDocument: File;
-  
 }
-
 
 export interface IFeatureListing {
   position: number;
@@ -23,6 +21,7 @@ export interface FeatureObject {
 }
 
 export interface PlatformsToDevelopOn {
+
   platformName: string;
   checked: boolean;
 }
