@@ -42,7 +42,8 @@ jobs:
         npm install
         npm run build --if-present
         # npm run test --if-present
-    - name: 'Deploy to Azure WebApp'
+        
+    # deploy web app using Azure credentials
     - uses: azure/webappsdeploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
