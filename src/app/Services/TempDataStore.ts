@@ -16,17 +16,23 @@ export class LocalDatabase{
     {
       feature: 'The Applciation must have GPS location	',
       hoursRequired: 0,
-      featureCost: 0
+      featureCost: 0,
+      position: 1,
+      importance: 'not so important'
     },
     {
       feature: 'It must be on Android and IOS',
       hoursRequired: 0,
-      featureCost: 0
+      featureCost: 0,
+      position: 2,
+      importance: 'not so important'
     },
     {
       feature: 'It must sign in with Google, facebook and linkdin',
       hoursRequired: 0,
-      featureCost: 0
+      featureCost: 0,
+      position: 3,
+      importance: 'not so important'
     }
  ];
 
@@ -61,7 +67,7 @@ export class LocalDatabase{
   {
       projectReq: this.tempProject,
       quoteAmount: this.pvtQuoteFigures,
-      quoteId: '1212321',
+      quoteId: 1212321,
       clientDetails: this.clientDetails,
       acceptedQuote: false,
       validityDateOfQuote: new Date(),

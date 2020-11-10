@@ -25,20 +25,18 @@ export class QuotegenerationviewComponent implements OnInit {
   // Subtotal local variable
   subTotal = 0;
 
-<<<<<<< HEAD
   pvtHoursRequired = 0;
-=======
+
 
   // Features requested by the client
-  tempFeatureList: IFeatureListing[] = [
+  /* tempFeatureList: IFeatureListing[] = [
                                           { position: 1, feature: 'The Applciation must have GPS location	',
                                             importance: 'High', hoursRequired: 0, featureCost: 0},
                                           { position: 2, feature: 'It must be on Android and IOS',
                                             importance: 'High', hoursRequired: 0, featureCost: 0},
                                           { position: 3, feature: 'It must sign in with Google, facebook and linkdin',
                                             importance: 'High', hoursRequired: 0, featureCost: 0}
-                                       ];
->>>>>>> e4e840c70893909c5744637b4bd1f01c98f60663
+                                       ]; */
 
   // Get data from the quoteObj object
   quoteSubmissionDate = new Date().toDateString();
@@ -48,19 +46,15 @@ export class QuotegenerationviewComponent implements OnInit {
 
   // Dummy service DOA
   listOfAllQuotes: Quote[] = [
-<<<<<<< HEAD
-                                this.tempData.dummyQuote,
-=======
                                 {
                                   quoteId: 50000,
                                   validityDateOfQuote: new Date(),
                                   acceptedQuote: false,
                                   dateTimeOfQuote: new Date(),
-                                  projectReq: this.tempProject,
-                                  clientDetails: this.clientDetails,
-                                  quoteAmount: this.pvtQuoteFigures
+                                  projectReq: new Project(),
+                                  clientDetails: new ClientDetails(),
+                                  quoteAmount: null
                                 },
->>>>>>> e4e840c70893909c5744637b4bd1f01c98f60663
                                 {
                                   quoteId: 10001,
                                   validityDateOfQuote: new Date(),
