@@ -16,14 +16,14 @@ export class OurTeamComponent implements OnInit {
     employeeName: 'Bonga Ngcobo',
      employeeLinkdInLink: 'https://www.linkedin.com/in/bonga-ngcobo-87582814a',
      employeeProfilePicture : '/assets/bonga.jpg',
-     employeeTitle: 'Co-founder and tech lead'
+     employeeTitle: 'Co-founder'
     };
 
 
     khanyisanisInfo: Employee = {
       employeeName: 'Khanyisani Buthelezi',
       employeeProfilePicture: '/assets/khanyisani.jpg',
-      employeeTitle: 'Co-founder and project lead',
+      employeeTitle: 'Co-founder',
       employeeLinkdInLink: 'https://www.linkedin.com/in/khanyisani-buthelezi-060602146'
     };
 
