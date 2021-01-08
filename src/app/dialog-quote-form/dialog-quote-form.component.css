@@ -42,3 +42,9 @@ table {
   border-width: medium;
   border-color: #2C3E7B;
 }
+
+.mat-card-image {
+  width: 600%;
+  margin: 0 -16px 16px -16px;
+  padding: 0%;
+}

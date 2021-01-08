@@ -58,3 +58,11 @@
   margin: 2%;
   line-height: 100%;
 }
+
+.has-text-white{
+  text-align: start;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 2%;
+}

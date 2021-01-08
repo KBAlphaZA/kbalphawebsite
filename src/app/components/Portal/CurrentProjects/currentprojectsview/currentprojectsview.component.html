@@ -1,9 +1,9 @@
 <!--Progress report on projects-->
-<div class="container">
+<div class="container" *ngFor="let project of currentProjects">
   <mat-card class="cardSizing">
     <mat-card-header>
-        <mat-card-title>Altron Technologies</mat-card-title>
-        <mat-card-subtitle>@Altrontech.com</mat-card-subtitle>
+        <mat-card-title>{{project.clientInformation.company}}</mat-card-title>
+        <mat-card-subtitle>{{project.clientInformation.email}}</mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content>
@@ -21,30 +21,28 @@
               </span>
             </label>
             <br>
-            <label class="subtitle">Industry: Engineering and Science</label>
+            <label class="subtitle">Industry: {{project.projectDetails.industry}}</label>
 
+            <br>
+            <br>
+
+            <h3 class="subtitle"><b> features</b></h3>
 
             <!--Feature list-->
-            <div>
-              <br>
-               <h3 class="subtitle"><b>5 features</b></h3>
+            <div *ngFor="let features of project.projectDetails.featuresRequested">
 
-               <mat-checkbox> The App must have a GPS</mat-checkbox>
+               <mat-checkbox> {{features.feature}}</mat-checkbox>
                <br>
-               <mat-checkbox> The App must have a Emailer</mat-checkbox>
                <br>
-               <mat-checkbox> The App must have a Sql database</mat-checkbox>
-               <br>
-               <mat-checkbox>The App must have a google docs api</mat-checkbox>
-               <br>
-               <mat-checkbox>The App must have a payment system</mat-checkbox>
+
+
+            </div>
 
                <br>
                <br>
 
                <button (click)="openPDFFile()" mat-raised-button color="primary">Design Specification</button>
 
-            </div>
           </div>
 
           <!--Progress bar and project data input area-->
