@@ -22,14 +22,18 @@ export class LandingpagecomponentComponent implements OnInit {
   onResize(event) {
     this._innerHeight = window.innerHeight;
     this._innerWidth = window.innerWidth;
-    var element = document.getElementById("headerImage")
+
+    var element = document.getElementById("headerImage");
     this._innerHeightString = this._innerHeight.toString() + "px";
+
+    var scolllottie = document.getElementById("lottie");   
+
     
     //
     // We need to fix the box issue before implmenting the resizing solution
     //
 
-    //element.style.height = this._innerHeightString;
+    element.style.height = this._innerHeightString;
     
   }
 }
