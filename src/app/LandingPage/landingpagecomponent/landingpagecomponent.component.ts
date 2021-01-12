@@ -13,19 +13,19 @@ export class LandingpagecomponentComponent implements OnInit {
   constructor() {
 
     }
-  public innerHeight: any;
-  public innerWidth: number;
-
-  get myStyles(): any{
-    return {
-      'height': innerHeight
-    };
-  }
+  public _innerHeight: any;
+  public _innerWidth: number;
+  public _innerHeightString: string;
 
   ngOnInit(): void {}
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.innerHeight = window.innerHeight;
-    this.innerWidth = window.innerWidth;
+    this._innerHeight = window.innerHeight;
+    this._innerWidth = window.innerWidth;
+    var element = document.getElementById("headerImage")
+    this._innerHeightString = this._innerHeight.toString() + "px";
+    
+    //element.style.height = this._innerHeightString;
+    
   }
 }

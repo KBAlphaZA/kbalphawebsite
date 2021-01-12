@@ -15,7 +15,7 @@
 }
 
 #boxWindow{
-    height: auto;
+    
     max-width: 100%;
 }
 
@@ -25,19 +25,19 @@
 }
 
 #rowOne{
-  height: auto;
+  height: 30%;
   margin-left: 20px;
   margin-right: 20px;
 }
 
 #rowTwo{
-  height: 100%;
+  height: 30%;
   margin-left: 20px;
   margin-right: 20px;
 }
 
 #rowThree{
-  height: 100%;
+  height: 15%;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 2%;
