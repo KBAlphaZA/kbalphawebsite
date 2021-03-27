@@ -1,6 +1,6 @@
 //var CustomerEnquiry = require( '../../dao/CustomerEnquiry');
 //var EnquiryDAO = require('../../dao/enquiryDAO');
-const express = require('express');
+var express = require('express');
 const router = express.Router();
 const Customer = require('../../Models/CustomerLead.ts');
 

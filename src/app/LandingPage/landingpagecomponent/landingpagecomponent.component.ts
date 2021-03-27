@@ -11,7 +11,7 @@ import { HostListener, Component, OnInit } from '@angular/core';
 export class LandingpagecomponentComponent implements OnInit {
 
   constructor() {
-
+    
     }
   public _innerHeight: any;
   public _innerWidth: number;
@@ -25,7 +25,7 @@ export class LandingpagecomponentComponent implements OnInit {
     var element = document.getElementById("headerImage")
     this._innerHeightString = this._innerHeight.toString() + "px";
     
-    //element.style.height = this._innerHeightString;
+    element.style.height = this._innerHeightString;
     
   }
 }
