@@ -31,7 +31,7 @@
             <!--Feature list-->
             <div *ngFor="let features of project.projectDetails.featuresRequested">
 
-               <mat-checkbox> {{features.feature}}</mat-checkbox>
+               <mat-checkbox [checked]="features.checked" (ngmodel)="features.checked" (change)="setValue(features)"> {{features.feature}}</mat-checkbox>
                <br>
                <br>
 
@@ -48,7 +48,7 @@
           <!--Progress bar and project data input area-->
           <div class="column">
             <h3 class="subtitle">Project progress</h3>
-            <mat-progress-bar mode="determinate" [value]=80></mat-progress-bar>
+            <mat-progress-bar mode="determinate" value={{getProjectCompletionPercentage()}}></mat-progress-bar>
 
             <br>
             <br>

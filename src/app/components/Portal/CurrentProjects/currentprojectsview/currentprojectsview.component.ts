@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentProjectInfo } from 'src/app/Server/Models/CurrentProjectInformation';
-import { Project } from 'src/app/Server/Models/Project';
+import { IFeatureListing, Project } from 'src/app/Server/Models/Project';
 import { LocalDatabase } from 'src/app/Services/TempDataStore';
+import {Equations} from 'src/app/Server/Utils/Equations';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { LocalDatabase } from 'src/app/Services/TempDataStore';
 export class CurrentprojectsviewComponent implements OnInit {
 
   constructor() { }
+
+  eq: Equations;
 
   // Get data from temp data store class
   dummyData = new LocalDatabase();
@@ -49,6 +52,33 @@ export class CurrentprojectsviewComponent implements OnInit {
      // Note: Pass the id for google drive
       // 1. Open a new tab on chrome with the pdf reader.
       window.open( 'pdf', '_blank');
+  }
+
+  getProjectCompletionPercentage() : number{
+    this.eq=new Equations();
+    let doneItems = 0;
+
+    let totalDevFeatures = this.projectDetailObj.projectDetails.featuresRequested.length;
+
+    let checkedItems = this.projectDetailObj.projectDetails.featuresRequested.forEach(y=>{
+      if(y.checked === true){
+        doneItems++;
+      }
+    });
+
+    return this.eq.percentageCalculator(doneItems, totalDevFeatures);
+  }
+
+  //set the value of the checked item
+  setValue(value: IFeatureListing){
+
+    //1. update local object
+    value.checked =! value.checked;
+
+    //2. update backed end with put
+
+    //3. Redraw the progression bar
+    this.getProjectCompletionPercentage();
   }
 
 }

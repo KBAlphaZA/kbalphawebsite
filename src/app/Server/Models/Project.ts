@@ -15,6 +15,7 @@ export interface IFeatureListing {
   importance: string;
   hoursRequired: number;
   featureCost: number;
+  checked: boolean;
 }
 
 export interface FeatureObject {

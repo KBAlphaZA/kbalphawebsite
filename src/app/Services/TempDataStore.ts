@@ -18,21 +18,24 @@ export class LocalDatabase{
       hoursRequired: 0,
       featureCost: 0,
       position: 1,
-      importance: 'not so important'
+      importance: 'not so important',
+      checked: false
     },
     {
       feature: 'It must be on Android and IOS',
       hoursRequired: 0,
       featureCost: 0,
       position: 2,
-      importance: 'not so important'
+      importance: 'not so important',
+      checked: false
     },
     {
       feature: 'It must sign in with Google, facebook and linkdin',
       hoursRequired: 0,
       featureCost: 0,
       position: 3,
-      importance: 'not so important'
+      importance: 'not so important',
+      checked: true
     }
  ];
 
