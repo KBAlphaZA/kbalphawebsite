@@ -27,7 +27,7 @@ export class CurrentprojectsviewComponent implements OnInit {
   ];
 
   // Get from currentProjectObj object
-  stages: string[] = ['Design and development', 'Maintaince'];
+  stages: string[] = ['Design', 'Development' ,'Maintaince'];
 
   // Stage of developemnt, get from backend
   localStageLabel: string;
@@ -42,8 +42,13 @@ export class CurrentprojectsviewComponent implements OnInit {
     // pass the projectId
     const pvtId = null;
 
-    // 1. check if the passed id is not empty
-    // 2. api qury to delete the project in the database
+    //allert first
+    let deletionConfirmation=confirm("are you sure you want to delete this project?");
+
+    if(deletionConfirmation==true){
+        // 1. check if the passed id is not empty
+        // 2. api qury to delete the project in the database
+    }
 
   }
 
