@@ -54,7 +54,6 @@ import { AccpetedQuoteComponent } from './components/Portal/accpeted-quote/accpe
 import { LoginComponent } from './components/Portal/Login/login/login.component';
 import {CommonModule} from '@angular/common';
 import { DevopsviewComponent } from './components/Portal/DevOpsViews/devopsview/devopsview.component';
-import { CloudEvaluationComponent } from './EvaluationForm/cloud-evaluation/cloud-evaluation.component';
 
 
 
@@ -91,7 +90,6 @@ export function playerFactory(){
     AccpetedQuoteComponent,
     LoginComponent,
     DevopsviewComponent,
-    CloudEvaluationComponent,
   ],
   imports: [
     BrowserModule,
