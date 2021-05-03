@@ -282,7 +282,8 @@ position: this.dataSource.length + 1,
 feature: theval,
 importance: 'High',
 hoursRequired: 0,
-featureCost: 0
+featureCost: 0,
+checked: false
 };
 this.quoteservice.addFeature(newobj);
 this.getAllFeatures();

@@ -3,6 +3,7 @@ import { CurrentProjectInfo } from 'src/app/Server/Models/CurrentProjectInformat
 import { IFeatureListing, Project } from 'src/app/Server/Models/Project';
 import { LocalDatabase } from 'src/app/Services/TempDataStore';
 import {Equations} from 'src/app/Server/Utils/Equations';
+import { Cycle } from 'src/app/Server/Models/DevelopmentCycle';
 
 
 @Component({
@@ -31,6 +32,9 @@ export class CurrentprojectsviewComponent implements OnInit {
 
   // Stage of developemnt, get from backend
   localStageLabel: string;
+
+  //Get the current dev stage from the backend and set to this variable
+  currentDevStage: Cycle.design;
 
   ngOnInit(): void {
 
