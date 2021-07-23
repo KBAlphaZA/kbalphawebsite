@@ -1,0 +1,41 @@
+name: "Postman Test Runner"
+on: push
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      
+    # INstall Node on the runner
+    - name: Install Node
+      uses: actions/setup-node@v2.2.0
+      with: 
+        node-version: '14.17.0'
+    
+    # Install the newman command line utility and also install the html extra reporter
+    - name: Install newman
+      id: newmanCli
+      continue-on-error: true
+      env:
+        PM_API_URL: "https://api.getpostman.com"
+      run: | 
+       npm install -g newman
+       npm install -g newman-reporter-htmlextra
+    # Make directory to upload the test results
+    - name: Make Directory for results
+      run: mkdir -p testResults
+  
+
+    # Run the POSTMAN collection
+    - name: Run POSTMAN collection
+      run: |
+       newman run "${{ secrets.PM_API_URL }}/collections/${{ secrets.PM_COLL_ID }}?apikey=${{ secrets.POSTMAN_API_KEY }}" \
+            --environment "${{ secrets.PM_API_URL }}/environments/${{ secrets.PM_ENV_ID }}?apikey=${{ secrets.POSTMAN_API_KEY }}" \
+            --folder "[CI]" --bail -r cli,htmlextra --reporter-htmlextra-export="/tmp/newman/newman-report-extra.html"
+    # Upload the contents of Test Results directory to workspace
+    - name: Output the run Details
+      uses: actions/upload-artifact@v2
+      with: 
+       name: RunReports
+       path: testResults
