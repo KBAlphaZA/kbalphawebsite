@@ -15,13 +15,17 @@ jobs:
     
     # Install the newman command line utility and also install the html extra reporter
     - name: Install newman
+      id: newmanCli
+      continue-on-error: true
+      env:
+        PM_API_URL: "https://api.getpostman.com"
       run: |
        npm install -g newman
        npm install -g newman-reporter-htmlextra
     # Make directory to upload the test results
     - name: Make Directory for results
       run: mkdir -p testResults
-
+  
 
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
