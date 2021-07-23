@@ -20,6 +20,7 @@ jobs:
       env:
         PM_API_URL: "https://api.getpostman.com"
       run: |
+       rm -rf package-lock.json 
        npm install -g newman
        npm install -g newman-reporter-htmlextra
     # Make directory to upload the test results
