@@ -5,7 +5,7 @@ jobs:
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1 
+    - uses: actions/checkout@v2 
     - name: Run Newman
       uses: anthonyvscode/newman-action@v1      
       id: run-api-tests
@@ -14,17 +14,6 @@ jobs:
         collection: ${{ secrets.POSTMAN_COLLECTION_ID }}
         environment: ${{ secrets.POSTMAN_ENVIRONMENT }}
         reporters: cli
-
-    - name: Run Newman - Failure Continue
-      uses: anthonyvscode/newman-action@v1      
-      id: run-api-tests-failure
-      with:
-        apiKey: ${{ secrets.POSTMAN_API_KEY }}
-        collection: ${{ secrets.POSTMAN_COLLECTION_ID }}
-        environment: ${{ secrets.POSTMAN_ENVIRONMENT }}
-        reporters: cli
-        suppressExitCode: "true"
     
     - name: Export Summary from Outputs
-      run: |
-        echo ${{ steps.run-api-tests.outputs.summary }}
+      run: echo ${{ steps.run-api-tests.outputs.summary_full }}
