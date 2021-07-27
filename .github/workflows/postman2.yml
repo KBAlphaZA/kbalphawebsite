@@ -1,0 +1,15 @@
+
+name: "Postman Test Runner"
+on: [push]
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: matt-ball/newman-action@master
+        with: # This is being done via the API
+          apiKey: ${{ secrets.POSTMAN_API_KEY }}
+          collection: ${{ secrets.POSTMAN_COLLECTION_ID }}
+          environment: ${{ secrets.POSTMAN_ENVIRONMENT }}
+          reporter: newman-reporter-htmlextra
+  
