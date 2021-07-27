@@ -1,15 +1,41 @@
+name: "build-test"
+on: # rebuild any PRs and main branch changes
+  push:
+    branches:
+      - master
+      - 'releases/*'
 
-name: "Postman Test Runner"
-on: [push]
 jobs:
-  test-api:
+  build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: matt-ball/newman-action@master
-        with: # This is being done via the API
-          apiKey: ${{ secrets.POSTMAN_API_KEY }}
-          collection: ${{ secrets.POSTMAN_COLLECTION_ID }}
-          environment: ${{ secrets.POSTMAN_ENVIRONMENT }}
-          reporter: htmlextra
-  
+    - uses: actions/checkout@v1
+    - run: |
+        npm install
+        npm run all
+  test: # make sure the action works on a clean machine without building
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: Run Newman
+      uses: ./      
+      id: run-api-tests
+      with:
+        apiKey: ${{ secrets.POSTMAN_API_KEY }}
+        collection: ${{ secrets.POSTMAN_COLLECTION_ID }}
+        reporters: cli
+
+    - name: Run Newman - Failure Continue
+      uses: ./      
+      id: run-api-tests-failure
+      with:
+        apiKey: ${{ secrets.POSTMAN_API_KEY }}
+        collection: ${{ secrets.POSTMAN_COLLECTION_ID }}
+        environment: ${{ secrets.POSTMAN_ENVIRONMENT }}
+        reporters: cli
+        suppressExitCode: "true"
+    
+    - name: Export Summary from Outputs
+      run: |
+        echo ${{ steps.run-api-tests.outputs.summary }}
