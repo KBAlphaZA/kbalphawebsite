@@ -8,6 +8,7 @@ import {AdminviewComponent} from './components/Portal/Admin/adminview/adminview.
 import { DialogQuoteFormComponent } from './dialog-quote-form/dialog-quote-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent} from './components/Portal/Login/login/login.component';
+import {FormComponent} from './components/form/form.component';
 import { from } from 'rxjs';
 
 // import { MongoClient } from 'mongodb';
@@ -29,7 +30,8 @@ const routes: Routes = [
    {path: 'about', component: SoftwaredevserviceComponent} ,
    {path: 'serapismedical', component: SerapismedicalComponent},
    {path: 'admin/login', component: LoginComponent},
-   {path: 'admin/login/adminView', component: AdminviewComponent}
+   {path: 'admin/login/adminView', component: AdminviewComponent},
+   {path: 'quoteform', component: FormComponent}
    // { path: '**', component: HomeComponent },
  // { path: '**', component: HomeComponent },  // Wildcard route for a 404 page[PAGE NOT FOUND]
   ];

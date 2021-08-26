@@ -22,7 +22,8 @@ export class AppComponent {
 
   constructor(public dialogTwo: MatDialog){}
 
-  popUpDialog(){
-     const dialogRef = this.dialogTwo.open(DialogQuoteFormComponent, {height: '80%', width: '90%'});
+  openForm(){
+     //const dialogRef = this.dialogTwo.open(DialogQuoteFormComponent, {height: '80%', width: '90%'});
+     location.href='quoteform';
   }
 }
