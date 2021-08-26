@@ -75,6 +75,8 @@ import { Component, OnInit } from '@angular/core';
 
                         <br>
 
+                        <a target="blank" title="Company Registration" href="https://www.govchain.co.za/verify-company?id=K2018265593"><img src="https://govchain-static.s3.amazonaws.com/logo/verification-badge-medium.png" width="80px" alt="Company Registration" /></a>
+
                         <!--Linkedin follow button plugin goes here future updates-->
                         <!--Documentation for it is here for version 2 of the website-->
                         <!--https://docs.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/follow-company-plugin -->
