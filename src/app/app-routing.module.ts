@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent} from './components/Portal/Login/login/login.component';
 import {FormComponent} from './components/form/form.component';
 import { from } from 'rxjs';
+import { PartnersComponent } from './partners/partners.component';
 
 // import { MongoClient } from 'mongodb';
 
@@ -31,7 +32,8 @@ const routes: Routes = [
    {path: 'serapismedical', component: SerapismedicalComponent},
    {path: 'admin/login', component: LoginComponent},
    {path: 'admin/login/adminView', component: AdminviewComponent},
-   {path: 'quoteform', component: FormComponent}
+   {path: 'quoteform', component: FormComponent},
+   {path: 'partners', component: PartnersComponent}
    // { path: '**', component: HomeComponent },
  // { path: '**', component: HomeComponent },  // Wildcard route for a 404 page[PAGE NOT FOUND]
   ];
