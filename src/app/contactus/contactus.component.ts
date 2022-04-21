@@ -9,6 +9,7 @@ import { HttpBackend, HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { ThankyoupopComponent } from '../components/subcomponent/popups/thankyoupop/thankyoupop.component';
 import { CustomerLeadService} from '../Services/CustomerLeadService';
+import { KbalphabusinessapiService} from '../Services/kbalphabusinessapi.service'
 
 
 interface Service{
@@ -31,7 +32,7 @@ export class ContactusComponent implements OnInit {
 
   snackbar: MatSnackBar;
 
-  duration = 5;
+  duration = 7;
 
   customerName = '';
   customerCellphone = '';
@@ -57,7 +58,7 @@ export class ContactusComponent implements OnInit {
    ];
 
 
-  constructor(private customerLeadService: CustomerLeadService, private pvtsnackBar: MatSnackBar) { this.ngOnInit(); }
+  constructor(private kbAlphaService: KbalphabusinessapiService, private pvtsnackBar: MatSnackBar) { this.ngOnInit(); }
 
   ngOnInit(): void {
 
@@ -66,7 +67,7 @@ export class ContactusComponent implements OnInit {
 
 
   onSendRequest(f: NgForm) {
-      /*take all the user data and send it to database.*/
+      /*take all the user data and send it to hubspot via business api.*/
 
       this.customerName = this.clientName;
 
@@ -88,7 +89,10 @@ export class ContactusComponent implements OnInit {
         CustomerEnquiry: this.subjectSelected
       };
 
-      this.customerLeadService.postcontact(f.value); // we need to return this function and use the sever messages
+      // we need to return this function and use the sever messages
+      this.kbAlphaService.postClientForm(f.value); 
+
+      //First check the response message
 
       // visual feedback on forms being sent
       this.openPopUp(this.clientName);
