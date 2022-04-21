@@ -55,6 +55,7 @@ import { LoginComponent } from './components/Portal/Login/login/login.component'
 import {CommonModule} from '@angular/common';
 import { DevopsviewComponent } from './components/Portal/DevOpsViews/devopsview/devopsview.component';
 import { FormComponent } from './components/form/form.component';
+import { PartnersComponent } from './partners/partners.component';
 
 
 
@@ -92,6 +93,7 @@ export function playerFactory(){
     LoginComponent,
     DevopsviewComponent,
     FormComponent,
+    PartnersComponent,
   ],
   imports: [
     BrowserModule,
