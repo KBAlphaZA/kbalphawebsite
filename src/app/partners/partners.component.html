@@ -1,16 +1,63 @@
 <div>
     <!--Partners div section-->
     <div>
-        <h1>Our Partners</h1>
+        <br>
+        <b><h1> Our Partners</h1></b>
 
         <!--The grid list-->
         <div>
-            Grid list of partners
+
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile *ngFor="let item of partners">
+                    <div>
+                        <!--Partner Card-->
+                        <img mat-card-md-image src=""/>
+
+                        <label>
+                            <h2>
+                                <b>{{item.partnerName}}</b>
+                            </h2>
+                        </label>
+
+                        <ul style="list-style-type: circle;" *ngFor="let innerItem of item.partnerServices">
+                            <li>{{innerItem}}</li>
+                        </ul>
+                        
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+
         </div>
     </div>
 
     <!--Clients div section-->
     <div>
+       <div class="columns">
+           <!--All the clients-->
+           <div class="column" *ngFor="let client of clients">
+               <mat-card>
+                   <mat-card-header>
+                        <mat-card-title>{{client.clientName}}</mat-card-title>
+                   </mat-card-header>
 
+                   <!--company logo-->
+                   <mat-card-content>
+                       <img mat-card-md-image 
+                            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                            />
+                   </mat-card-content>
+
+                   <!--Description and website link-->
+                   <mat-card-footer>
+                       <p>
+                           {{client.clientReview}}
+                       </p>
+                  </mat-card-footer>
+               </mat-card>
+               
+                <!--Space-->
+                <br>
+           </div>
+       </div> 
     </div>
 </div>
