@@ -59,6 +59,7 @@ import { PartnersComponent } from './partners/partners.component';
 import { TradingComponent } from './components/Portal/trading/trading.component';
 import { CommodatiescompComponent } from './components/subcomponent/commodatiescomp/commodatiescomp.component';
 import {NgxEchartsModule} from 'ngx-echarts';
+import { EquatiescompComponent } from './components/subcomponent/equatiescomp/equatiescomp.component';
 
 
 export function playerFactory(){
@@ -101,7 +102,8 @@ export function loadEcharts() {
     FormComponent,
     PartnersComponent,
     TradingComponent,
-    CommodatiescompComponent
+    CommodatiescompComponent,
+    EquatiescompComponent
   ],
   imports: [
     BrowserModule,
