@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-trading',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TradingComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sanitizer: DomSanitizer) { }
+
+  
 
   ngOnInit(): void {
+  }
+
+  goToUrl()
+  {
+    return this.sanitizer.bypassSecurityTrustResourceUrl('https://material.angular.io/components/input/examples');
   }
 
 }
