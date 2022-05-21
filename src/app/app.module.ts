@@ -57,11 +57,16 @@ import { DevopsviewComponent } from './components/Portal/DevOpsViews/devopsview/
 import { FormComponent } from './components/form/form.component';
 import { PartnersComponent } from './partners/partners.component';
 import { TradingComponent } from './components/Portal/trading/trading.component';
-
+import { CommodatiescompComponent } from './components/subcomponent/commodatiescomp/commodatiescomp.component';
+import {NgxEchartsModule} from 'ngx-echarts';
 
 
 export function playerFactory(){
     return import('lottie-web');
+}
+
+export function loadEcharts() {
+  return import('echarts');
 }
 
 @NgModule({
@@ -96,6 +101,7 @@ export function playerFactory(){
     FormComponent,
     PartnersComponent,
     TradingComponent,
+    CommodatiescompComponent
   ],
   imports: [
     BrowserModule,
@@ -124,7 +130,8 @@ export function playerFactory(){
     MatRadioModule,
     MatButtonModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    NgxEchartsModule.forRoot({ echarts: loadEcharts })
   ],
   providers: [],
   bootstrap: [AppComponent]
