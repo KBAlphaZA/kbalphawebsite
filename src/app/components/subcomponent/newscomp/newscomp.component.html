@@ -3,14 +3,45 @@
     <!--Ticker news search-->
     <div class="column is-two-thirds">
 
-        <!--stock news search bar-->
-        <div class="control has-icons-right" style="margin-left: 25%; margin-right: 25%;">
-            <input class="input" type="text" placeholder="ticker symbol">
-    
-            <span class="icon is-small is-right">
-            <i class="fas fa-search"></i>
-            </span>
+        <!--inner div container with columns-->
+        <div class="columns">
+
+            <div class="column">
+                 <!--Region select-->
+                 <div class="control has-icons-left">
+                    <div class="select">
+                      <select>
+                          <option *ngFor="let region of regions">
+                             {{region.regionCode}}
+                          </option>
+                      </select>
+
+                      <div class="icon is-small is-left">
+                          <!--Region flag-->
+                        <img src=""/>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column is-four-fifths">
+
+                <!--stock news search bar-->
+                <div class="control has-icons-right" style="margin-left: 25%; margin-right: 25%;">
+                    <input [(ngModel)]="tickerSymbolEntered" class="input" type="text" placeholder="ticker symbol">
+            
+                    <span class="icon is-small is-right">
+                    <i class="fas fa-search"></i>
+                    </span>
+                </div>
+                
+            </div>
+
         </div>
+
+       
+
+        
 
     </div>
 

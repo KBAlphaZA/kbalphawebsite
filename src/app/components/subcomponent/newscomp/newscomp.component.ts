@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {KbalphabusinessapiService} from '../../../Services/kbalphabusinessapi.service';
 
 @Component({
   selector: 'app-newscomp',
@@ -7,9 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewscompComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiConnect: KbalphabusinessapiService) { }
+
+  regions: Regions[] = [
+    {regionCode: "US", regionFlag: "https://img.icons8.com/color/48/000000/usa.png"},
+    {regionCode: "AU", regionFlag: ""},
+    {regionCode: "CA", regionFlag: ""},
+    {regionCode: "FR", regionFlag: ""},
+    {regionCode: "DE", regionFlag: ""},
+    {regionCode: "HK", regionFlag: ""},
+    {regionCode: "IT", regionFlag: ""},
+    {regionCode: "ES", regionFlag: ""},
+    {regionCode: "GB", regionFlag: ""},
+  ];
+  
+  selectedRegion: string;
+
+  tickerSymbolEntered: string;
 
   ngOnInit(): void {
+    //Get default articles (US), set to US for now until select works
+    this.apiConnect.getTrendingStockNews("US");
   }
 
+}
+
+interface Regions{
+  regionCode: string;
+  regionFlag: string;
 }

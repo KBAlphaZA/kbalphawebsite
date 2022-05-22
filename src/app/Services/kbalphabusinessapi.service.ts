@@ -58,6 +58,17 @@ export class KbalphabusinessapiService {
     return _codes;
   }
 
+  //----------Equaties-----------
+  public async getTrendingStockNews(region: string){
+    let url = this.baseUrl + "api/stocks/news/trending/" + region;
+
+    console.log("Url: ", url);
+
+    let articles = await this.http.get(url).subscribe((data: any)=>{
+      console.log("data objct:", data);
+    })
+  }
+
 }
 
 interface IDictionary{
