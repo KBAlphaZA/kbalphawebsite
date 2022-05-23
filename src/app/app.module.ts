@@ -61,6 +61,7 @@ import { CommodatiescompComponent } from './components/subcomponent/commodatiesc
 import {NgxEchartsModule} from 'ngx-echarts';
 import { EquatiescompComponent } from './components/subcomponent/equatiescomp/equatiescomp.component';
 import { NewscompComponent } from './components/subcomponent/newscomp/newscomp.component';
+import { MacroeconomicsComponent } from './components/subcomponent/macroeconomics/macroeconomics.component';
 
 
 export function playerFactory(){
@@ -105,7 +106,8 @@ export function loadEcharts() {
     TradingComponent,
     CommodatiescompComponent,
     EquatiescompComponent,
-    NewscompComponent
+    NewscompComponent,
+    MacroeconomicsComponent
   ],
   imports: [
     BrowserModule,

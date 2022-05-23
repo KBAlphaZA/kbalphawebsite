@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {TrendingNews} from '../../app/Server/Models/TrendingNews';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -60,12 +61,16 @@ export class KbalphabusinessapiService {
 
   //----------Equaties-----------
   public async getTrendingStockNews(region: string){
+
+
     let url = this.baseUrl + "api/stocks/news/trending/" + region;
 
     console.log("Url: ", url);
 
-    let articles = await this.http.get(url).subscribe((data: any)=>{
+    let articles = await this.http.get(url).subscribe((data:any)=>{
       console.log("data objct:", data);
+
+      return data;
     })
   }
 

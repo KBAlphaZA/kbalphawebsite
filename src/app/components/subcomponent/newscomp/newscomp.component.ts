@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {KbalphabusinessapiService} from '../../../Services/kbalphabusinessapi.service';
+import {TrendingNews} from '../../../Server/Models/TrendingNews';
 
 @Component({
   selector: 'app-newscomp',
@@ -26,9 +27,11 @@ export class NewscompComponent implements OnInit {
 
   tickerSymbolEntered: string;
 
+  articles: TrendingNews[] = [];
+
   ngOnInit(): void {
     //Get default articles (US), set to US for now until select works
-    this.apiConnect.getTrendingStockNews("US");
+    //let data =  this.apiConnect.getTrendingStockNews("US");
   }
 
 }
