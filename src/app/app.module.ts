@@ -62,7 +62,17 @@ import {NgxEchartsModule} from 'ngx-echarts';
 import { EquatiescompComponent } from './components/subcomponent/equatiescomp/equatiescomp.component';
 import { NewscompComponent } from './components/subcomponent/newscomp/newscomp.component';
 import { MacroeconomicsComponent } from './components/subcomponent/macroeconomics/macroeconomics.component';
+import { EarningscompComponent } from './components/subcomponent/earningscomp/earningscomp.component';
 
+// ########### Calendar library #########
+ // must go before plugins (Calendar library)
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+
+ // register FullCalendar plugins
+FullCalendarModule.registerPlugins([
+  dayGridPlugin
+]);
 
 export function playerFactory(){
     return import('lottie-web');
@@ -107,7 +117,8 @@ export function loadEcharts() {
     CommodatiescompComponent,
     EquatiescompComponent,
     NewscompComponent,
-    MacroeconomicsComponent
+    MacroeconomicsComponent,
+    EarningscompComponent
   ],
   imports: [
     BrowserModule,
@@ -137,7 +148,8 @@ export function loadEcharts() {
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    NgxEchartsModule.forRoot({ echarts: loadEcharts })
+    NgxEchartsModule.forRoot({ echarts: loadEcharts }),
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

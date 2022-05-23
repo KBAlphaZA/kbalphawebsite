@@ -60,6 +60,8 @@ export class KbalphabusinessapiService {
   }
 
   //----------Equaties-----------
+
+  //Trending stock news
   public async getTrendingStockNews(region: string){
 
 
@@ -70,6 +72,18 @@ export class KbalphabusinessapiService {
     let articles = await this.http.get(url).subscribe((data:any)=>{
       console.log("data objct:", data);
 
+      return data;
+    })
+  }
+
+  //Company earnings
+  public async getEarningsDates(){
+    let url = this.baseUrl + "api/stocks/earnings/calendar";
+
+    console.log("Url: ", url);
+
+    await this.http.get(url).subscribe((data: any) =>{
+      console.log("earnings data: ", data);
       return data;
     })
   }
