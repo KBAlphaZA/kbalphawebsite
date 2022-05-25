@@ -56,6 +56,7 @@ import {CommonModule} from '@angular/common';
 import { DevopsviewComponent } from './components/Portal/DevOpsViews/devopsview/devopsview.component';
 import { FormComponent } from './components/form/form.component';
 import { PartnersComponent } from './partners/partners.component';
+import { PortalsettingsComponent } from './components/Portal/PortalSettings/portalsettings/portalsettings.component';
 
 
 
@@ -94,6 +95,7 @@ export function playerFactory(){
     DevopsviewComponent,
     FormComponent,
     PartnersComponent,
+    PortalsettingsComponent,
   ],
   imports: [
     BrowserModule,
