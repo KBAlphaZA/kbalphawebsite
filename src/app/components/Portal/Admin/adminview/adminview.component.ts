@@ -22,6 +22,7 @@ export class AdminviewComponent implements OnInit {
     {menuItemText: 'CRM', menuItemIcon: 'contacts', viewLink: '', viewID: 'crmConnect'},
     {menuItemText: 'Dev ops', menuItemIcon: 'code', viewLink: '', viewID: 'devopspage'},
     {menuItemText: 'Settings', menuItemIcon: 'construction', viewLink: '', viewID: 'settings'}
+    {menuItemText: 'Trading', menuItemIcon: 'show_chart', viewLink: '', viewID: 'tradingPage'}
   ];
 
 
