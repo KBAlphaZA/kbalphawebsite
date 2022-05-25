@@ -120,7 +120,6 @@ export function loadEcharts() {
     EquatiescompComponent,
     NewscompComponent,
     MacroeconomicsComponent,
-    EarningscompComponent,
     TradingviewcompComponent
   ],
   imports: [
