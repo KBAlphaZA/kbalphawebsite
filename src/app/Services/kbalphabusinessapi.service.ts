@@ -88,6 +88,19 @@ export class KbalphabusinessapiService {
     })
   }
 
+  //Cpi data
+  public async getCpiData(interval: string){
+    let url = this.baseUrl + "api/stocks/macroecon/cpidata/" + interval;
+
+    console.log("Url: ", url);
+
+    await this.http.get(url).subscribe((data: any) =>{
+      console.log("cpi data: ", data);
+      return data;
+    })
+  }
+
+
 }
 
 interface IDictionary{

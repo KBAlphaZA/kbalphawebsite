@@ -67,7 +67,8 @@ import { EarningscompComponent } from './components/subcomponent/earningscomp/ea
 // ########### Calendar library #########
  // must go before plugins (Calendar library)
 import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import dayGridPlugin from '@fullcalendar/daygrid';
+import { TradingviewcompComponent } from './components/subcomponent/tradingviewcomp/tradingviewcomp.component'; // a plugin!
 
  // register FullCalendar plugins
 FullCalendarModule.registerPlugins([
@@ -118,7 +119,8 @@ export function loadEcharts() {
     EquatiescompComponent,
     NewscompComponent,
     MacroeconomicsComponent,
-    EarningscompComponent
+    EarningscompComponent,
+    TradingviewcompComponent
   ],
   imports: [
     BrowserModule,

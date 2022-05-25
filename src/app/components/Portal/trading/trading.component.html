@@ -1,3 +1,41 @@
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text">Markets</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "proName": "FOREXCOM:SPXUSD",
+        "title": "S&P 500"
+      },
+      {
+        "proName": "FOREXCOM:NSXUSD",
+        "title": "US 100"
+      },
+      {
+        "proName": "FX_IDC:EURUSD",
+        "title": "EUR/USD"
+      },
+      {
+        "proName": "BITSTAMP:BTCUSD",
+        "title": "Bitcoin"
+      },
+      {
+        "proName": "BITSTAMP:ETHUSD",
+        "title": "Ethereum"
+      }
+    ],
+    "showSymbolLogo": false,
+    "colorTheme": "light",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "en"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+  
 <mat-tab-group mat-align-tabs="start" style="margin: 2%;">
 
     <!--Equaties page-->
@@ -30,5 +68,11 @@
     <mat-tab label="Earnings calendar">
         <app-earningscomp></app-earningscomp>
     </mat-tab>
+
+    <!--Trading view -->
+    <mat-tab label="Trading view">
+        <app-tradingviewcomp></app-tradingviewcomp>
+    </mat-tab>
+
 
 </mat-tab-group>
