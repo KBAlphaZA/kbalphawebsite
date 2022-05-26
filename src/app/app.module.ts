@@ -63,12 +63,14 @@ import {NgxEchartsModule} from 'ngx-echarts';
 import { EquatiescompComponent } from './components/subcomponent/equatiescomp/equatiescomp.component';
 import { NewscompComponent } from './components/subcomponent/newscomp/newscomp.component';
 import { MacroeconomicsComponent } from './components/subcomponent/macroeconomics/macroeconomics.component';
+import {EarningscompComponent} from './components/subcomponent/earningscomp/earningscomp.component';
 
 // ########### Calendar library #########
  // must go before plugins (Calendar library)
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { TradingviewcompComponent } from './components/subcomponent/tradingviewcomp/tradingviewcomp.component'; // a plugin!
+
 
  // register FullCalendar plugins
 FullCalendarModule.registerPlugins([
@@ -120,7 +122,8 @@ export function loadEcharts() {
     EquatiescompComponent,
     NewscompComponent,
     MacroeconomicsComponent,
-    TradingviewcompComponent
+    TradingviewcompComponent,
+    EarningscompComponent
   ],
   imports: [
     BrowserModule,

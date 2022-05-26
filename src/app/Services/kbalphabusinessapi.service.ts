@@ -35,6 +35,18 @@ export class KbalphabusinessapiService {
                                                             })
   }
 
+  //Post the deal to the crm via the business api
+  public async postDeal(dealPayload: any){
+    let url =this.baseUrl+"api/crm/create/deal";
+
+    console.log("Base url to post client form:", url);
+
+    return await this.http.post<any>(url, dealPayload, {headers}).subscribe(response=>
+                                                                  {
+                                                                    console.log('Response=>', response)
+                                                                  })
+  }
+
   //----------Commodaties-------
 
   //Get commodatiy codes
