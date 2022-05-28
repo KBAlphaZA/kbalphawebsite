@@ -47,6 +47,18 @@ export class KbalphabusinessapiService {
                                                                   })
   }
 
+  public async getContacts(){
+    let url = this.baseUrl + "api/crm/contacts";
+
+    console.log("Url: ", url);
+
+    let contacts = await this.http.get(url).subscribe((data: any)=>{
+
+      //The contacts data object
+      console.log("data objct:", data);
+    })
+  }
+
   //----------Commodaties-------
 
   //Get commodatiy codes
