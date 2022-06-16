@@ -42,7 +42,7 @@ export class PartnersComponent implements OnInit {
       },
       {
         partnerName:"Lenovo", 
-        partnerLogo:"", 
+        partnerLogo:"LenovoLogo-POS-Red.png", 
         partnerServices: [
           "Servers", 
           "Data storage"
@@ -50,13 +50,11 @@ export class PartnersComponent implements OnInit {
       },
       {
       partnerName: "HPE", 
-      partnerLogo: "", 
-      partnerServices: []
-      },
-      {
-        partnerName:"Dell technologies", 
-        partnerLogo:"", 
-        partnerServices: []
+      partnerLogo: "hp logo.png", 
+      partnerServices: [
+        "Servers", 
+        "Data storage"
+      ]
       }
   ]
 
