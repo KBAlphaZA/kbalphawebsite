@@ -34,7 +34,7 @@ export class PartnersComponent implements OnInit {
   [
       {
         partnerName: "Microsoft", 
-        partnerLogo: "", 
+        partnerLogo: "Microsoft-logo_rgb_c-gray.png", 
         partnerServices: [
           "Cloud Service Provider", 
           "Power BI licensing"
