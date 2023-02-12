@@ -39,7 +39,7 @@
     "morgan": "^1.10.0",
     "ngx-echarts": "^7.0.1",
     "ngx-lottie": "^6.2.1",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "typescript": "~3.9.6",
