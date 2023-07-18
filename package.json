@@ -35,7 +35,7 @@
     "express": "^4.17.1",
     "lottie-web": "^5.7.4",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.10.0",
+    "mongoose": "^5.13.20",
     "morgan": "^1.10.0",
     "ngx-echarts": "^7.0.1",
     "ngx-lottie": "^6.2.1",
